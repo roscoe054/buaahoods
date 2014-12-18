@@ -1,4 +1,7 @@
-<?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+<?php if (!defined('BASEPATH')) {
+	exit('No direct script access allowed');
+}
+
 /*
 | -------------------------------------------------------------------------
 | URI ROUTING
@@ -36,11 +39,11 @@
 | This route will tell the Router what URI segments to use if those provided
 | in the URL cannot be matched to a valid route.
 |
-*/
+ */
 
-$route['default_controller'] = "welcome";
+$route['default_controller'] = 'pages/view';
+$route['(:any)'] = 'pages/view/$1';
 $route['404_override'] = '';
-
 
 /* End of file routes.php */
 /* Location: ./application/config/routes.php */
