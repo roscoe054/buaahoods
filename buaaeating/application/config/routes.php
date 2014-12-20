@@ -40,10 +40,19 @@
 | in the URL cannot be matched to a valid route.
 |
  */
-
-$route['default_controller'] = 'pages/view';
-$route['(:any)'] = 'pages/view/$1';
+$route['assets/(:any)'] = 'assets/$1';
 $route['404_override'] = '';
+
+$route['buaaeating/reserve'] = 'buaaeating/reserve';
+$route['buaaeating/(:any)'] = 'buaaeating/view/$1';
+
+$route['news/json_get_news'] = 'news/json_get_news';
+$route['news/create'] = 'news/create';
+$route['news/(:any)'] = 'news/view/$1';
+$route['news'] = 'news';
+
+$route['(:any)'] = 'pages/view/$1';
+$route['default_controller'] = 'pages/view';
 
 /* End of file routes.php */
 /* Location: ./application/config/routes.php */
