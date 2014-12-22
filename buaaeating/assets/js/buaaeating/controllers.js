@@ -1,6 +1,6 @@
-var phonecatApp = angular.module('buaaeatingApp', ['ngTouch']);
+var buaaeatingCtrls = angular.module('buaaeatingCtrls', ['ngTouch']);
 
-phonecatApp.controller('ReserveCtrl', function($scope, $http) {
+buaaeatingCtrls.controller('ReserveCtrl', function($scope, $http) {
 	// data structure
 	var DishType = {
 		createNew: function(name, price, content) {
@@ -66,7 +66,7 @@ phonecatApp.controller('ReserveCtrl', function($scope, $http) {
 
 	$scope.priceSum = 0
 
-	// events handlers
+	// operate handlers
 	$scope.addItemCount = function(item) {
 		item.count += 1
 		$scope.priceSum += item.price
@@ -80,24 +80,36 @@ phonecatApp.controller('ReserveCtrl', function($scope, $http) {
 		}
 	}
 
+	// submit
 	$scope.submitOrder = function() {
 		varifyDeltimes($scope.deltimes, true)
 	}
 
+	// discount
+	$scope.discountCode = ""
+	$scope.varifyDiscountCode = function(code) {
+		code += ""
+		if(code.length === 6){
+			$http({
+				url: "http://" + location.host + '/discount/get_discount',
+				params: {"code":code},
+				method: "GET",
+			}).success(function(data) {
+				console.log(data)
+				if(typeof data.id !== "undefined"){
+					// TO DO
+					console.log('success')
+				} else{
+					console.log('fail')
+				}
+			});
+		}
+	}
+
+	/**
+	*	页面执行部分
+	*/
 	varifyDeltimes($scope.deltimes, false)
-
-	// Initialising the variable.
-	$scope.news = [];
-
-	// Getting the list of users through ajax call.
-	$http({
-		url: "http://" + location.host + '/news/json_get_news',
-		method: "POST",
-	}).success(function(data) {
-		$scope.news = data;
-		console.log(data)
-	});
-
 });
 
 function varifyDeltimes(deltimes, testIfOverdue) {

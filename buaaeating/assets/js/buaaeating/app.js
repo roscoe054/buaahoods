@@ -4,10 +4,10 @@ var buaaeatingApp = angular.module('buaaeatingApp',[
 
 buaaeatingApp.config(function($routeProvider){
 	$routeProvider.when('order',{
-		templateUrl: 'reserve.html',
+		templateUrl: '/partials/reserve.html',
 		controller: 'ReserveCtrl'
 	}).otherwise({
-		templateUrl: 'views/reserve.html',
+		templateUrl: '/partials/reserve.html',
 		controller: 'ReserveCtrl'
 	})
 })

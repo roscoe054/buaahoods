@@ -43,6 +43,9 @@
 $route['assets/(:any)'] = 'assets/$1';
 $route['404_override'] = '';
 
+$route['discount/get_discount/(:any)'] = 'discount/get_discount/$1';
+$route['discount/get_discount'] = 'discount/get_discount';
+
 $route['buaaeating/reserve'] = 'buaaeating/reserve';
 $route['buaaeating/(:any)'] = 'buaaeating/view/$1';
 
@@ -52,7 +55,7 @@ $route['news/(:any)'] = 'news/view/$1';
 $route['news'] = 'news';
 
 $route['(:any)'] = 'pages/view/$1';
-$route['default_controller'] = 'pages/view';
+$route['default_controller'] = 'welcome';
 
 /* End of file routes.php */
 /* Location: ./application/config/routes.php */

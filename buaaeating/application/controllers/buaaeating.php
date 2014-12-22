@@ -15,9 +15,9 @@ class Buaaeating extends CI_Controller {
 	public function reserve() {
 		$data['title'] = '订外卖';
 
-		$this->load->view('templates/header', $data);
-		$this->load->view('buaaeating/reserve', $data);
-		$this->load->view('templates/footer');
+		$this->load->view('index_reserve', $data);
+		// $this->load->view('buaaeating/reserve', $data);
+		// $this->load->view('templates/footer');
 	}
 
 }

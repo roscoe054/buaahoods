@@ -5,9 +5,9 @@
   <meta name="viewport" content="target-densitydpi=get-target-densitydpi, width=device-width, user-scalable=no" />
   <title><?php echo $title?> - 航学长与航学姐</title>
   <link rel="stylesheet" type="text/css" href="<?php echo asset_url();?>stylesheets/style.css" />
-  <script src="<?php echo asset_url();?>js/public/angular.min.js"></script>
-  <script src="<?php echo asset_url();?>js/public/angular-touch.min.js"></script>
-  <script src="<?php echo asset_url();?>js/public/angular-route.min.js"></script>
+  <script src="<?php echo asset_url();?>js/framework/angular.min.js"></script>
+  <script src="<?php echo asset_url();?>js/framework/angular-touch.min.js"></script>
+  <script src="<?php echo asset_url();?>js/framework/angular-route.min.js"></script>
   <script src="<?php echo asset_url();?>js/buaaeating/app.js"></script>
   <script src="<?php echo asset_url();?>js/buaaeating/controllers.js"></script>
 </head>
