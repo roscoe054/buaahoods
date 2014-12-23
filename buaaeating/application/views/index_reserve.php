@@ -11,6 +11,7 @@
   <script src="<?php echo asset_url();?>js/buaaeating/app.js"></script>
   <script src="<?php echo asset_url();?>js/buaaeating/controllers.js"></script>
   <script src="<?php echo asset_url();?>js/buaaeating/filters.js"></script>
+  <script src="<?php echo asset_url();?>js/buaaeating/factorys.js"></script>
 </head>
 <body ng-controller="reserveParentCtrl">
 	<div class="all-wrap">
