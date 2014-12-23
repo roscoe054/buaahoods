@@ -1,7 +1,9 @@
 var buaaeatingCtrls = angular.module('buaaeatingCtrls', ['ngTouch']);
 
-buaaeatingCtrls.controller('ReserveCtrl', function($scope, $http) {
-	// data structure
+buaaeatingCtrls.controller('reserveParentCtrl', function($scope) {
+	/**
+	 *	准备视图数据
+	 */
 	var DishType = {
 		createNew: function(name, price, content) {
 			var dishType = {};
@@ -46,6 +48,7 @@ buaaeatingCtrls.controller('ReserveCtrl', function($scope, $http) {
 		DrinkType.createNew("酸枣汁")
 	]
 
+	// 订餐时间
 	$scope.deltimes = [{
 		time: "11:20",
 		reserveDeadline: "11:00",
@@ -64,13 +67,47 @@ buaaeatingCtrls.controller('ReserveCtrl', function($scope, $http) {
 		valid: true
 	}]
 
+	// 校验时间
+	$scope.validDelTimes = varifyDeltimes($scope.deltimes, false)
+
+	// 订单信息
+	$scope.orderInfo = {
+		buildingNum: null,
+		roomNum: null,
+		phoneNum: null,
+		discountCode : null,
+		discountCodeValid: false,
+		delTime: $scope.validDelTimes[0].time
+	}
+
+	// 测试订单验证页
+	$scope.dishes[0].count = 2
+	$scope.dishes[1].count = 2
+	$scope.drinks[0].count = 1
+
+	// 监听
+	$scope.$on("checkTimeValid", function(event, testIfOverdue) {
+		$scope.validDelTimes = varifyDeltimes($scope.deltimes, testIfOverdue)
+	});
+	$scope.$on("checkCodeValid", function(event, ifCodeValid) {
+		$scope.orderInfo.discountCodeValid = ifCodeValid
+	});
+
+})
+
+buaaeatingCtrls.controller('ReserveCtrl', function($scope, $http) {
 	$scope.priceSum = 0
 
+	/**
+	 *	事件处理
+	 */
 	// operate handlers
 	$scope.addItemCount = function(item) {
 		item.count += 1
 		$scope.priceSum += item.price
-		varifyDeltimes($scope.deltimes, false)
+
+		// 上报需要检查时间是否有效
+		$scope.$emit("checkTimeValid", false)
 	}
 
 	$scope.subItemCount = function(item) {
@@ -82,37 +119,44 @@ buaaeatingCtrls.controller('ReserveCtrl', function($scope, $http) {
 
 	// submit
 	$scope.submitOrder = function() {
-		varifyDeltimes($scope.deltimes, true)
+		// 上报需要检查时间是否有效
+		$scope.$emit("checkTimeValid", true)
 	}
 
 	// discount
-	$scope.discountCode = ""
 	$scope.varifyDiscountCode = function(code) {
 		code += ""
-		if(code.length === 6){
+		if (code.length === 6) {
 			$http({
 				url: "http://" + location.host + '/discount/get_discount',
-				params: {"code":code},
+				params: {
+					"code": code
+				},
 				method: "GET",
 			}).success(function(data) {
-				console.log(data)
-				if(typeof data.id !== "undefined"){
+				if (typeof data.id !== "undefined") {
 					// TO DO
-					console.log('success')
-				} else{
-					console.log('fail')
+					alert("恭喜优惠码验证成功~")
+					$scope.$emit("checkCodeValid", true)
+				} else {
+					alert("不好意思，没有找到这个验证码 :(")
+					$scope.$emit("checkCodeValid", false)
 				}
 			});
+		} else{
+			$scope.$emit("checkCodeValid", false)
 		}
 	}
-
-	/**
-	*	页面执行部分
-	*/
-	varifyDeltimes($scope.deltimes, false)
 });
 
+// 确认订单页
+buaaeatingCtrls.controller('orderConfirmCtrl', function($scope, $http) {
+
+})
+
 function varifyDeltimes(deltimes, testIfOverdue) {
+	var validDelTimes = []
+
 	for (var i in deltimes) {
 		var deltime = deltimes[i],
 			deadline = deltime.reserveDeadline,
@@ -127,8 +171,12 @@ function varifyDeltimes(deltimes, testIfOverdue) {
 				alert("不好意思，页面放太久失效了，请刷新一下吧~")
 			}
 			deltime.valid = false
+		} else {
+			validDelTimes.push(deltime)
 		}
 	}
+
+	return validDelTimes
 }
 
 // 页面准备好了

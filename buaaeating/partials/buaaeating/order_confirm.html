@@ -1,0 +1,35 @@
+<div>
+  <h2>请确认订单</h2>
+
+  <h3>菜品</h3>
+  <ul>
+    <li ng-repeat="dish in dishes | filter: { count: '!0' }" >
+      <div class="name">
+        <span class="itemname">{{ dish.name }}</span>
+        <span class="price">￥{{ dish.price }}元</span>
+      </div>
+      {{ dish.count }} 份
+    </li>
+  </ul>
+
+  <h3>饮料</h3>
+  <ul>
+    <li ng-repeat="drink in drinks | filter: { count: '!0' }">
+      <div style="display:inline-block">
+        <span class="drink-name">{{ drink.name }}</span>
+        {{ drink.count }} 份
+      </div>
+    </li>
+  </ul>
+  
+  <h3>个人信息</h3>
+  <div>宿舍楼号{{ orderInfo.buildingNum }}</div>
+  <div>寝室号{{ orderInfo.roomNum }}</div>
+  <div>手机{{ orderInfo.phoneNum }}</div>
+  <div>送餐时间{{ orderInfo.delTime }}</div>
+  <div ng-show="{{ orderInfo.discountCodeValid }}">优惠码减2元</div>
+  <div>
+    <a href="#">返回修改</a>
+    <a href="">确认</a>
+  </div>
+</div>

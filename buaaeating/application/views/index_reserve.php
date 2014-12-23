@@ -10,8 +10,9 @@
   <script src="<?php echo asset_url();?>js/framework/angular-route.min.js"></script>
   <script src="<?php echo asset_url();?>js/buaaeating/app.js"></script>
   <script src="<?php echo asset_url();?>js/buaaeating/controllers.js"></script>
+  <script src="<?php echo asset_url();?>js/buaaeating/filters.js"></script>
 </head>
-<body>
+<body ng-controller="reserveParentCtrl">
 	<div class="all-wrap">
 		<div class="header">
 			<h1 id="header">航学长与航学姐</h1>

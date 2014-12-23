@@ -1,13 +1,15 @@
 var buaaeatingApp = angular.module('buaaeatingApp',[
-	'ngRoute','buaaeatingCtrls','ngTouch'
+	'ngRoute','ngTouch','buaaeatingCtrls','buaaeatingFilters'
 ]);
 
+var rootPath = '/partials/buaaeating/'
+
 buaaeatingApp.config(function($routeProvider){
-	$routeProvider.when('order',{
-		templateUrl: '/partials/reserve.html',
-		controller: 'ReserveCtrl'
+	$routeProvider.when('/order_confirm',{
+		templateUrl: rootPath + 'order_confirm.html',
+		controller: 'orderConfirmCtrl'
 	}).otherwise({
-		templateUrl: '/partials/reserve.html',
+		templateUrl: rootPath + 'reserve.html',
 		controller: 'ReserveCtrl'
 	})
 })

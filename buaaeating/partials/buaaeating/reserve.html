@@ -1,4 +1,4 @@
-<form class="list-wrap" name="order" >
+<div class="list-wrap" name="order">
   <div>
     <ul class="list">
       <li ng-repeat="dish in dishes">
@@ -9,7 +9,8 @@
         </div>
         <div class=" ope-wrap">
           <span class="minus" ng-click="subItemCount(dish)">-</span>
-          <input type="text" value="{{ dish.count }}" class="ope-wrap-item itemnum" disabled="">
+          <input type="text" ng-model="dish.count" 
+          class="ope-wrap-item itemnum" disabled="">
           <span class="plus" ng-click="addItemCount(dish)">+</span>
           <div class="favor">
             <small>口味选择：</small>
@@ -37,30 +38,30 @@
   </div>
   <div class="result-wrap">
     <span class="label">宿舍楼号</span>
-    <input type="number" name="building"  value="" placeholder="如“4”">
+    <input type="number" ng-model="orderInfo['buildingNum']" placeholder="如“4”">
     <br/>
     <span class="label">房间号</span>
-    <input type="text" name="room"  value="" placeholder="如“中404”">
+    <input type="text" ng-model="orderInfo['roomNum']" placeholder="如“中404”">
     <br/>
     <span class="label">联系电话</span>
-    <input type="number" name="phone" value="">
+    <input type="number" ng-model="orderInfo['phoneNum']">
     <br/>
     <span class="label">优惠码</span>
-    <input id="" type="number" name="" ng-model="discountCode" ng-keyup="varifyDiscountCode(discountCode)">
+    <input id="" type="number" name="" ng-model="orderInfo['discountCode']" 
+    ng-keyup="varifyDiscountCode(orderInfo['discountCode'])">
     <br/>
     <span class="label">送餐时间</span>
-    <select id="deliver-time" name="time" value="">
-      <option value="" ng-repeat="deltime in deltimes" ng-disabled="{{ !deltime.valid }}">
-        {{ deltime.time }}
-      </option>
-    </select>
-    <br/>
+
+    <select ng-model='orderInfo.delTime' required 
+      ng-options='option.time as option.time for option in validDelTimes'>
+    </select><br/>
+    
     <div class="submit">
       共计
       <span id="sum">{{ priceSum }}</span>
       元
-      <a id='submit' ng-click="submitOrder">确认</a>
+      <a href="#/order_confirm" ng-click="submitOrder">确认</a>
     </div>
   </div>
   <!-- <div ng-repeat="newsItem in news">news</div> -->
-</form>
+</div>
