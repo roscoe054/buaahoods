@@ -66,11 +66,10 @@ buaaeatingFactorys.factory('Data', function() {
 			buildingNum: null,
 			roomNum: null,
 			phoneNum: null,
-			discountCode : null,
 			discountCodeValid: false,
-			delTime: null
-		},
-		discountCodeValid: false
+			delTime: null,
+			price: null
+		}
 	}
 })
 
@@ -107,11 +106,12 @@ buaaeatingFactorys.factory('Service', function($http, Data) {
 		if (code.length === 6) {
 			$http({
 				url: "http://" + location.host + '/discount/get_discount',
-				params: {
+				data: {
 					"code": code
 				},
-				method: "GET",
+				method: "POST"
 			}).success(function(data) {
+				console.log(data)
 				if (typeof data.id !== "undefined") {
 					// TO DO
 					alert("恭喜优惠码验证成功~")
@@ -121,9 +121,66 @@ buaaeatingFactorys.factory('Service', function($http, Data) {
 					Data.orderInfo.discountCodeValid = false
 				}
 			});
-		} else{
+		} else {
 			Data.orderInfo.discountCodeValid = false
 		}
+	}
+
+	service.submitOrder = function() {
+		//准备数据
+		var dishes = [],
+			drinks = [],
+			orderInfo = Data.orderInfo,
+			reqData = {}
+
+		// 获取订单有效项
+		angular.forEach(Data.dishes, function(dish, index) {
+			if (dish.count !== 0) {
+				dishes.push(dish)
+			}
+		})
+		angular.forEach(Data.drinks, function(drink, index) {
+			if (drink.count !== 0) {
+				drinks.push(drink)
+			}
+		})
+
+		// 组织数据
+		reqData = {
+			orderItems: dishes,
+			drink: drinks,
+			building: orderInfo.buildingNum,
+			room: orderInfo.roomNum,
+			phone: orderInfo.phoneNum,
+			price: orderInfo.price,
+			delTime: orderInfo.delTime,
+			name: "测试微信号", // TO DO
+			discountTypeNew: 0, // TO DO
+			discountTypeCode: 0 // TO DO
+		}
+
+		// 上传
+		if(dataComplete){
+			$http({
+				url: "http://" + location.host + '/order/submit_order',
+				data: reqData,
+				method: "POST"
+			}).success(function(data) {
+				console.log(data)
+			})
+		}
+	}
+
+	service.checkOrderInfo = function() {
+		// 验证数据完整性
+		angular.forEach(Data.orderInfo, function(item, index) {
+			if(item === null){
+				alert("信息没有填写完整哦亲~")
+				return false
+			}
+		})
+
+		return true
 	}
 
 	return service

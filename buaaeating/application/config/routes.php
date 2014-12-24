@@ -46,6 +46,9 @@ $route['404_override'] = '';
 $route['discount/get_discount/(:any)'] = 'discount/get_discount/$1';
 $route['discount/get_discount'] = 'discount/get_discount';
 
+$route['order/submit_order/(:any)'] = 'order/submit_order/$1';
+$route['order/submit_order'] = 'order/submit_order';
+
 $route['buaaeating/reserve'] = 'buaaeating/reserve';
 $route['buaaeating/(:any)'] = 'buaaeating/view/$1';
 

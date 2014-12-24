@@ -47,8 +47,8 @@
     <input type="number" ng-model="orderInfo['phoneNum']">
     <br/>
     <span class="label">优惠码</span>
-    <input id="" type="number" name="" ng-model="orderInfo['discountCode']" 
-    ng-keyup="varifyDiscountCode(orderInfo['discountCode'])">
+    <input id="" type="number" name="" ng-model="discountCode" 
+    ng-keyup="varifyDiscountCode()">
     <br/>
     <span class="label">送餐时间</span>
 
@@ -60,8 +60,7 @@
       共计
       <span id="sum">{{ priceSum }}</span>
       元
-      <a href="#/order_confirm" ng-click="submitOrder">确认</a>
+      <a href="javascript:void(0);" ng-click="confirmOrder();">确认</a>
     </div>
   </div>
-  <!-- <div ng-repeat="newsItem in news">news</div> -->
 </div>

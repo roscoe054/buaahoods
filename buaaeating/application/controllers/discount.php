@@ -7,7 +7,7 @@ class Discount extends CI_Controller {
 	}
 
 	public function get_discount() {
-		$code = $_GET['code'];
+		$code = $this->input->post('code');
 		$data['discount'] = $this->discount_model->get_discount($code);
 
 		print json_encode($data['discount']);
