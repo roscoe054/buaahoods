@@ -155,20 +155,18 @@ buaaeatingFactorys.factory('Service', function($http, Data) {
 			price: orderInfo.price,
 			delTime: orderInfo.delTime,
 			name: "测试微信号", // TO DO
-			discountTypeNew: 0, // TO DO
-			discountTypeCode: 0 // TO DO
+			discount_type_new: 0, // TO DO
+			discount_type_code: orderInfo.discountCodeValid ? 1 : 0
 		}
 
 		// 上传
-		if(dataComplete){
-			$http({
-				url: "http://" + location.host + '/order/submit_order',
-				data: reqData,
-				method: "POST"
-			}).success(function(data) {
-				console.log(data)
-			})
-		}
+		$http({
+			url: "http://" + location.host + '/order/submit_order',
+			data: reqData,
+			method: "POST"
+		}).success(function(data) {
+			console.log(data)
+		})
 	}
 
 	service.checkOrderInfo = function() {

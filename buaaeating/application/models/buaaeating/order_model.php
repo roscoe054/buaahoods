@@ -15,13 +15,11 @@ class Order_model extends CI_Model {
 		return $query->row_array();
 	}
 
-	public function set_order() {
-		$data = array(
-			'title' => $this->input->post('title'),
-			'text' => $this->input->post('text'),
-		);
-
-		// return $this->db->insert('news', $data);
+	public function set_order($data) {
+		unset($data['orderItems']);
+		unset($data['drink']);
+		// print json_encode($data);
+		return $this->db->insert('order_info', $data);
 	}
 
 }
