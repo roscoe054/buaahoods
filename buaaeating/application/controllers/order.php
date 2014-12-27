@@ -4,6 +4,7 @@ class Order extends CI_Controller {
 	public function __construct() {
 		parent::__construct();
 		$this->load->model('buaaeating/order_model');
+		$this->load->model('buaaeating/dish_model');
 	}
 
 	public function submit_order() {
@@ -23,10 +24,18 @@ class Order extends CI_Controller {
 		}
 
 		if ($dataComplete) {
+			// 添加必要数据来insert order / dish
 			$postData['date'] = date('Y-m-d H:i:s');
 			$postData['status'] = 0;
-			$this->order_model->set_order($postData);
-			echo "数据完整";
+			$dishesData = $postData['orderItems'];
+
+			// insert order & get orderId
+			$orderId = $this->order_model->set_order($postData);
+
+			// insert dish
+			foreach ($dishesData as $dish) {
+				$this->dish_model->set_dish($dish, $orderId, $postData['date']);
+			}
 		} else {
 			echo "缺少数据";
 		}

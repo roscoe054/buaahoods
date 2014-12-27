@@ -9,6 +9,7 @@ buaaeatingFactorys.factory('Data', function() {
 			dishType.price = parseInt(price)
 			dishType.content = content
 			dishType.count = 0
+			dishType.favor = "正常"
 
 			return dishType
 		}

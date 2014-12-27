@@ -18,8 +18,13 @@ class Order_model extends CI_Model {
 	public function set_order($data) {
 		unset($data['orderItems']);
 		unset($data['drink']);
-		// print json_encode($data);
-		return $this->db->insert('order_info', $data);
+
+		if ($this->db->insert('order_info', $data)) {
+			$this->db->select_max('id');
+			$query = $this->db->get('order_info');
+
+			return $query->row()->id;
+		}
 	}
 
 }

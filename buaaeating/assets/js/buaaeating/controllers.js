@@ -25,6 +25,11 @@ buaaeatingCtrls.controller('ReserveCtrl', function($scope, Data, Service) {
 	$scope.validDelTimes = Service.varifyDeltimes($scope.deltimes, false)
 	$scope.delTime = Data.orderInfo.delTime = $scope.validDelTimes[0].time
 
+	// 改变口味
+	$scope.changeFavor = function(dish, favorName){
+		dish.favor = favorName
+	}
+
 	// 订单项事件处理
 	$scope.addItemCount = function(item) {
 		item.count += 1

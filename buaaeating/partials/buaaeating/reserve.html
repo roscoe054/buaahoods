@@ -14,8 +14,12 @@
           <span class="plus" ng-click="addItemCount(dish)">+</span>
           <div class="favor">
             <small>口味选择：</small>
-            <span class="favor-button selected">正常</span>
-            <span class="favor-button">加辣</span>
+            <span class="favor-button" ng-class="{true: 'selected'}[dish.favor=='正常']"
+              ng-click="changeFavor(dish,'正常')">正常
+            </span>
+            <span class="favor-button" ng-class="{true: 'selected'}[dish.favor=='加辣']"
+              ng-click="changeFavor(dish,'加辣')">加辣
+            </span>
           </div>
         </div>
       </li>
