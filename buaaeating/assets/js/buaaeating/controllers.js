@@ -22,7 +22,7 @@ buaaeatingCtrls.controller('reserveParentCtrl', function($scope, Data, Service) 
 })
 
 buaaeatingCtrls.controller('ReserveCtrl', function($scope, Data, Service) {
-	$scope.priceSum = 0
+	$scope.priceSum = Service.calculateSum()
 
 	// 校验时间
 	$scope.validDelTimes = Service.varifyDeltimes($scope.deltimes, false)
@@ -54,11 +54,17 @@ buaaeatingCtrls.controller('ReserveCtrl', function($scope, Data, Service) {
 	}
 	$scope.addDrinkCount = function(drink) {
 		drink.count += 1
+
+		// 重新计算总价
+		$scope.priceSum = Service.calculateSum()
 	}
 	$scope.subDrinkCount = function(drink) {
 		if (drink.count > 0) {
 			drink.count = 0
 		}
+
+		// 重新计算总价
+		$scope.priceSum = Service.calculateSum()
 	}
 
 	$scope.itemConfirm = function(item) {
@@ -68,7 +74,8 @@ buaaeatingCtrls.controller('ReserveCtrl', function($scope, Data, Service) {
 		// 上报需要检查时间是否有效
 		Service.varifyDeltimes($scope.validDelTimes, false)
 
-		// TODO 重新计算总价
+		// 重新计算总价
+		$scope.priceSum = Service.calculateSum()
 	}
 
 	// 转到确认订单页
@@ -85,9 +92,11 @@ buaaeatingCtrls.controller('ReserveCtrl', function($scope, Data, Service) {
 	}
 
 	// code改变时检测
-	$scope.discountCode = null
 	$scope.varifyDiscountCode = function(){
-		Service.varifyDiscountCode($scope.discountCode)
+		Service.varifyDiscountCode($scope.orderInfo.discountCode, function(){
+			// 重新计算总价
+			$scope.priceSum = Service.calculateSum()
+		})
 	}
 
 });

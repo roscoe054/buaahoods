@@ -74,7 +74,7 @@
     </div>
     <div class="info-item">
       <span class="label">优惠码</span>
-      <input class="info-input" type="number" name="" ng-model="discountCode"
+      <input class="info-input" type="number" name="" ng-model="orderInfo['discountCode']"
       ng-keyup="varifyDiscountCode()">
     </div>
     <div class="info-item">
@@ -87,6 +87,7 @@
       共计
       <span id="sum">{{ priceSum }}</span>
       元
+      <span class="discount-info" ng-show="orderInfo.discountCodeValid">(优惠码减2)</span>
       <a class="button-submit" href="javascript:void(0);" ng-click="confirmOrder();">确认订单</a>
     </div>
   </div>

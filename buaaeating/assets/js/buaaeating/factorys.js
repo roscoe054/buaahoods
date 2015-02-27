@@ -72,6 +72,7 @@ buaaeatingFactorys.factory('Data', function() {
 			roomNum: null,
 			phoneNum: null,
 			discountCodeValid: false,
+			discountCode: null,
 			delTime: null,
 			price: null
 		}
@@ -106,7 +107,7 @@ buaaeatingFactorys.factory('Service', function($http, Data) {
 		return validDelTimes
 	}
 
-	service.varifyDiscountCode = function(code) {
+	service.varifyDiscountCode = function(code, callback) {
 		code += ""
 		if (code.length === 6) {
 			$http({
@@ -116,7 +117,6 @@ buaaeatingFactorys.factory('Service', function($http, Data) {
 				},
 				method: "POST"
 			}).success(function(data) {
-				console.log(data)
 				if (typeof data.id !== "undefined") {
 					// TO DO
 					alert("恭喜优惠码验证成功~")
@@ -125,9 +125,11 @@ buaaeatingFactorys.factory('Service', function($http, Data) {
 					alert("不好意思，没有找到这个验证码 :(")
 					Data.orderInfo.discountCodeValid = false
 				}
+				callback()
 			});
 		} else {
 			Data.orderInfo.discountCodeValid = false
+			callback()
 		}
 	}
 
@@ -184,6 +186,31 @@ buaaeatingFactorys.factory('Service', function($http, Data) {
 		})
 
 		return true
+	}
+
+	service.calculateSum = function(){
+		var sum = 0
+
+		angular.forEach(Data.dishes, function(dish){
+			sum += dish.count * dish.price
+		})
+		angular.forEach(Data.drinks, function(drink){
+			sum += drink.count * drink.price
+		})
+
+		// 优惠码
+		if(Data.orderInfo.discountCodeValid){
+			sum -= 2
+		}
+
+		// TODO 新用户
+
+		// 检测最小值
+		if(sum < 0){
+			sum = 0
+		}
+
+		return sum
 	}
 
 	return service
