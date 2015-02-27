@@ -4,7 +4,8 @@
 <meta charset="UTF-8">
   <meta name="viewport" content="target-densitydpi=get-target-densitydpi, width=device-width, user-scalable=no" />
   <title><?php echo $title?> - 航学长与航学姐</title>
-  <link rel="stylesheet" type="text/css" href="<?php echo asset_url();?>stylesheets/style.css" />
+  <link rel="stylesheet" type="text/css" href="<?php echo asset_url();?>stylesheets/common.css" />
+  <link rel="stylesheet" type="text/css" href="<?php echo asset_url();?>stylesheets/lib/ionicons.css" />
   <script src="<?php echo asset_url();?>js/framework/angular.min.js"></script>
   <script src="<?php echo asset_url();?>js/framework/angular-touch.min.js"></script>
   <script src="<?php echo asset_url();?>js/framework/angular-route.min.js"></script>
@@ -16,7 +17,9 @@
 <body ng-controller="reserveParentCtrl">
 	<div class="all-wrap">
 		<div class="header">
-			<h1 id="header">航学长与航学姐</h1>
+		    <span class="icon-title">航</span>
+		    学长外卖 - {{title}}
+			<span class="discount-info">新用户首单减2元!</span>
 		</div>
     <div ng-view>
     </div>

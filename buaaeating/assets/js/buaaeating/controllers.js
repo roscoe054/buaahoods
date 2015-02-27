@@ -1,6 +1,9 @@
 var buaaeatingCtrls = angular.module('buaaeatingCtrls', []);
 
 buaaeatingCtrls.controller('reserveParentCtrl', function($scope, Data, Service) {
+	// header
+	$scope.title = "订餐"
+
 	// 共享数据
 	$scope.dishes = Data.dishes
 	$scope.drinks = Data.drinks
@@ -8,9 +11,9 @@ buaaeatingCtrls.controller('reserveParentCtrl', function($scope, Data, Service) 
 	$scope.orderInfo = Data.orderInfo // 订单信息
 
 	// 测试订单验证页
-	$scope.dishes[0].count = 2
-	$scope.dishes[1].count = 2
-	$scope.drinks[0].count = 1
+	//$scope.dishes[0].count = 2
+	//$scope.dishes[1].count = 2
+	//$scope.drinks[0].count = 1
 	$scope.orderInfo.buildingNum = 1
 	$scope.orderInfo.roomNum = "中333"
 	$scope.orderInfo.phoneNum = 1501111111
@@ -25,6 +28,16 @@ buaaeatingCtrls.controller('ReserveCtrl', function($scope, Data, Service) {
 	$scope.validDelTimes = Service.varifyDeltimes($scope.deltimes, false)
 	$scope.delTime = Data.orderInfo.delTime = $scope.validDelTimes[0].time
 
+	// 预订下拉
+	$scope.reserveItem = function(dish){
+		var opeVisible = dish.temp.opeVisible
+
+		if(opeVisible){
+			dish.temp.count = dish.count
+		}
+		dish.temp.opeVisible = !opeVisible
+	}
+
 	// 改变口味
 	$scope.changeFavor = function(dish, favorName){
 		dish.favor = favorName
@@ -32,17 +45,30 @@ buaaeatingCtrls.controller('ReserveCtrl', function($scope, Data, Service) {
 
 	// 订单项事件处理
 	$scope.addItemCount = function(item) {
-		item.count += 1
-		$scope.priceSum += item.price
+		item.temp.count += 1
+	}
+	$scope.subItemCount = function(item) {
+		if (item.temp.count > 0) {
+			item.temp.count -= 1
+		}
+	}
+	$scope.addDrinkCount = function(drink) {
+		drink.count += 1
+	}
+	$scope.subDrinkCount = function(drink) {
+		if (drink.count > 0) {
+			drink.count = 0
+		}
+	}
+
+	$scope.itemConfirm = function(item) {
+		item.count = item.temp.count
+		item.temp.opeVisible = false
 
 		// 上报需要检查时间是否有效
 		Service.varifyDeltimes($scope.validDelTimes, false)
-	}
-	$scope.subItemCount = function(item) {
-		if (item.count > 0) {
-			item.count -= 1
-			$scope.priceSum -= item.price
-		}
+
+		// TODO 重新计算总价
 	}
 
 	// 转到确认订单页
@@ -70,6 +96,7 @@ buaaeatingCtrls.controller('ReserveCtrl', function($scope, Data, Service) {
 buaaeatingCtrls.controller('orderConfirmCtrl', function($scope, Service) {
 	$scope.submitOrder = function(){
 		Service.submitOrder()
+		window.location.href = "#/order_succeed"
 	}
 })
 

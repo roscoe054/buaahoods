@@ -2,69 +2,92 @@
   <div>
     <ul class="list">
       <li ng-repeat="dish in dishes">
-        <div class="name">
-          <span class="itemname">{{ dish.name }}</span>
-          <span class="price">￥{{ dish.price }}元</span>
-          <small>{{ dish.content }}</small>
-        </div>
-        <div class=" ope-wrap">
-          <span class="minus" ng-click="subItemCount(dish)">-</span>
-          <input type="text" ng-model="dish.count" 
-          class="ope-wrap-item itemnum" disabled="">
-          <span class="plus" ng-click="addItemCount(dish)">+</span>
-          <div class="favor">
-            <small>口味选择：</small>
-            <span class="favor-button" ng-class="{true: 'selected'}[dish.favor=='正常']"
-              ng-click="changeFavor(dish,'正常')">正常
-            </span>
-            <span class="favor-button" ng-class="{true: 'selected'}[dish.favor=='加辣']"
-              ng-click="changeFavor(dish,'加辣')">加辣
-            </span>
+        <div class="main-wrap">
+          <img class="dish-img" src="/assets/images/hongshaopaigu.jpg">
+          <a href="javascript:void(0);" class="button-reserve" ng-click="reserveItem(dish)">
+            预订
+            <i class="icon ion-chevron-down" ng-show="!dish.temp.opeVisible"></i>
+            <i class="icon ion-chevron-up" ng-show="dish.temp.opeVisible"></i>
+          </a>
+          <div class="intro-wrap">
+            <div class="intro-item item-name">
+              {{ dish.name }}
+              <span class="icon-count" ng-show="dish.count !== 0">{{dish.count}}</span>
+            </div>
+            <div class="intro-item">{{ dish.content }}</div>
+            <div class="intro-item item-price">{{ dish.price }}元 / 份</div>
           </div>
+        </div>
+        <div class="ope-wrap" ng-show="dish.temp.opeVisible">
+          <div class="num-wrap">
+            <span class="minus" ng-click="subItemCount(dish)">-</span>
+            <input type="text" ng-model="dish.temp.count"
+                   class="ope-wrap-item itemnum" disabled="">
+            <span class="plus" ng-click="addItemCount(dish)">+</span>
+          </div>
+          <div class="favor">
+            <small>口味:</small>
+            <div class="favor-option-wrap">
+              <span class="favor-button" ng-class="{true: 'selected'}[dish.favor=='正常']"
+                ng-click="changeFavor(dish,'正常')">正常
+              </span>
+              <span class="char-division">/</span>
+              <span class="favor-button" ng-class="{true: 'selected'}[dish.favor=='加辣']"
+                ng-click="changeFavor(dish,'加辣')">加辣
+              </span>
+            </div>
+          </div>
+          <a href="javascript:void(0);" class="button-item-confirm" ng-click="itemConfirm(dish)">确认</a>
+          <div class="ope-wrap-tri"></div>
         </div>
       </li>
     </ul>
-    <div class="name">
-      饮料（3元/个）：<br/>
-      <ul class="list">
-        <li class="drink-wrap" ng-repeat="drink in drinks">
-          <div style="display:inline-block">
+    <div class="drink-wrap">
+      <h2>饮料（3元 / 个）</h2>
+      <ul class="drink-list">
+        <li class="drink-item" ng-class="{'active':drink.count !== 0}" ng-repeat="drink in drinks" ng-click="addDrinkCount(drink)">
             <span class="drink-name">{{ drink.name }}</span>
-            <span class=" drink-ope-wrap">
-              <span class="minus" ng-click="subItemCount(drink)">-</span>
-              <input value="{{ drink.count }}" class="itemnum" disabled="">
-              <span class="plus" ng-click="addItemCount(drink)">+</span>
-            </span>
-          </div>
+            <span class="icon-count" ng-show="drink.count !== 0">{{ drink.count }}</span>
+            <i class="icon ion-close-circled" ng-show="drink.count !== 0" ng-click="subDrinkCount(drink); $event.stopPropagation()"></i>
+            <!--<span class=" drink-ope-wrap">-->
+              <!--<span class="minus" ng-click="subItemCount(drink)">-</span>-->
+              <!--<input value="{{ drink.count }}" class="itemnum" disabled="">-->
+              <!--<span class="plus" ng-click="addItemCount(drink)">+</span>-->
+            <!--</span>-->
         </li>
       </ul>
     </div>
   </div>
   <div class="result-wrap">
-    <span class="label">宿舍楼号</span>
-    <input type="number" ng-model="orderInfo['buildingNum']" placeholder="如“4”">
-    <br/>
-    <span class="label">房间号</span>
-    <input type="text" ng-model="orderInfo['roomNum']" placeholder="如“中404”">
-    <br/>
-    <span class="label">联系电话</span>
-    <input type="number" ng-model="orderInfo['phoneNum']">
-    <br/>
-    <span class="label">优惠码</span>
-    <input id="" type="number" name="" ng-model="discountCode" 
-    ng-keyup="varifyDiscountCode()">
-    <br/>
-    <span class="label">送餐时间</span>
-
-    <select ng-model='delTime' required 
-      ng-options='option.time as option.time for option in validDelTimes'>
-    </select><br/>
-    
+    <h2>订单信息</h2>
+    <div class="info-item">
+      <span class="label">宿舍楼</span>
+      <input class="info-input" type="number" ng-model="orderInfo['buildingNum']" placeholder="如“4”">
+    </div>
+    <div class="info-item">
+      <span class="label">宿舍号</span>
+      <input class="info-input" type="text" ng-model="orderInfo['roomNum']" placeholder="如“中404”">
+    </div>
+    <div class="info-item">
+      <span class="label">手机号</span>
+      <input class="info-input" type="number" ng-model="orderInfo['phoneNum']">
+    </div>
+    <div class="info-item">
+      <span class="label">优惠码</span>
+      <input class="info-input" type="number" name="" ng-model="discountCode"
+      ng-keyup="varifyDiscountCode()">
+    </div>
+    <div class="info-item">
+      <span class="label">送餐时间</span>
+      <select class="select-time" ng-model='delTime' required
+        ng-options='option.time as option.time for option in validDelTimes'>
+      </select>
+    </div>
     <div class="submit">
       共计
       <span id="sum">{{ priceSum }}</span>
       元
-      <a href="javascript:void(0);" ng-click="confirmOrder();">确认</a>
+      <a class="button-submit" href="javascript:void(0);" ng-click="confirmOrder();">确认订单</a>
     </div>
   </div>
 </div>
