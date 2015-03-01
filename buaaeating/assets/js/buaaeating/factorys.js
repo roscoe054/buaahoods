@@ -210,6 +210,7 @@ buaaeatingFactorys.factory('Service', function($http, Data, $localStorage) {
 			sum = 0
 		}
 
+		$localStorage.orderInfo.price = sum
 		return sum
 	}
 

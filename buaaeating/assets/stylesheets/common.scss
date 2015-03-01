@@ -1,5 +1,5 @@
 $color_theme: #3fc2d6;
-$color_orange: #fb6858;
+$color_orange: #FA8723;
 $color_detail: #999;
 $color_content: #666;
 $color_title: #333;
@@ -33,7 +33,7 @@ a{
   height: 20px;
   text-align: center;
   line-height: 23px;
-  background-color: #fb6858;
+  background-color: $color_orange;
   color: #fff;
   border-radius: 50%;
   font-size: 12px;
