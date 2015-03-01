@@ -306,3 +306,19 @@ ul{list-style: none;}
   }
 }
 
+/* 确认页面 */
+.confirm-wrap{
+  text-align: left;
+
+  .title{
+    padding: 10px;
+    text-align: center;
+    font-size: 16px;
+    border-bottom: 1px #eee solid;
+  }
+  .section{
+    padding: 10px;
+    border-bottom: 1px #eee solid;
+  }
+}
+/* 确认页面 结束 */

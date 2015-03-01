@@ -1,3 +1,4 @@
+@charset "UTF-8";
 html, body, p, ul, li, h1, h2, h3 {
   margin: 0;
   padding: 0;
@@ -306,5 +307,19 @@ ul {
       background-color: #fb6858;
       border-radius: 3px;
       text-decoration: none; }
+
+/* 确认页面 */
+.confirm-wrap {
+  text-align: left; }
+  .confirm-wrap .title {
+    padding: 10px;
+    text-align: center;
+    font-size: 16px;
+    border-bottom: 1px #eee solid; }
+  .confirm-wrap .section {
+    padding: 10px;
+    border-bottom: 1px #eee solid; }
+
+/* 确认页面 结束 */
 
 /*# sourceMappingURL=common.css.map */

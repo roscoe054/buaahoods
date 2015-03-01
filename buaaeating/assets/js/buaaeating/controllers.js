@@ -1,28 +1,33 @@
 var buaaeatingCtrls = angular.module('buaaeatingCtrls', []);
 
-buaaeatingCtrls.controller('reserveParentCtrl', function($scope, Data, Service) {
+buaaeatingCtrls.controller('reserveParentCtrl', function($scope, Data, $localStorage) {
 	// 共享数据
-	$scope.dishes = Data.dishes
-	$scope.drinks = Data.drinks
-	$scope.deltimes = Data.deltimes
-	$scope.orderInfo = Data.orderInfo // 订单信息
+	//$scope.dishes = Data.dishes
+	//$scope.drinks = Data.drinks
+	//$scope.deltimes = Data.deltimes
+	//$scope.orderInfo = Data.orderInfo
+
+	// 本地缓存
+	$scope.$storage = $localStorage.$default({
+		dishes: Data.dishes,
+		drinks: Data.drinks,
+		deltimes: Data.deltimes,
+		orderInfo: Data.orderInfo // 订单信息
+	});
 
 	// 测试订单验证页
-	//$scope.dishes[0].count = 2
-	//$scope.dishes[1].count = 2
-	//$scope.drinks[0].count = 1
-	$scope.orderInfo.buildingNum = 1
-	$scope.orderInfo.roomNum = "中333"
-	$scope.orderInfo.phoneNum = 1501111111
-	$scope.orderInfo.price = 15
-	$scope.orderInfo.delTime = "11:20"
+	$scope.$storage.orderInfo.buildingNum = 1
+	$scope.$storage.orderInfo.roomNum = "中333"
+	$scope.$storage.orderInfo.phoneNum = 1501111111
+	$scope.$storage.orderInfo.price = 15
+	$scope.$storage.orderInfo.delTime = "11:20"
 })
 
-buaaeatingCtrls.controller('ReserveCtrl', function($scope, Data, Service) {
+buaaeatingCtrls.controller('ReserveCtrl', function($scope, Data, Service, $localStorage) {
 	$scope.priceSum = Service.calculateSum()
 
 	// 校验时间
-	$scope.validDelTimes = Service.varifyDeltimes($scope.deltimes, false)
+	$scope.validDelTimes = Service.varifyDeltimes($scope.$storage.deltimes, false)
 	$scope.delTime = Data.orderInfo.delTime = $scope.validDelTimes[0].time
 
 	// 预订下拉
@@ -82,7 +87,7 @@ buaaeatingCtrls.controller('ReserveCtrl', function($scope, Data, Service) {
 		Data.orderInfo.price = $scope.priceSum
 		timeValid = Service.varifyDeltimes($scope.validDelTimes, true),
 		orderInfoComplete = Service.checkOrderInfo()
-		
+
 		if(timeValid && orderInfoComplete){
 			location.href = "#/order_confirm"
 		}
@@ -90,7 +95,7 @@ buaaeatingCtrls.controller('ReserveCtrl', function($scope, Data, Service) {
 
 	// code改变时检测
 	$scope.varifyDiscountCode = function(){
-		Service.varifyDiscountCode($scope.orderInfo.discountCode, function(){
+		Service.varifyDiscountCode($scope.$storage.orderInfo.discountCode, function(){
 			// 重新计算总价
 			$scope.priceSum = Service.calculateSum()
 		})

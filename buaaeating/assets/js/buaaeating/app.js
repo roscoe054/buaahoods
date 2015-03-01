@@ -1,5 +1,5 @@
 var buaaeatingApp = angular.module('buaaeatingApp',[
-	'ngRoute','ngTouch','buaaeatingCtrls','buaaeatingFilters','buaaeatingFactorys'
+	'ngRoute','ngTouch','ngStorage','buaaeatingCtrls','buaaeatingFilters','buaaeatingFactorys'
 ]);
 
 var rootPath = '/partials/buaaeating/'

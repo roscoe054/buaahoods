@@ -79,7 +79,7 @@ buaaeatingFactorys.factory('Data', function() {
 	}
 })
 
-buaaeatingFactorys.factory('Service', function($http, Data) {
+buaaeatingFactorys.factory('Service', function($http, Data, $localStorage) {
 	var service = {}
 
 	service.varifyDeltimes = function(deltimes, testIfOverdue) {
@@ -94,7 +94,7 @@ buaaeatingFactorys.factory('Service', function($http, Data) {
 			deadlineDate.setHours(parseInt(deadline.slice(0, 2)))
 			deadlineDate.setMinutes(parseInt(deadline.slice(3, 5)))
 
-			if (deadlineDate < nowDate && deltime.valid) {
+			if (deadlineDate < nowDate) {
 				if (testIfOverdue) {
 					alert("不好意思，页面放太久失效了，请刷新一下吧~")
 				}
@@ -103,7 +103,6 @@ buaaeatingFactorys.factory('Service', function($http, Data) {
 				validDelTimes.push(deltime)
 			}
 		}
-
 		return validDelTimes
 	}
 
@@ -120,15 +119,15 @@ buaaeatingFactorys.factory('Service', function($http, Data) {
 				if (typeof data.id !== "undefined") {
 					// TO DO
 					alert("恭喜优惠码验证成功~")
-					Data.orderInfo.discountCodeValid = true
+					$localStorage.orderInfo.discountCodeValid = true
 				} else {
 					alert("不好意思，没有找到这个验证码 :(")
-					Data.orderInfo.discountCodeValid = false
+					$localStorage.orderInfo.discountCodeValid = false
 				}
 				callback()
 			});
 		} else {
-			Data.orderInfo.discountCodeValid = false
+			$localStorage.orderInfo.discountCodeValid = false
 			callback()
 		}
 	}
@@ -137,16 +136,16 @@ buaaeatingFactorys.factory('Service', function($http, Data) {
 		//准备数据
 		var dishes = [],
 			drinks = [],
-			orderInfo = Data.orderInfo,
+			orderInfo = $localStorage.orderInfo,
 			reqData = {}
 
 		// 获取订单有效项
-		angular.forEach(Data.dishes, function(dish, index) {
+		angular.forEach($localStorage.dishes, function(dish, index) {
 			if (dish.count !== 0) {
 				dishes.push(dish)
 			}
 		})
-		angular.forEach(Data.drinks, function(drink, index) {
+		angular.forEach($localStorage.drinks, function(drink, index) {
 			if (drink.count !== 0) {
 				drinks.push(drink)
 			}
@@ -178,8 +177,8 @@ buaaeatingFactorys.factory('Service', function($http, Data) {
 
 	service.checkOrderInfo = function() {
 		// 验证数据完整性
-		angular.forEach(Data.orderInfo, function(item, index) {
-			if(item === null){
+		angular.forEach($localStorage.orderInfo, function(item, index) {
+			if(item === null && index !== "discountCode"){
 				alert("信息没有填写完整哦亲~")
 				return false
 			}
@@ -189,17 +188,18 @@ buaaeatingFactorys.factory('Service', function($http, Data) {
 	}
 
 	service.calculateSum = function(){
+
 		var sum = 0
 
-		angular.forEach(Data.dishes, function(dish){
+		angular.forEach($localStorage.dishes, function(dish){
 			sum += dish.count * dish.price
 		})
-		angular.forEach(Data.drinks, function(drink){
+		angular.forEach($localStorage.drinks, function(drink){
 			sum += drink.count * drink.price
 		})
 
 		// 优惠码
-		if(Data.orderInfo.discountCodeValid){
+		if($localStorage.orderInfo.discountCodeValid){
 			sum -= 2
 		}
 
