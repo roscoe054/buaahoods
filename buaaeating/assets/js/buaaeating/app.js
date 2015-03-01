@@ -17,6 +17,22 @@ buaaeatingApp.config(function($routeProvider){
 	})
 })
 
+buaaeatingApp.run(function($rootScope) {
+    var titleData = {
+        "#/order_confirm": "订单",
+        "#/order_succeed": "成功"
+    }
+
+    $rootScope.title = ""
+    $rootScope.$on("$routeChangeStart", function(event, next, current) {
+        if(typeof titleData[location.hash] !== "undefined"){
+            $rootScope.title = titleData[location.hash]
+        } else{
+            $rootScope.title = "订餐"
+        }
+    });
+})
+
 buaaeatingApp.config(function($httpProvider) {
     $httpProvider.defaults.headers.put['Content-Type'] = 'application/x-www-form-urlencoded';
     $httpProvider.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';

@@ -1,9 +1,6 @@
 var buaaeatingCtrls = angular.module('buaaeatingCtrls', []);
 
 buaaeatingCtrls.controller('reserveParentCtrl', function($scope, Data, Service) {
-	// header
-	$scope.title = "订餐"
-
 	// 共享数据
 	$scope.dishes = Data.dishes
 	$scope.drinks = Data.drinks
