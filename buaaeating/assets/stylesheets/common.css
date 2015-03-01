@@ -312,13 +312,43 @@ ul {
 .confirm-wrap {
   text-align: left; }
   .confirm-wrap .title {
-    padding: 10px;
+    padding: 10px 12px;
     text-align: center;
     font-size: 16px;
     border-bottom: 1px #eee solid; }
   .confirm-wrap .section {
-    padding: 10px;
+    padding: 10px 12px;
     border-bottom: 1px #eee solid; }
+    .confirm-wrap .section h3 {
+      margin: 0 0 5px; }
+  .confirm-wrap .item-list .item {
+    padding: 5px 0 0; }
+    .confirm-wrap .item-list .item .item-info {
+      float: right; }
+    .confirm-wrap .item-list .item .item-label {
+      display: inline-block;
+      *display: inline;
+      *zoom: 1;
+      min-width: 5.5em; }
+  .confirm-wrap .button-wrap {
+    text-align: center; }
+    .confirm-wrap .button-wrap .button {
+      display: inline-block;
+      *display: inline;
+      *zoom: 1;
+      padding: 5px 10px;
+      text-decoration: none;
+      cursor: pointer;
+      border-radius: 3px; }
+    .confirm-wrap .button-wrap .button-white {
+      background-color: #fff;
+      color: #666;
+      border: 1px #ccc solid; }
+    .confirm-wrap .button-wrap .button-orange {
+      width: 4em;
+      background-color: #fb6858;
+      color: #fff;
+      margin: 0 0 0 10px; }
 
 /* 确认页面 结束 */
 

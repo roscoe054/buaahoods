@@ -1,43 +1,42 @@
 <div class="confirm-wrap">
-  <h2 class="title">请确认订单</h2>
+  <h2 class="title">确认订单</h2>
 
   <div class="section">
     <h3>菜品</h3>
-    <ul>
-      <li ng-repeat="dish in $storage.dishes | filter: { count: '!0' }" >
-        <div class="name">
-          <span class="itemname">{{ dish.name }}</span>
-          <span class="price">￥{{ dish.price }}元</span>
-        </div>
-        {{ dish.count }} 份
+    <ul class="item-list">
+      <li class="item" ng-repeat="dish in $storage.dishes | filter: { count: '!0' }" >
+        <span class="item-name">{{ dish.name }}</span>
+        <span class="item-info">
+          {{ dish.price }}元 x {{ dish.count }}份
+        </span>
       </li>
     </ul>
   </div>
 
   <div class="section">
     <h3>饮料</h3>
-    <ul>
-      <li ng-repeat="drink in $storage.drinks | filter: { count: '!0' }">
-        <div style="display:inline-block">
-          <span class="drink-name">{{ drink.name }}</span>
-          {{ drink.count }} 份
-        </div>
+    <ul class="item-list">
+      <li class="item" ng-repeat="drink in $storage.drinks | filter: { count: '!0' }">
+        <span class="item-name">{{ drink.name }}</span>
+        <span class="item-info">
+          3元 x {{ drink.count }}份
+        </span>
       </li>
     </ul>
   </div>
 
-  <div class="section">
+  <div class="section item-list">
     <h3>个人信息</h3>
-    <div>宿舍楼号{{ $storage.orderInfo.buildingNum }}</div>
-    <div>寝室号{{ $storage.orderInfo.roomNum }}</div>
-    <div>手机{{ $storage.orderInfo.phoneNum }}</div>
-    <div>送餐时间{{ $storage.orderInfo.delTime }}</div>
-    <div>总价{{ $storage.orderInfo.price }}</div>
-    <div ng-show="$storage.orderInfo.discountCodeValid">优惠码减2元</div>
+    <div class="item"><span class="item-label">宿舍楼号</span>{{ $storage.orderInfo.buildingNum }}</div>
+    <div class="item"><span class="item-label">寝室号</span>{{ $storage.orderInfo.roomNum }}</div>
+    <div class="item"><span class="item-label">手机</span>{{ $storage.orderInfo.phoneNum }}</div>
+    <div class="item"><span class="item-label">送餐时间</span>{{ $storage.orderInfo.delTime }}</div>
+    <div class="item"><span class="item-label">总价</span>{{ $storage.orderInfo.price }}</div>
+    <div class="item" ng-show="$storage.orderInfo.discountCodeValid">优惠码减2元</div>
   </div>
 
-  <div>
-    <a href="#">返回修改</a>
-    <a href="javascript:void(0);" ng-click="submitOrder()">确认</a>
+  <div class="section button-wrap">
+    <a class="button button-white" href="#">返回修改</a>
+    <a class="button button-orange" href="javascript:void(0);" ng-click="submitOrder()">确认</a>
   </div>
 </div>

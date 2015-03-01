@@ -4,6 +4,8 @@ $color_detail: #999;
 $color_content: #666;
 $color_title: #333;
 
+$padding_side: 12px;
+
 html,body,p,ul,li,h1,h2,h3{margin: 0;padding: 0;font-weight: normal;}
 html{width: 100%;height: 100%;}
 body{
@@ -311,14 +313,53 @@ ul{list-style: none;}
   text-align: left;
 
   .title{
-    padding: 10px;
+    padding: 10px $padding_side;
     text-align: center;
     font-size: 16px;
     border-bottom: 1px #eee solid;
   }
   .section{
-    padding: 10px;
+    padding: 10px $padding_side;
     border-bottom: 1px #eee solid;
+
+    h3{
+      margin: 0 0 5px;
+    }
+  }
+  .item-list{
+    .item{
+      padding: 5px 0 0;
+
+      .item-info{
+        float: right;
+      }
+      .item-label{
+        @include inb;
+        min-width: 5.5em;
+      }
+    }
+  }
+  .button-wrap{
+    text-align: center;
+
+    .button{
+      @include inb;
+      padding: 5px 10px;
+      text-decoration: none;
+      cursor: pointer;
+      border-radius: 3px;
+    }
+    .button-white{
+      background-color: #fff;
+      color: $color-content;
+      border: 1px #ccc solid;
+    }
+    .button-orange{
+      width: 4em;
+      background-color: $color-orange;
+      color: #fff;
+      margin: 0 0 0 10px;
+    }
   }
 }
 /* 确认页面 结束 */
