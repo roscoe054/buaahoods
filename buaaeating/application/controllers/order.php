@@ -36,8 +36,17 @@ class Order extends CI_Controller {
 			foreach ($dishesData as $dish) {
 				$this->dish_model->set_dish($dish, $orderId, $postData['date']);
 			}
+
+			echo "succeed $orderId";
+			// print json_encode($data['discount']);
 		} else {
 			echo "缺少数据";
 		}
+	}
+
+	public function query_order() {
+		$orderId = $this->input->get('$orderId', TRUE);
+
+		echo "id: $orderId";
 	}
 }

@@ -1,3 +1,32 @@
-<div>
-	恭喜你已订餐成功
+<div class="page-wrap">
+	<h2 class="title">订餐成功</h2>
+
+	<div class="section">
+		<h3>菜品</h3>
+		<ul class="item-list">
+			<li class="item" ng-repeat="dish in dishes | filter: { count: '!0' }" >
+				<span class="item-name">{{ dish.name }}</span>
+        <span class="item-info">
+          {{ dish.price }}元 x {{ dish.count }}份
+        </span>
+			</li>
+		</ul>
+	</div>
+
+	<div class="section">
+		<h3>饮料</h3>
+		<ul class="item-list">
+			<li class="item" ng-repeat="drink in drinks | filter: { count: '!0' }">
+				<span class="item-name">{{ drink.name }}</span>
+        <span class="item-info">
+          3元 x {{ drink.count }}份
+        </span>
+			</li>
+		</ul>
+	</div>
+
+	<div class="section button-wrap">
+		<a class="button button-white" href="#">返回修改</a>
+		<a class="button button-orange" href="javascript:void(0);" ng-click="submitOrder()">确认</a>
+	</div>
 </div>

@@ -308,8 +308,8 @@ ul{list-style: none;}
   }
 }
 
-/* 确认页面 */
-.confirm-wrap{
+/* 确认页面 订餐成功页面*/
+.page-wrap{
   text-align: left;
 
   .title{
@@ -344,7 +344,7 @@ ul{list-style: none;}
 
     .button{
       @include inb;
-      padding: 5px 10px;
+      padding: 8px 10px;
       text-decoration: none;
       cursor: pointer;
       border-radius: 3px;

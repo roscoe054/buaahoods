@@ -15,12 +15,12 @@ buaaeatingCtrls.controller('reserveParentCtrl', function($scope, Data, $localSto
 	$scope.$storage.orderInfo.phoneNum = 1501111111
 })
 
-buaaeatingCtrls.controller('ReserveCtrl', function($scope, Data, Service) {
+buaaeatingCtrls.controller('ReserveCtrl', function($scope, Data, Service, $localStorage) {
 	$scope.priceSum = Service.calculateSum()
 
 	// 校验时间
 	$scope.validDelTimes = Service.varifyDeltimes($scope.$storage.deltimes, false)
-	$scope.delTime = $scope.validDelTimes[0].time
+	$localStorage.orderInfo.delTime = $scope.delTime = $scope.validDelTimes[0].time
 
 	// 预订下拉
 	$scope.reserveItem = function(dish){
@@ -98,14 +98,21 @@ buaaeatingCtrls.controller('ReserveCtrl', function($scope, Data, Service) {
 // 确认订单页
 buaaeatingCtrls.controller('orderConfirmCtrl', function($scope, Service) {
 	$scope.submitOrder = function(){
-		Service.submitOrder()
-		window.location.href = "#/order_succeed"
+		Service.submitOrder(function(status){
+			if(status === "succeed"){
+				window.location.href = "#/order_succeed"
+			}else{
+				alert("不好意思，服务器出了点小问题，请稍后再试")
+			}
+		})
 	}
 })
 
 // 订单成功页
-buaaeatingCtrls.controller('orderSucceedCtrl', function($scope) {
-	
+buaaeatingCtrls.controller('orderSucceedCtrl', function($scope, $localStorage) {
+	$scope.dishes = $localStorage.dishes
+	$scope.drinks = $localStorage.drinks
+	//$localStorage.$reset();
 })
 
 // 页面准备好了

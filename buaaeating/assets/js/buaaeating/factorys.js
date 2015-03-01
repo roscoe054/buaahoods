@@ -132,7 +132,7 @@ buaaeatingFactorys.factory('Service', function($http, Data, $localStorage) {
 		}
 	}
 
-	service.submitOrder = function() {
+	service.submitOrder = function(callback) {
 		//准备数据
 		var dishes = [],
 			drinks = [],
@@ -172,6 +172,7 @@ buaaeatingFactorys.factory('Service', function($http, Data, $localStorage) {
 			method: "POST"
 		}).success(function(data) {
 			console.log(data)
+			callback("succeed")
 		})
 	}
 
