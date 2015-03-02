@@ -99,6 +99,7 @@ buaaeatingCtrls.controller('ReserveCtrl', function($scope, Data, Service, $local
 buaaeatingCtrls.controller('orderConfirmCtrl', function($scope, Service) {
 	$scope.submitOrder = function(){
 		Service.submitOrder(function(ret){
+			console.log(ret)
 			if(ret.status === "succeed"){
 				window.location.href = "#/order_succeed/" + ret.orderId
 			}else{
@@ -111,12 +112,22 @@ buaaeatingCtrls.controller('orderConfirmCtrl', function($scope, Service) {
 // 订单成功页
 buaaeatingCtrls.controller('orderSucceedCtrl', function($scope, $localStorage, $routeParams, Service) {
 	// 获取订单信息
-	Service.getOrderInfo($routeParams.orderId, function(ret){
-		console.log(ret)
+	Service.getOrderInfo($routeParams.orderId, function(retData){
+		console.log(retData)
+		$scope.dishes = retData.dish
+		$scope.drinks = []
+
+		var drinksArr = retData.order.drink.split(", ")
+		angular.forEach(drinksArr, function(drink){
+			var drinkInfoArr = drink.split("x")
+
+			$scope.drinks.push({
+				name: drinkInfoArr[0],
+				num:drinkInfoArr[1]
+			})
+		})
 	})
 
-	$scope.dishes = $localStorage.dishes
-	$scope.drinks = $localStorage.drinks
 	//$localStorage.$reset();
 })
 

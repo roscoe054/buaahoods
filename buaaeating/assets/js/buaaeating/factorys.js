@@ -147,10 +147,11 @@ buaaeatingFactorys.factory('Service', function($http, Data, $localStorage) {
 		})
 		angular.forEach($localStorage.drinks, function(drink, index) {
 			if (drink.count !== 0) {
+				drink = drink.name + "x" + drink.count
 				drinks.push(drink)
 			}
 		})
-		
+		drinks = drinks.join(", ")
 
 		// 组织数据
 		reqData = {
@@ -224,11 +225,10 @@ buaaeatingFactorys.factory('Service', function($http, Data, $localStorage) {
 			},
 			method: "GET"
 		}).success(function(ret) {
-			console.log(ret)
 			if(ret.status === "succeed"){
-				//callback(ret.data)
+				callback(ret.data)
 			} else{
-				//alert("不好意思，服务器出了点小问题，请稍后再试")
+				alert("不好意思，服务器出了点小问题，请稍后再试")
 			}
 		})
 	}

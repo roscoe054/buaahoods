@@ -6,9 +6,9 @@
 		<ul class="item-list">
 			<li class="item" ng-repeat="dish in dishes | filter: { count: '!0' }" >
 				<span class="item-name">{{ dish.name }}</span>
-        <span class="item-info">
-          {{ dish.price }}元 x {{ dish.count }}份
-        </span>
+				<span class="item-info">
+				  {{ dish.num }}份
+				</span>
 			</li>
 		</ul>
 	</div>
@@ -18,9 +18,7 @@
 		<ul class="item-list">
 			<li class="item" ng-repeat="drink in drinks | filter: { count: '!0' }">
 				<span class="item-name">{{ drink.name }}</span>
-        <span class="item-info">
-          3元 x {{ drink.count }}份
-        </span>
+				<span class="item-info">{{ drink.num }}份</span>
 			</li>
 		</ul>
 	</div>
