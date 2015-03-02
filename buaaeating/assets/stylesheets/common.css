@@ -308,7 +308,7 @@ ul {
       border-radius: 3px;
       text-decoration: none; }
 
-/* 确认页面 订餐成功页面*/
+/* 确认页面 */
 .page-wrap {
   text-align: left; }
   .page-wrap .title {
@@ -351,5 +351,23 @@ ul {
       margin: 0 0 0 10px; }
 
 /* 确认页面 结束 */
+/* 成功页面 */
+.succeed-wrap .explanation {
+  margin: 10px 0 0;
+  font-size: 12px;
+  color: #999; }
+.succeed-wrap .info-item {
+  padding: 5px 0 0; }
+  .succeed-wrap .info-item .info-label {
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+    min-width: 5em; }
+.succeed-wrap .order-status {
+  color: #FA8723;
+  font-size: 16px;
+  margin: 10px 0; }
+
+/* 成功页面 结束 */
 
 /*# sourceMappingURL=common.css.map */

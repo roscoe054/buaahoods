@@ -116,6 +116,14 @@ buaaeatingCtrls.controller('orderSucceedCtrl', function($scope, $localStorage, $
 		console.log(retData)
 		$scope.dishes = retData.dish
 		$scope.drinks = []
+		$scope.order = retData.order
+
+		var orderStatus = {
+			0: "订单等待确认中",
+			1: "餐品准备中",
+			2: "餐品正在送来的路上了"
+		}
+		$scope.orderStatus = orderStatus[retData.order.status]
 
 		var drinksArr = retData.order.drink.split(", ")
 		angular.forEach(drinksArr, function(drink){
