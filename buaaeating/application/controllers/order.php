@@ -37,16 +37,25 @@ class Order extends CI_Controller {
 				$this->dish_model->set_dish($dish, $orderId, $postData['date']);
 			}
 
-			echo "succeed $orderId";
-			// print json_encode($data['discount']);
+			// 返回订单成功状态和id
+			$returnData = array ('status' => "succeed", 'orderId' => $orderId);
+			echo json_encode($returnData);
 		} else {
-			echo "缺少数据";
+			$returnData = array ('status' => "error");
+			echo json_encode($returnData);
 		}
 	}
 
 	public function query_order() {
-		$orderId = $this->input->get('$orderId', TRUE);
+		$returnData = array ('status' => "error", 'data' => array('order' => '', 'dish' => array()));
+		$orderId = $this->input->get('orderId', TRUE);
 
-		echo "id: $orderId";
+		if($orderId != ""){
+			$returnData['status'] = "succeed";
+			$returnData['data']['order'] = $this->order_model->get_order($orderId);
+			$returnData['data']['dish'] = $this->dish_model->get_dish($orderId);
+		}
+
+		echo json_encode($returnData);
 	}
 }

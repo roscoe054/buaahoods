@@ -98,9 +98,9 @@ buaaeatingCtrls.controller('ReserveCtrl', function($scope, Data, Service, $local
 // 确认订单页
 buaaeatingCtrls.controller('orderConfirmCtrl', function($scope, Service) {
 	$scope.submitOrder = function(){
-		Service.submitOrder(function(status){
-			if(status === "succeed"){
-				window.location.href = "#/order_succeed"
+		Service.submitOrder(function(ret){
+			if(ret.status === "succeed"){
+				window.location.href = "#/order_succeed/" + ret.orderId
 			}else{
 				alert("不好意思，服务器出了点小问题，请稍后再试")
 			}
@@ -109,7 +109,12 @@ buaaeatingCtrls.controller('orderConfirmCtrl', function($scope, Service) {
 })
 
 // 订单成功页
-buaaeatingCtrls.controller('orderSucceedCtrl', function($scope, $localStorage) {
+buaaeatingCtrls.controller('orderSucceedCtrl', function($scope, $localStorage, $routeParams, Service) {
+	// 获取订单信息
+	Service.getOrderInfo($routeParams.orderId, function(ret){
+		console.log(ret)
+	})
+
 	$scope.dishes = $localStorage.dishes
 	$scope.drinks = $localStorage.drinks
 	//$localStorage.$reset();

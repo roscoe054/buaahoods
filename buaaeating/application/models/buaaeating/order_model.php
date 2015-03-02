@@ -17,7 +17,7 @@ class Order_model extends CI_Model {
 
 	public function set_order($data) {
 		unset($data['orderItems']);
-		unset($data['drink']);
+		// unset($data['drink']);
 
 		if ($this->db->insert('order_info', $data)) {
 			$this->db->select_max('id');

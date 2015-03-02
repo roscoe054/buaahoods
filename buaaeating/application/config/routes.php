@@ -43,9 +43,15 @@
 $route['assets/(:any)'] = 'assets/$1';
 $route['404_override'] = '';
 
+// 获取优惠码
 $route['discount/get_discount/(:any)'] = 'discount/get_discount/$1';
 $route['discount/get_discount'] = 'discount/get_discount';
 
+// 查询订单
+$route['order/query_order/(:any)'] = 'order/query_order/$1';
+$route['order/query_order'] = 'order/query_order';
+
+// 提交订单
 $route['order/submit_order/(:any)'] = 'order/submit_order/$1';
 $route['order/submit_order'] = 'order/submit_order';
 

@@ -150,6 +150,7 @@ buaaeatingFactorys.factory('Service', function($http, Data, $localStorage) {
 				drinks.push(drink)
 			}
 		})
+		
 
 		// 组织数据
 		reqData = {
@@ -170,9 +171,8 @@ buaaeatingFactorys.factory('Service', function($http, Data, $localStorage) {
 			url: "http://" + location.host + '/order/submit_order',
 			data: reqData,
 			method: "POST"
-		}).success(function(data) {
-			console.log(data)
-			callback("succeed")
+		}).success(function(ret) {
+			callback(ret)
 		})
 	}
 
@@ -189,7 +189,6 @@ buaaeatingFactorys.factory('Service', function($http, Data, $localStorage) {
 	}
 
 	service.calculateSum = function(){
-
 		var sum = 0
 
 		angular.forEach($localStorage.dishes, function(dish){
@@ -213,6 +212,25 @@ buaaeatingFactorys.factory('Service', function($http, Data, $localStorage) {
 
 		$localStorage.orderInfo.price = sum
 		return sum
+	}
+
+	// 获取订单信息
+	service.getOrderInfo = function(orderId, callback){
+		// 上传
+		$http({
+			url: "http://" + location.host + '/order/query_order',
+			params: {
+				orderId:orderId
+			},
+			method: "GET"
+		}).success(function(ret) {
+			console.log(ret)
+			if(ret.status === "succeed"){
+				//callback(ret.data)
+			} else{
+				//alert("不好意思，服务器出了点小问题，请稍后再试")
+			}
+		})
 	}
 
 	return service
