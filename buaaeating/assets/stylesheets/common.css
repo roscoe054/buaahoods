@@ -173,14 +173,21 @@ ul {
     .list-wrap li .ope-wrap {
       position: relative;
       padding: 8px 12px;
-      background-color: #eee; }
+      background-color: #eee;
+      text-align: center; }
       .list-wrap li .ope-wrap .num-wrap {
         display: inline-block;
         *display: inline;
-        *zoom: 1;
-        padding: 0 4px;
-        background-color: #fff;
-        border-radius: 3px; }
+        *zoom: 1; }
+        .list-wrap li .ope-wrap .num-wrap small {
+          vertical-align: 2px; }
+        .list-wrap li .ope-wrap .num-wrap .num-ope-wrap {
+          display: inline-block;
+          *display: inline;
+          *zoom: 1;
+          padding: 0 4px;
+          background-color: #fff;
+          border-radius: 3px; }
         .list-wrap li .ope-wrap .num-wrap .minus, .list-wrap li .ope-wrap .num-wrap .plus, .list-wrap li .ope-wrap .num-wrap .itemnum {
           height: 20px;
           padding: 2px 4px;
@@ -193,7 +200,7 @@ ul {
         display: inline-block;
         *display: inline;
         *zoom: 1;
-        margin: 0 0 0 20px;
+        margin: 0 20px 0 0;
         vertical-align: top; }
         .list-wrap li .ope-wrap .favor .favor-option-wrap {
           display: inline-block;

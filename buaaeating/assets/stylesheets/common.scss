@@ -154,13 +154,20 @@ ul{list-style: none;}
       position: relative;
       padding: 8px 12px;
       background-color: #eee;
+      text-align: center;
 
       .num-wrap{
         @include inb;
-        padding: 0 4px;
-        background-color: #fff;
-        border-radius: 3px;
 
+        small{
+          vertical-align: 2px;
+        }
+        .num-ope-wrap{
+          @include inb;
+          padding: 0 4px;
+          background-color: #fff;
+          border-radius: 3px;
+        }
         .minus, .plus, .itemnum{
           height: 20px;
           padding: 2px 4px;
@@ -174,7 +181,7 @@ ul{list-style: none;}
       }
       .favor{
         @include inb;
-        margin: 0 0 0 20px;
+        margin: 0 20px 0 0;
         vertical-align: top;
 
         .favor-option-wrap{

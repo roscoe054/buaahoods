@@ -25,10 +25,6 @@ buaaeatingCtrls.controller('ReserveCtrl', function($scope, Data, Service, $local
 	// 预订下拉
 	$scope.reserveItem = function(dish){
 		var opeVisible = dish.temp.opeVisible
-
-		if(opeVisible){
-			dish.temp.count = dish.count
-		}
 		dish.temp.opeVisible = !opeVisible
 	}
 
@@ -39,12 +35,16 @@ buaaeatingCtrls.controller('ReserveCtrl', function($scope, Data, Service, $local
 
 	// 订单项事件处理
 	$scope.addItemCount = function(item) {
-		item.temp.count += 1
+		item.count += 1
+		// 重新计算总价
+		$scope.priceSum = Service.calculateSum()
 	}
 	$scope.subItemCount = function(item) {
-		if (item.temp.count > 0) {
-			item.temp.count -= 1
+		if (item.count > 0) {
+			item.count -= 1
 		}
+		// 重新计算总价
+		$scope.priceSum = Service.calculateSum()
 	}
 	$scope.addDrinkCount = function(drink) {
 		drink.count += 1
@@ -56,17 +56,6 @@ buaaeatingCtrls.controller('ReserveCtrl', function($scope, Data, Service, $local
 		if (drink.count > 0) {
 			drink.count = 0
 		}
-
-		// 重新计算总价
-		$scope.priceSum = Service.calculateSum()
-	}
-
-	$scope.itemConfirm = function(item) {
-		item.count = item.temp.count
-		item.temp.opeVisible = false
-
-		// 上报需要检查时间是否有效
-		Service.varifyDeltimes($scope.validDelTimes, false)
 
 		// 重新计算总价
 		$scope.priceSum = Service.calculateSum()
@@ -138,9 +127,10 @@ buaaeatingCtrls.controller('orderSucceedCtrl', function($scope, $localStorage, $
 		$scope.order = retData.order
 
 		var orderStatus = {
-			0: "订单等待确认中",
-			1: "餐品准备中",
-			2: "餐品正在送来的路上了"
+			"-1": "订单已被取消，如有问题请联系我们",
+			"0": "订单等待确认中",
+			"1": "餐品准备中",
+			"2": "餐品正在送来的路上"
 		}
 		$scope.orderStatus = orderStatus[retData.order.status]
 

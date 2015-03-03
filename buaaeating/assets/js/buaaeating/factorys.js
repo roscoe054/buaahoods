@@ -11,8 +11,7 @@ buaaeatingFactorys.factory('Data', function() {
 			dishType.count = 0
 			dishType.favor = "正常"
 			dishType.temp = {
-				opeVisible: false,
-				count: 0
+				opeVisible: false
 			}
 
 			return dishType
@@ -178,15 +177,19 @@ buaaeatingFactorys.factory('Service', function($http, Data, $localStorage) {
 	}
 
 	service.checkOrderInfo = function() {
+		var orderInfoComplete = true
+
 		// 验证数据完整性
 		angular.forEach($localStorage.orderInfo, function(item, index) {
 			if(item === null && index !== "discountCode"){
+				console.log(item, index)
+
 				alert("信息没有填写完整哦亲~")
-				return false
+				orderInfoComplete = false
 			}
 		})
 
-		return true
+		return orderInfoComplete
 	}
 
 	service.calculateSum = function(){
