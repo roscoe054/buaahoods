@@ -34,11 +34,13 @@ if (defined('ENVIRONMENT'))
 	{
 		case 'development':
 			error_reporting(E_ALL);
+			date_default_timezone_set('Etc/GMT-8');
 		break;
 	
 		case 'testing':
 		case 'production':
 			error_reporting(0);
+			date_default_timezone_set('Etc/GMT-8');
 		break;
 
 		default:

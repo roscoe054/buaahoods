@@ -10,24 +10,7 @@ buaaeatingApp.config(function($routeProvider){
 		controller: 'orderConfirmCtrl'
 	}).when('/order_succeed/:orderId',{
 		templateUrl: rootPath + 'order_succeed.html',
-		controller: 'orderSucceedCtrl',
-        resolve: {
-            data: function ($q, $http, $location) {
-                //console.log($location.search().orderId)
-                //var deferred = $q.defer(),
-                //    paramArr = location.pathname.split("/"),
-                //    uid = paramArr[paramArr.length - 1]
-                //
-                //$http({
-                //    method: 'GET',
-                //    url: "http://" + location.host + '/m/user/cooperate/' + uid
-                //}).then(function(data) {
-                //    deferred.resolve(data);
-                //});
-                //
-                //return deferred.promise;
-            }
-        }
+		controller: 'orderSucceedCtrl'
 	}).otherwise({
 		templateUrl: rootPath + 'reserve.html',
 		controller: 'ReserveCtrl'

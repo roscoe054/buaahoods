@@ -80,6 +80,11 @@ buaaeatingCtrls.controller('ReserveCtrl', function($scope, Data, Service, $local
 		timeValid = Service.varifyDeltimes($scope.validDelTimes, true),
 		orderInfoComplete = Service.checkOrderInfo()
 
+		// 记录是由订餐页跳过去的
+		$localStorage.$default({
+			from: "reserve_page"
+		});
+
 		if(timeValid && orderInfoComplete){
 			location.href = "#/order_confirm"
 		}
@@ -96,10 +101,13 @@ buaaeatingCtrls.controller('ReserveCtrl', function($scope, Data, Service, $local
 });
 
 // 确认订单页
-buaaeatingCtrls.controller('orderConfirmCtrl', function($scope, Service) {
+buaaeatingCtrls.controller('orderConfirmCtrl', function($scope, Service, $localStorage) {
+	if(typeof $localStorage.from === "undefined"){
+		location.href = "/buaaeating/reserve"
+	}
+
 	$scope.submitOrder = function(){
 		Service.submitOrder(function(ret){
-			console.log(ret)
 			if(ret.status === "succeed"){
 				window.location.href = "#/order_succeed/" + ret.orderId
 			}else{
@@ -107,13 +115,24 @@ buaaeatingCtrls.controller('orderConfirmCtrl', function($scope, Service) {
 			}
 		})
 	}
+
+	//drink num
+	var drinksSum = 0
+	$scope.noDrinks = false
+	angular.forEach($localStorage.drinks, function(drink){
+		drinksSum += drink.count
+	})
+	if(drinksSum === 0){
+		$scope.noDrinks = true
+	}
 })
 
 // 订单成功页
 buaaeatingCtrls.controller('orderSucceedCtrl', function($scope, $localStorage, $routeParams, Service) {
 	// 获取订单信息
+	$scope.showDrinks = false
+
 	Service.getOrderInfo($routeParams.orderId, function(retData){
-		console.log(retData)
 		$scope.dishes = retData.dish
 		$scope.drinks = []
 		$scope.order = retData.order
@@ -134,9 +153,13 @@ buaaeatingCtrls.controller('orderSucceedCtrl', function($scope, $localStorage, $
 				num:drinkInfoArr[1]
 			})
 		})
+
+		if(drinksArr[0] !== ""){
+			$scope.showDrinks = true
+		}
 	})
 
-	//$localStorage.$reset();
+	$localStorage.$reset();
 })
 
 // 页面准备好了
