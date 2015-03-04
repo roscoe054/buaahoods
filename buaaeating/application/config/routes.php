@@ -43,28 +43,30 @@
 $route['assets/(:any)'] = 'assets/$1';
 $route['404_override'] = '';
 
+$routeRoot = 'buaagit/'
+
 // 获取优惠码
-$route['discount/get_discount/(:any)'] = 'discount/get_discount/$1';
-$route['discount/get_discount'] = 'discount/get_discount';
+$route['discount/get_discount/(:any)'] = $routeRoot + 'discount/get_discount/$1';
+$route['discount/get_discount'] = $routeRoot +  'discount/get_discount';
 
 // 查询订单
-$route['order/query_order/(:any)'] = 'order/query_order/$1';
-$route['order/query_order'] = 'order/query_order';
+$route['order/query_order/(:any)'] = $routeRoot +  'order/query_order/$1';
+$route['order/query_order'] = $routeRoot +  'order/query_order';
 
 // 提交订单
-$route['order/submit_order/(:any)'] = 'order/submit_order/$1';
-$route['order/submit_order'] = 'order/submit_order';
+$route['order/submit_order/(:any)'] = $routeRoot +  'order/submit_order/$1';
+$route['order/submit_order'] = $routeRoot +  'order/submit_order';
 
-$route['buaaeating'] = 'buaaeating/reserve';
-$route['buaaeating/(:any)'] = 'buaaeating/view/$1';
+$route['buaaeating'] = $routeRoot +  'buaaeating/reserve';
+$route['buaaeating/(:any)'] = $routeRoot +  'buaaeating/view/$1';
 
-$route['news/json_get_news'] = 'news/json_get_news';
-$route['news/create'] = 'news/create';
-$route['news/(:any)'] = 'news/view/$1';
-$route['news'] = 'news';
+$route['news/json_get_news'] = $routeRoot +  'news/json_get_news';
+$route['news/create'] = $routeRoot +  'news/create';
+$route['news/(:any)'] = $routeRoot +  'news/view/$1';
+$route['news'] = $routeRoot +  'news';
 
-$route['(:any)'] = 'pages/view/$1';
-$route['default_controller'] = 'welcome';
+$route['(:any)'] = $routeRoot +  'pages/view/$1';
+$route['default_controller'] = $routeRoot +  'welcome';
 
 /* End of file routes.php */
 /* Location: ./application/config/routes.php */
