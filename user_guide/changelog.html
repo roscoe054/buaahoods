@@ -5,10 +5,10 @@
 <style type='text/css' media='all'>@import url('userguide.css');</style>
 <link rel='stylesheet' type='text/css' media='all' href='userguide.css' />
 
-<script type="text/javascript" src="./nav/nav.js"></script>
-<script type="text/javascript" src="./nav/prototype.lite.js"></script>
-<script type="text/javascript" src="./nav/moo.fx.js"></script>
-<script type="text/javascript" src="./nav/user_guide_menu.js"></script>
+<script type="text/javascript" src="nav/nav.js"></script>
+<script type="text/javascript" src="nav/prototype.lite.js"></script>
+<script type="text/javascript" src="nav/moo.fx.js"></script>
+<script type="text/javascript" src="nav/user_guide_menu.js"></script>
 
 <meta http-equiv='expires' content='-1' />
 <meta http-equiv= 'pragma' content='no-cache' />
@@ -24,12 +24,12 @@
 
 <!-- START NAVIGATION -->
 <div id="nav"><div id="nav_inner"><script type="text/javascript">create_menu('./');</script></div></div>
-<div id="nav2"><a name="top"></a><a href="javascript:void(0);" onclick="myHeight.toggle();"><img src="./images/nav_toggle_darker.jpg" width="154" height="43" border="0" title="Toggle Table of Contents" alt="Toggle Table of Contents" /></a></div>
+<div id="nav2"><a name="top"></a><a href="javascript:void(0);" onclick="myHeight.toggle();"><img src="images/nav_toggle_darker.jpg" width="154" height="43" border="0" title="Toggle Table of Contents" alt="Toggle Table of Contents" /></a></div>
 <div id="masthead">
 <table cellpadding="0" cellspacing="0" border="0" style="width:100%">
 <tr>
 <td><h1>CodeIgniter User Guide Version 2.2.0</h1></td>
-<td id="breadcrumb_right"><a href="./toc.html">Table of Contents Page</a></td>
+<td id="breadcrumb_right"><a href="toc.html">Table of Contents Page</a></td>
 </tr>
 </table>
 </div>
@@ -297,19 +297,19 @@ Hg Tag: v2.0.2</p>
 <ul>
 	<li>General changes
 		<ul>
-			<li>The <a href="./libraries/security.html">Security library</a> was moved to the core and is now loaded automatically. Please remove your loading calls.</li>
+			<li>The <a href="libraries/security.html">Security library</a> was moved to the core and is now loaded automatically. Please remove your loading calls.</li>
 			<li>The CI_SHA class is now deprecated. All supported versions of PHP provide a <kbd>sha1()</kbd> function.</li>
 			<li><kbd>constants.php</kbd> will now be loaded from the environment folder if available.</li>
 			<li>Added language key error logging</li>
 			<li>Made Environment Support optional. Comment out or delete the constant to stop environment checks.</li>
 			<li>Added Environment Support for Hooks.</li>
 			<li>Added CI_ Prefix to the <a href="libraries/caching.html">Cache driver</a>.</li>
-			<li>Added <a href="./general/cli.html">CLI usage</a> documentation.</li>
+			<li>Added <a href="general/cli.html">CLI usage</a> documentation.</li>
 		</ul>
 	</li>
 	<li>Helpers
 		<ul>
-			<li>Removed the previously deprecated <kbd>dohash()</kbd> from the <a href="./helpers/security_helper.html">Security helper</a>; use <kbd>do_hash()</kbd> instead.</li>
+			<li>Removed the previously deprecated <kbd>dohash()</kbd> from the <a href="helpers/security_helper.html">Security helper</a>; use <kbd>do_hash()</kbd> instead.</li>
 			<li>Changed the 'plural' function so that it doesn't ruin the captalization of your string. It also take into consideration acronyms which are all caps.</li>
 		</ul>
 	</li>
@@ -379,8 +379,8 @@ Hg Tag: v2.0.0</p>
 		<ul>
 			<li>PHP 4 support is removed. CodeIgniter now requires PHP 5.1.6.</li>
 			<li>Scaffolding, having been deprecated for a number of versions, has been removed.</li>
-			<li>Plugins have been removed, in favor of Helpers.  The CAPTCHA plugin has been converted to a Helper and <a href="./helpers/captcha_helper.html">documented</a>.  The JavaScript calendar plugin was removed due to the ready availability of great JavaScript calendars, particularly with jQuery.</li>
-			<li>Added new special Library type: <a href="./general/drivers.html">Drivers</a>.</li>
+			<li>Plugins have been removed, in favor of Helpers.  The CAPTCHA plugin has been converted to a Helper and <a href="helpers/captcha_helper.html">documented</a>.  The JavaScript calendar plugin was removed due to the ready availability of great JavaScript calendars, particularly with jQuery.</li>
+			<li>Added new special Library type: <a href="general/drivers.html">Drivers</a>.</li>
 			<li>Added full query-string support.  See the config file for details.</li>
 			<li>Moved the application folder outside of the system folder.</li>
 			<li>Moved system/cache and system/logs directories to the application directory.</li>
@@ -400,13 +400,13 @@ Hg Tag: v2.0.0</p>
 	<li>Libraries
 		<ul>
 			<li>Added a <a href="libraries/caching.html">Cache driver</a> with APC, memcached, and file-based support.</li>
-			<li>Added <var>$prefix</var>, <var>$suffix</var> and <var>$first_url</var> properties to <a href="./libraries/pagination.html">Pagination library</a>.</li>
-			<li>Added the ability to suppress first, previous, next, last, and page links by setting their values to FALSE in the <a href="./libraries/pagination.html">Pagination library</a>.</li>
-			<li>Added <a href="./libraries/security.html">Security library</a>, which now contains the <dfn>xss_clean</dfn> function, <dfn>filename_security</dfn> function and other security related functions.</li>
-			<li>Added CSRF (Cross-site Reference Forgery) protection to the <a href="./libraries/security.html">Security library</a>.</li>
+			<li>Added <var>$prefix</var>, <var>$suffix</var> and <var>$first_url</var> properties to <a href="libraries/pagination.html">Pagination library</a>.</li>
+			<li>Added the ability to suppress first, previous, next, last, and page links by setting their values to FALSE in the <a href="libraries/pagination.html">Pagination library</a>.</li>
+			<li>Added <a href="libraries/security.html">Security library</a>, which now contains the <dfn>xss_clean</dfn> function, <dfn>filename_security</dfn> function and other security related functions.</li>
+			<li>Added CSRF (Cross-site Reference Forgery) protection to the <a href="libraries/security.html">Security library</a>.</li>
 			<li>Added <var>$parse_exec_vars</var> property to Output library.</li>
 			<li>Added ability to enable / disable individual sections of the <a href="general/profiling.html">Profiler</a></li>
-			<li>Added a wildcard option <kbd>$config['allowed_types'] = '*'</kbd> to the <a href="./libraries/file_uploading.html">File Uploading Class</a>.</li>
+			<li>Added a wildcard option <kbd>$config['allowed_types'] = '*'</kbd> to the <a href="libraries/file_uploading.html">File Uploading Class</a>.</li>
 			<li>Added an 'object' config variable to the XML-RPC Server library so that one can specify the object to look for requested methods, instead of assuming it is in the $CI superobject.</li>
 			<li>Added "is_object" into the list of unit tests capable of being run.</li>
 			<li>Table library will generate an empty cell with a blank string, or NULL value.</li>
@@ -426,7 +426,7 @@ Hg Tag: v2.0.0</p>
 			<li>Improved performance of the Encryption library on servers where Mcrypt is available.</li>
 			<li>Changed the default encryption mode in the Encryption library to CBC.</li>
 			<li>Added an <kbd>encode_from_legacy()</kbd> method to provide a way to transition encrypted data from CodeIgniter 1.x to CodeIgniter 2.x.
-				Please see the <a href="./installation/upgrade_200.html">upgrade instructions</a> for details.</li>
+				Please see the <a href="installation/upgrade_200.html">upgrade instructions</a> for details.</li>
 			<li>Altered Form_Validation library to allow for method chaining on <kbd>set_rules()</kbd>, <kbd>set_message()</kbd> and <kbd>set_error_delimiters()</kbd> functions.</li>
 			<li>Altered Email Library to allow for method chaining.</li>
 			<li>Added <kbd>request_headers()</kbd>, <kbd>get_request_header()</kbd> and <kbd>is_ajax_request()</kbd> to the input class.</li>
@@ -436,9 +436,9 @@ Hg Tag: v2.0.0</p>
 	</li>
 	<li>Database
 		<ul>
-			<li><a href="./database/configuration.html">database configuration</a>.</li>
-			<li>Added <kbd>autoinit</kbd> value to <a href="./database/configuration.html">database configuration</a>.</li>
-			<li>Added <kbd>stricton</kbd> value to <a href="./database/configuration.html">database configuration</a>.</li>
+			<li><a href="database/configuration.html">database configuration</a>.</li>
+			<li>Added <kbd>autoinit</kbd> value to <a href="database/configuration.html">database configuration</a>.</li>
+			<li>Added <kbd>stricton</kbd> value to <a href="database/configuration.html">database configuration</a>.</li>
 			<li>Added <kbd>database_exists()</kbd> to the <a href="database/utilities.html">Database Utilities Class</a>.</li>
 			<li>Semantic change to db->version() function to allow a list of exceptions for databases with functions to return version string instead of specially formed SQL queries. Currently this list only includes Oracle and SQLite.</li>
 			<li>Fixed a bug where driver specific table identifier protection could lead to malformed queries in the <kbd>field_data()</kbd> functions.</li>
@@ -451,7 +451,7 @@ Hg Tag: v2.0.0</p>
 	</li>
 	<li>Helpers
 		<ul>
-			<li>Added <kbd>convert_accented_characters()</kbd> function to <a href="./helpers/text_helper.html">text helper</a>.</li>
+			<li>Added <kbd>convert_accented_characters()</kbd> function to <a href="helpers/text_helper.html">text helper</a>.</li>
 			<li>Added accept-charset to the list of inserted attributes of <kbd>form_open()</kbd> in the <a href="helpers/form_helper.html">Form Helper</a>.</li>
 			<li>Deprecated the <kbd>dohash()</kbd> function in favour of <kbd>do_hash()</kbd> for naming consistency.</li>
 			<li>Non-backwards compatible change made to <kbd>get_dir_file_info()</kbd> in the <a href="helpers/file_helper.html">File Helper</a>.  No longer recurses
@@ -463,11 +463,11 @@ Hg Tag: v2.0.0</p>
 			<li>Modified <kbd>prep_url()</kbd> so as to not prepend http:// if the supplied string already has a scheme.</li>
 			<li>Modified <kbd>get_file_info</kbd> in the file helper, changing filectime() to filemtime() for dates.</li>
 			<li>Modified <kbd>smiley_js()</kbd> to add optional third parameter to return only the javascript with no script tags.</li>
-			<li>The <kbd>img()</kbd> function of the <a href="./helpers/html_helper.html">HTML helper</a> will now generate an empty string as an alt attribute if one is not provided.</li>
+			<li>The <kbd>img()</kbd> function of the <a href="helpers/html_helper.html">HTML helper</a> will now generate an empty string as an alt attribute if one is not provided.</li>
 			<li>If CSRF is enabled in the application config file, <kbd>form_open()</kbd> will automatically insert it as a hidden field.</li>
-			<li>Added <kbd>sanitize_filename()</kbd> into the <a href="./helpers/security_helper.html">Security helper</a>.</li>
-			<li>Added <kbd>ellipsize()</kbd> to the <a href="./helpers/text_helper.html">Text Helper</a></li>
-			<li>Added <kbd>elements()</kbd> to the <a href="./helpers/array_helper.html">Array Helper</a></li>
+			<li>Added <kbd>sanitize_filename()</kbd> into the <a href="helpers/security_helper.html">Security helper</a>.</li>
+			<li>Added <kbd>ellipsize()</kbd> to the <a href="helpers/text_helper.html">Text Helper</a></li>
+			<li>Added <kbd>elements()</kbd> to the <a href="helpers/array_helper.html">Array Helper</a></li>
 		</ul>
 	</li>
 	<li>Other Changes
@@ -690,7 +690,7 @@ Hg Tag: 1.7.0</p>
 			<li>Added controller class/method info to <a href="general/profiling.html">Profiler class</a> and support for multiple database connections.</li>
 			<li>Improved the "auto typography" feature and moved it out of the helper into its own <a href="libraries/typography.html">Typography Class</a>.</li>
 			<li>Improved performance and accuracy of <kbd>xss_clean()</kbd>, including reduction of false positives on image/file tests.</li>
-			<li>Improved <a href="./libraries/parser.html">Parser class</a> to allow multiple calls to the parse() function.  The output of each is appended in the output.</li>
+			<li>Improved <a href="libraries/parser.html">Parser class</a> to allow multiple calls to the parse() function.  The output of each is appended in the output.</li>
 			<li>Added <dfn>max_filename</dfn> option to set a file name length limit in the  <a href="libraries/file_uploading.html">File Upload Class</a>.</li>
 			<li>Added <dfn>set_status_header()</dfn> function to <a href="libraries/output.html">Output class</a>.</li>
 			<li>Modified <a href="libraries/pagination.html">Pagination</a> class to only output the "First" link when the link for page one would not be shown.</li>
@@ -724,7 +724,7 @@ Hg Tag: 1.7.0</p>
 	</li>
 	<li>Other Changes
 		<ul>
-			<li>Added <a href="./general/styleguide.html">PHP Style Guide</a> to docs.</li>
+			<li>Added <a href="general/styleguide.html">PHP Style Guide</a> to docs.</li>
 			<li>Added sanitization in <kbd>xss_clean()</kbd> for a deprecated HTML tag that could be abused in user input in Internet Explorer.</li>
 			<li>Added a few openxml document mime types, and an additional mobile agent to mimes.php and user_agents.php respectively.</li>
 			<li>Added a file lock check during caching, before trying to write to the file.</li>
@@ -835,14 +835,14 @@ Hg Tag: 1.6.2</p>
 	<li>Active Record
 		<ul>
 			<li>Added the ability to prevent escaping in <kbd>having()</kbd> clauses.</li>
-			<li>Added <kbd>rename_table()</kbd> into <a href="./database/forge.html">DBForge</a>.</li>
+			<li>Added <kbd>rename_table()</kbd> into <a href="database/forge.html">DBForge</a>.</li>
 			<li>Fixed a bug that wasn't allowing escaping to be turned off if the value of a query was NULL.</li>
 			<li>DB Forge is now assigned to any models that exist after loading (#3457).</li>
 			</ul>
 	</li>
 	<li>Database
 		<ul>
-			<li>Added <a href="./database/transactions.html">Strict Mode</a> to database transactions.</li>
+			<li>Added <a href="database/transactions.html">Strict Mode</a> to database transactions.</li>
 			<li>Escape behaviour in where() clauses has changed; values in those with the &quot;FALSE&quot; argument are no longer escaped (ie: quoted).</li>
 		</ul>
 	</li>
@@ -937,7 +937,7 @@ Hg Tag: 1.6.1</p>
 <ul>
 	<li>Active Record
 		<ul>
-			<li>Added <a href="./database/active_record.html#caching">Active Record Caching</a>.</li>
+			<li>Added <a href="database/active_record.html#caching">Active Record Caching</a>.</li>
 			<li>Made Active Record fully database-prefix aware.</li>
 		</ul>
 	</li>
@@ -950,7 +950,7 @@ Hg Tag: 1.6.1</p>
 		<ul>
 			<li>Modified <kbd>xss_clean()</kbd> to be more intelligent with its handling of URL encoded strings.</li>
 			<li>Added $_SERVER, $_FILES, $_ENV, and $_SESSION to sanitization of globals.</li>
-			<li>Added a <a href="./helpers/path_helper.html">Path Helper</a>.</li>
+			<li>Added a <a href="helpers/path_helper.html">Path Helper</a>.</li>
 			<li>Simplified <kbd>_reindex_segments()</kbd> in the URI class.</li>
 			<li>Escaped the '-' in the default 'permitted_uri_chars' config item, to prevent errors if developers just try to add additional characters to the end of the default expression.</li>
 			<li>Modified method calling to controllers to show a 404 when a private or protected method is accessed via a URL.</li>
@@ -988,25 +988,25 @@ Hg Tag: 1.6.1</p>
 <ul>
 	<li>DBForge
 		<ul>
-			<li>Added <a href="./database/forge.html">DBForge</a> to the database tools.</li>
-			<li>Moved <kbd>create_database()</kbd> and <kbd>drop_database()</kbd> into <a href="./database/forge.html">DBForge</a>.</li>
-			<li>Added <kbd>add_field()</kbd>, <kbd>add_key()</kbd>, <kbd>create_table()</kbd>, <kbd>drop_table()</kbd>, <kbd>add_column()</kbd>, <kbd>drop_column()</kbd>, <kbd>modify_column()</kbd> into <a href="./database/forge.html">DBForge</a>.</li>
+			<li>Added <a href="database/forge.html">DBForge</a> to the database tools.</li>
+			<li>Moved <kbd>create_database()</kbd> and <kbd>drop_database()</kbd> into <a href="database/forge.html">DBForge</a>.</li>
+			<li>Added <kbd>add_field()</kbd>, <kbd>add_key()</kbd>, <kbd>create_table()</kbd>, <kbd>drop_table()</kbd>, <kbd>add_column()</kbd>, <kbd>drop_column()</kbd>, <kbd>modify_column()</kbd> into <a href="database/forge.html">DBForge</a>.</li>
 		</ul>
 	</li>
 
 	<li>Active Record
 		<ul>
-			<li>Added <kbd>protect_identifiers()</kbd> in <a href="./database/active_record.html">Active Record</a>.</li>
+			<li>Added <kbd>protect_identifiers()</kbd> in <a href="database/active_record.html">Active Record</a>.</li>
 			<li>All AR queries are backticked if appropriate to the database.</li>
-			<li>Added <kbd>where_in()</kbd>, <kbd>or_where_in()</kbd>, <kbd>where_not_in()</kbd>,  <kbd>or_where_not_in()</kbd>, <kbd>not_like()</kbd> and <kbd>or_not_like()</kbd> to <a href="./database/active_record.html">Active Record</a>.</li>
-			<li>Added support for <kbd>limit()</kbd>  into <kbd>update()</kbd> and <kbd>delete()</kbd> statements in  <a href="./database/active_record.html">Active Record</a>.</li>
-			<li>Added <kbd>empty_table()</kbd> and <kbd>truncate_table()</kbd> to <a href="./database/active_record.html">Active Record</a>.</li>
-			<li>Added the ability to pass an array of tables to the <kbd>delete()</kbd> statement in <a href="./database/active_record.html">Active Record</a>.</li>
-			<li>Added <kbd>count_all_results()</kbd> function to <a href="./database/active_record.html">Active Record</a>.</li>
-			<li>Added <kbd>select_max()</kbd>, <kbd>select_min()</kbd>, <kbd>select_avg()</kbd> and <kbd>select_sum()</kbd> to <a href="./database/active_record.html">Active Record</a>.</li>
-			<li>Added the ability to use aliases with joins in <a href="./database/active_record.html">Active Record</a>.</li>
+			<li>Added <kbd>where_in()</kbd>, <kbd>or_where_in()</kbd>, <kbd>where_not_in()</kbd>,  <kbd>or_where_not_in()</kbd>, <kbd>not_like()</kbd> and <kbd>or_not_like()</kbd> to <a href="database/active_record.html">Active Record</a>.</li>
+			<li>Added support for <kbd>limit()</kbd>  into <kbd>update()</kbd> and <kbd>delete()</kbd> statements in  <a href="database/active_record.html">Active Record</a>.</li>
+			<li>Added <kbd>empty_table()</kbd> and <kbd>truncate_table()</kbd> to <a href="database/active_record.html">Active Record</a>.</li>
+			<li>Added the ability to pass an array of tables to the <kbd>delete()</kbd> statement in <a href="database/active_record.html">Active Record</a>.</li>
+			<li>Added <kbd>count_all_results()</kbd> function to <a href="database/active_record.html">Active Record</a>.</li>
+			<li>Added <kbd>select_max()</kbd>, <kbd>select_min()</kbd>, <kbd>select_avg()</kbd> and <kbd>select_sum()</kbd> to <a href="database/active_record.html">Active Record</a>.</li>
+			<li>Added the ability to use aliases with joins in <a href="database/active_record.html">Active Record</a>.</li>
 			<li>Added a third parameter to Active Record's <kbd>like()</kbd> clause to control where the wildcard goes. </li>
-			<li>Added a third parameter to <kbd>set()</kbd> in <a href="./database/active_record.html">Active Record</a> that withholds escaping data.</li>
+			<li>Added a third parameter to <kbd>set()</kbd> in <a href="database/active_record.html">Active Record</a> that withholds escaping data.</li>
 			<li>Changed the behaviour of variables submitted to the where() clause with no values to auto set &quot;IS NULL&quot;</li>
 		</ul>
 	</li>
@@ -1030,7 +1030,7 @@ Hg Tag: 1.6.1</p>
 	<li>Core changes
 		<ul>
 			<li>Added ability to load multiple views, whose content will be appended to the output in the order loaded.</li>
-			<li>Added the ability to <a href="./general/autoloader.html">auto-load</a> <a href="./general/models.html">Models</a>.</li>
+			<li>Added the ability to <a href="general/autoloader.html">auto-load</a> <a href="general/models.html">Models</a>.</li>
 			<li>Reorganized the URI and Routes classes for better clarity.</li>
 			<li>Added Compat.php to allow function overrides for older versions of PHP or PHP environments missing certain extensions / libraries</li>
 			<li>Added memory usage, GET, URI string data, and individual query execution time to Profiler output.</li>
@@ -1043,7 +1043,7 @@ Hg Tag: 1.6.1</p>
 		<ul>
 			<li>Changed the load protocol of Models to allow for extension.</li>
 			<li>Strengthened the Encryption library to help protect against man in the middle attacks when MCRYPT_MODE_CBC mode is used.</li>
-			<li>Added Flashdata variables, session_id regeneration and configurable session update times to the <a href="./libraries/sessions.html">Session class.</a></li>
+			<li>Added Flashdata variables, session_id regeneration and configurable session update times to the <a href="libraries/sessions.html">Session class.</a></li>
 			<li>Removed 'last_visit' from the Session class.</li>
 			<li>Added a language entry for valid_ip validation error.</li>
 			<li>Modified prep_for_form() in the Validation class to accept arrays, adding support for POST array validation (via callbacks only)</li>
@@ -1061,14 +1061,14 @@ Hg Tag: 1.6.1</p>
 
 	<li>Helpers &amp; Plugins
 		<ul>
-			<li>Added link_tag() to the <a href="./helpers/html_helper.html">HTML helper.</a></li>
-			<li>Added img() to the <a href="./helpers/html_helper.html">HTML helper.</a></li>
-			<li>Added ability to <a href="./general/helpers.html">"extend" Helpers</a>.</li>
-			<li>Added an <a href="./helpers/email_helper.html">email helper</a> into core helpers.</li>
-			<li>Added <kbd>strip_quotes()</kbd> function to <a href="./helpers/string_helper.html">string helper</a>.</li>
-			<li>Added <kbd>reduce_multiples()</kbd> function to <a href="./helpers/string_helper.html">string helper</a>.</li>
-			<li>Added <kbd>quotes_to_entities()</kbd> function to <a href="./helpers/string_helper.html">string helper</a>.</li>
-			<li>Added <kbd>form_fieldset()</kbd>, <kbd>form_fieldset_close()</kbd>, <kbd>form_label()</kbd>, and <kbd>form_reset()</kbd> function to <a href="./helpers/form_helper.html">form helper</a>.</li>
+			<li>Added link_tag() to the <a href="helpers/html_helper.html">HTML helper.</a></li>
+			<li>Added img() to the <a href="helpers/html_helper.html">HTML helper.</a></li>
+			<li>Added ability to <a href="general/helpers.html">"extend" Helpers</a>.</li>
+			<li>Added an <a href="helpers/email_helper.html">email helper</a> into core helpers.</li>
+			<li>Added <kbd>strip_quotes()</kbd> function to <a href="helpers/string_helper.html">string helper</a>.</li>
+			<li>Added <kbd>reduce_multiples()</kbd> function to <a href="helpers/string_helper.html">string helper</a>.</li>
+			<li>Added <kbd>quotes_to_entities()</kbd> function to <a href="helpers/string_helper.html">string helper</a>.</li>
+			<li>Added <kbd>form_fieldset()</kbd>, <kbd>form_fieldset_close()</kbd>, <kbd>form_label()</kbd>, and <kbd>form_reset()</kbd> function to <a href="helpers/form_helper.html">form helper</a>.</li>
 			<li>Added support for external urls in <kbd>form_open()</kbd>.</li>
 			<li>Removed support for db_backup in MySQLi due to incompatible functions.</li>
 			<li>Javascript Calendar plugin now uses the months and days from the calendar language file, instead of hard-coded values, internationalizing it.</li>
@@ -1078,15 +1078,15 @@ Hg Tag: 1.6.1</p>
 
 	<li>Documentation Changes
 		<ul>
-			<li>Added <a href="./doc_style/index.html">Writing Documentation</a> section for the community to use in writing their own documentation.</li>
+			<li>Added <a href="doc_style/index.html">Writing Documentation</a> section for the community to use in writing their own documentation.</li>
 			<li>Added titles to all user manual pages.</li>
 			<li>Added attributes into &lt;html&gt; of userguide for valid html.</li>
 			<li>Added <a href="http://codeigniter.com/user_guide/libraries/zip.html">Zip Encoding Class</a> to the table of contents of the userguide.</li>
 			<li>Moved part of the userguide menu javascript to an external file.</li>
-			<li>Documented <kbd>distinct()</kbd> in <a href="./database/active_record.html">Active Record</a>. </li>
-			<li>Documented the <kbd>timezones()</kbd> function in the <a href="./helpers/date_helper.html">Date Helper</a>.</li>
-			<li>Documented unset_userdata in the <a href="./libraries/sessions.html">Session class</a>.</li>
-			<li>Documented 2 config options to the <a href="./database/configuration.html">Database configuration</a> page.</li>
+			<li>Documented <kbd>distinct()</kbd> in <a href="database/active_record.html">Active Record</a>. </li>
+			<li>Documented the <kbd>timezones()</kbd> function in the <a href="helpers/date_helper.html">Date Helper</a>.</li>
+			<li>Documented unset_userdata in the <a href="libraries/sessions.html">Session class</a>.</li>
+			<li>Documented 2 config options to the <a href="database/configuration.html">Database configuration</a> page.</li>
 		</ul>
 	</li>
 </ul>
@@ -1100,22 +1100,22 @@ Hg Tag: 1.6.1</p>
 	<li>Fixed a bug (#1890) in csv_from_result() where content that included the delimiter would break the file.</li>
 	<li>Fixed a bug (#2542)in the clean_email() method of the Email class to allow for non-numeric / non-sequential array keys.</li>
 	<li>Fixed a bug (#2545) in <kbd>_html_entity_decode_callback()</kbd> when 'global_xss_filtering' is enabled.</li>
-	<li>Fixed a bug (#2668) in the <a href="./libraries/parser.html">parser class</a> where numeric data was ignored.</li>
+	<li>Fixed a bug (#2668) in the <a href="libraries/parser.html">parser class</a> where numeric data was ignored.</li>
 	<li>Fixed a bug (#2679) where the &quot;previous&quot; pagination link would get drawn on the first page.</li>
 	<li>Fixed a bug (#2702) in _object_to_array that broke some types of inserts and updates.</li>
 	<li>Fixed a bug (#2732) in the SQLite driver for PHP 4.</li>
 	<li>Fixed a bug (#2754) in Pagination to scan for non-positive num_links.</li>
-	<li>Fixed a bug (#2762) in the <a href="./libraries/sessions.html">Session library</a> where user agent matching would fail on user agents ending with a space. </li>
+	<li>Fixed a bug (#2762) in the <a href="libraries/sessions.html">Session library</a> where user agent matching would fail on user agents ending with a space. </li>
 	<li>Fixed a bug (#2784) $field_names[] vs $Ffield_names[] in postgres and sqlite drivers.</li>
 	<li>Fixed a bug (#2810) in the typography helper causing extraneous paragraph tags when string contains tags.</li>
 	<li>Fixed a bug (#2849) where arguments passed to a subfolder controller method would be incorrectly shifted, dropping the 3rd segment value.</li>
 	<li>Fixed a bug (#2858) which referenced a wrong variable in the Image class.</li>
 	<li>Fixed a bug (#2875)when loading plugin files as _plugin. and not _pi.</li>
-	<li>Fixed a bug (#2912) in <kbd>get_filenames()</kbd> in the <a href="./helpers/file_helper.html">File Helper </a>where the array wasn't cleared after each call.</li>
+	<li>Fixed a bug (#2912) in <kbd>get_filenames()</kbd> in the <a href="helpers/file_helper.html">File Helper </a>where the array wasn't cleared after each call.</li>
 	<li>Fixed a bug (#2974) in <kbd>highlight_phrase()</kbd> that caused an error with slashes.</li>
 	<li>Fixed a bug (#3003) in the Encryption Library to support modes other than MCRYPT_MODE_ECB</li>
-	<li>Fixed a bug (#3015) in the <a href="./libraries/user_agent.html">User Agent library</a> where more then 2 languages where not reported with languages().</li>
-	<li>Fixed a bug (#3017) in the <a href="./libraries/email.html">Email</a> library where some timezones were calculated incorrectly. </li>
+	<li>Fixed a bug (#3015) in the <a href="libraries/user_agent.html">User Agent library</a> where more then 2 languages where not reported with languages().</li>
+	<li>Fixed a bug (#3017) in the <a href="libraries/email.html">Email</a> library where some timezones were calculated incorrectly. </li>
 	<li>Fixed a bug (#3024) in which master_dim wasn't getting reset by clear() in the Image library.</li>
 	<li>Fixed a bug (#3156) in Text Helper highlight_code() causing PHP tags to be handled incorrectly.</li>
 	<li>Fixed a bug (#3166) that prevented num_rows from working in Oracle.</li>
@@ -1132,7 +1132,7 @@ Hg Tag: 1.6.1</p>
 	<li>Fixed a bug (#3330) in the FTP class where a comparison wasn't getting made.</li>
 	<li>Removed an unused parameter from Profiler (#3332).</li>
 	<li>Fixed a bug in database driver where num_rows property wasn't getting updated.</li>
-	<li>Fixed a bug in the <a href="./libraries/file_uploading.html">upload library</a> when allowed_files wasn't defined.</li>
+	<li>Fixed a bug in the <a href="libraries/file_uploading.html">upload library</a> when allowed_files wasn't defined.</li>
 	<li>Fixed a bug in <kbd>word_wrap()</kbd> of the Text Helper that incorrectly referenced an object. </li>
 	<li>Fixed a bug in Validation where <kbd>valid_ip()</kbd> wasn't called properly.</li>
 	<li>Fixed a bug in Validation where individual error messages for checkboxes wasn't supported.</li>
@@ -1145,9 +1145,9 @@ Hg Tag: 1.6.1</p>
 	<li>Fixed a typo in the database language file.</li>
 	<li>Fixed a typo in the image language file &quot;suppor&quot; to &quot;support&quot;.</li>
 	<li>Fixed an example for XML RPC.</li>
-	<li>Fixed an example of <kbd>accept_charset()</kbd> in the <a href="./libraries/user_agent.html">User Agent Library</a>.</li>
+	<li>Fixed an example of <kbd>accept_charset()</kbd> in the <a href="libraries/user_agent.html">User Agent Library</a>.</li>
 	<li>Fixed a typo in the docblock comments that had CodeIgniter spelled CodeIgnitor.</li>
-	<li>Fixed a typo in the <a href="./helpers/string_helper.html">String Helper</a> (uniquid changed to uniqid).</li>
+	<li>Fixed a typo in the <a href="helpers/string_helper.html">String Helper</a> (uniquid changed to uniqid).</li>
 	<li>Fixed typos in the email Language class (email_attachment_unredable, email_filed_smtp_login), and FTP Class (ftp_unable_to_remame).</li>
 	<li>Added a stripslashes()  into the Upload Library.</li>
 	<li>Fixed a series of grammatical and spelling errors in the language files.</li>
@@ -1156,37 +1156,37 @@ Hg Tag: 1.6.1</p>
 <h2>Version 1.5.4</h2>
 <p>Release Date: July 12, 2007 </p>
 <ul>
-	<li>Added <a href="./libraries/language.html">custom Language files</a> to the <a href="./general/autoloader.html">autoload</a> options. </li>
-	<li>Added stripslashes() to the _clean_input_data() function in the <a href="./libraries/input.html">Input class</a> when magic quotes is on so that data will always be un-slashed within the framework.</li>
+	<li>Added <a href="libraries/language.html">custom Language files</a> to the <a href="general/autoloader.html">autoload</a> options. </li>
+	<li>Added stripslashes() to the _clean_input_data() function in the <a href="libraries/input.html">Input class</a> when magic quotes is on so that data will always be un-slashed within the framework.</li>
 	<li>Added array to string into the <a href="general/profiling.html">profiler</a>.</li>
 	<li>Added some additional mime types in application/config/mimes.php.</li>
-	<li>Added filename_security() method to <a href="./libraries/input.html">Input library</a>.</li>
-	<li>Added some additional arguments to the <a href="./helpers/inflector_helper.html">Inflection helper</a> singular() to compensate for words ending in "s".  Also added a force parameter to pluralize().</li>
+	<li>Added filename_security() method to <a href="libraries/input.html">Input library</a>.</li>
+	<li>Added some additional arguments to the <a href="helpers/inflector_helper.html">Inflection helper</a> singular() to compensate for words ending in "s".  Also added a force parameter to pluralize().</li>
 	<li>Added $config['charset'] to the config file.  Default value is 'UTF-8', used in some string handling functions.</li>
 	<li>Fixed MSSQL insert_id().</li>
 	<li>Fixed a logic error in the DB trans_status() function.  It was incorrectly returning TRUE on failure and FALSE on success.</li>
 	<li>Fixed a bug that was allowing multiple load attempts on extended classes.</li>
 	<li>Fixed a bug in the bootstrap file that was incorrectly attempting to discern the full server path even when it was explicity set by the user.</li>
 	<li>Fixed a bug in the escape_str() function in the MySQL driver.</li>
-	<li>Fixed a typo in the <a href="./libraries/calendar.html">Calendar library </a> </li>
+	<li>Fixed a typo in the <a href="libraries/calendar.html">Calendar library </a> </li>
 	<li>Fixed a typo in rpcs.php library</li>
-	<li>Fixed a bug in the <a href="./libraries/zip.html">Zip library</a>, providing PC Zip file compatibility with Mac OS X</li>
+	<li>Fixed a bug in the <a href="libraries/zip.html">Zip library</a>, providing PC Zip file compatibility with Mac OS X</li>
 	<li>Fixed a bug in router that was ignoring the scaffolding route for optimization </li>
 	<li>Fixed an IP validation bug.</li>
-	<li>Fixed a bug in display of POST keys in the <a href="./general/profiling.html">Profiler</a> output</li>
-	<li>Fixed a bug in display of queries with characters that would be interpreted as HTML in the <a href="./general/profiling.html">Profiler</a> output</li>
+	<li>Fixed a bug in display of POST keys in the <a href="general/profiling.html">Profiler</a> output</li>
+	<li>Fixed a bug in display of queries with characters that would be interpreted as HTML in the <a href="general/profiling.html">Profiler</a> output</li>
 	<li>Fixed a bug in display of Email class print debugger with characters that would be interpreted as HTML in the debugging output</li>
 	<li>Fixed a bug in the Content-Transfer-Encoding of HTML emails with the quoted-printable MIME type</li>
 	<li>Fixed a bug where one could unset certain PHP superglobals by setting them via GET or POST data</li>
 	<li>Fixed an undefined function error in the insert_id() function of the PostgreSQL driver</li>
 	<li>Fixed various doc typos. </li>
-	<li>Documented two functions from the <a href="./helpers/string_helper.html">String helper </a> that were missing from the user guide:  trim_slashes() and reduce_double_slashes().</li>
+	<li>Documented two functions from the <a href="helpers/string_helper.html">String helper </a> that were missing from the user guide:  trim_slashes() and reduce_double_slashes().</li>
 	<li>Docs now validate to XHTML 1 transitional</li>
 	<li>Updated the XSS Filtering to take into account the IE expression() ability and improved certain deletions to prevent possible exploits</li>
 	<li>Modified the Router so that when Query Strings are Enabled, the controller trigger and function trigger values are sanitized for filename include security.</li>
 	<li>Modified the is_image() method in the Upload library to take into account Windows IE 6/7 eccentricities when dealing with MIMEs</li>
 	<li>Modified XSS Cleaning routine to be more performance friendly and compatible with PHP 5.2's new PCRE backtrack and recursion limits.</li>
-	<li>Modified the <a href="./helpers/url_helper.html">URL Helper</a> to type cast the $title as a string in case a numeric value is supplied</li>
+	<li>Modified the <a href="helpers/url_helper.html">URL Helper</a> to type cast the $title as a string in case a numeric value is supplied</li>
 	<li>Modified Form Helper form_dropdown() to type cast the keys and values of the options array as strings, allowing numeric values to be properly set as 'selected'</li>
 	<li>Deprecated the use if <kbd>is_numeric()</kbd> in various places since it allows periods.  Due to compatibility problems with <kbd>ctype_digit()</kbd>, making it unreliable in some installations, the following regular expression was used instead:  <kbd>preg_match("/[^0-9]/", $n)</kbd></li>
 	<li>Deprecated: APPVER has been deprecated and replaced with CI_VERSION for clarity. </li>
@@ -1197,10 +1197,10 @@ Hg Tag: 1.6.1</p>
 	<li>Added array to string into the profiler </li>
 	<li>Code Igniter references updated to CodeIgniter </li>
 	<li>pMachine references updated to EllisLab </li>
-	<li>Fixed a bug in the repeater function of <a href="./helpers/string_helper.html">string helper</a>. </li>
+	<li>Fixed a bug in the repeater function of <a href="helpers/string_helper.html">string helper</a>. </li>
 	<li>Fixed a bug in ODBC driver </li>
 	<li>Fixed a bug in result_array() that was returning an empty array when no result is produced.</li>
-	<li>Fixed a bug in the redirect function of the <a href="./helpers/url_helper.html">url helper</a>. </li>
+	<li>Fixed a bug in the redirect function of the <a href="helpers/url_helper.html">url helper</a>. </li>
 	<li>Fixed an undefined variable in Loader </li>
 	<li>Fixed a version bug in the Postgres driver </li>
 	<li>Fixed a bug in the textarea function of the form helper for use with strings</li>
@@ -1209,13 +1209,13 @@ Hg Tag: 1.6.1</p>
 <h2>Version 1.5.2</h2>
 <p>Release Date: February 13, 2007 </p>
 <ul>
-	<li>Added <a href="./installation/downloads.html#svn">subversion information</a> to the <a href="./installation/downloads.html">downloads</a> page. </li>
-	<li>Added support for captions in the <a href="./libraries/table.html">Table Library</a> </li>
-	<li>Fixed a bug in the <a href="./helpers/download_helper.html">download_helper</a> that was causing Internet Explorer to load rather than download </li>
+	<li>Added <a href="installation/downloads.html#svn">subversion information</a> to the <a href="installation/downloads.html">downloads</a> page. </li>
+	<li>Added support for captions in the <a href="libraries/table.html">Table Library</a> </li>
+	<li>Fixed a bug in the <a href="helpers/download_helper.html">download_helper</a> that was causing Internet Explorer to load rather than download </li>
 	<li>Fixed a bug in the Active Record Join function that was not taking table prefixes into consideration.</li>
 	<li>Removed unescaped variables in error messages of Input and Router classes</li>
 	<li>Fixed a bug in the Loader that was causing errors on Libraries loaded twice. A debug message is now silently made in the log.  </li>
-	<li>Fixed a bug in the <a href="./helpers/form_helper.html">form helper</a> that gave textarea a value attribute </li>
+	<li>Fixed a bug in the <a href="helpers/form_helper.html">form helper</a> that gave textarea a value attribute </li>
 	<li>Fixed a bug in the <a href="./libraries/image_lib.php">Image Library</a> that was ignoring resizing the same size image </li>
 	<li>Fixed some doc typos.</li>
 </ul>
@@ -1251,33 +1251,33 @@ Hg Tag: 1.6.1</p>
 <p>Release Date: October 30, 2006</p>
 
 <ul>
-<li>Added <a href="./database/utilities.html">DB utility class</a>, permitting DB backups, CVS or XML files from DB results, and various other functions.</li>
-<li>Added <a href="./database/caching.html">Database Caching Class</a>.</li>
-<li>Added <a href="./database/transactions.html">transaction support</a> to the database classes.</li>
-<li>Added <a href="./general/profiling.html">Profiler Class</a> which generates a report of Benchmark execution times, queries, and POST data at the bottom of your pages.</li>
-<li>Added <a href="./libraries/user_agent.html">User Agent Library</a> which allows browsers, robots, and mobile devises to be identified.</li>
-<li>Added <a href="./libraries/table.html">HTML Table Class</a> , enabling tables to be generated from arrays or database results.</li>
-<li>Added <a href="./libraries/zip.html">Zip Encoding Library</a>.</li>
-<li>Added <a href="./libraries/ftp.html">FTP Library</a>.</li>
-<li>Added the ability to <a href="./general/creating_libraries.html">extend libraries</a> and <a href="./general/core_classes.html">extend core classes</a>, in addition to being able to replace them.</li>
-<li>Added support for storing <a href="./general/models.html">models within sub-folders</a>.</li>
-<li>Added <a href="./helpers/download_helper.html">Download Helper</a>.</li>
-<li>Added <a href="./database/queries.html">simple_query()</a> function to the database classes</li>
-<li>Added <a href="./helpers/date_helper.html">standard_date()</a> function to the Date Helper.</li>
-<li>Added <a href="./database/results.html">$query->free_result()</a> to database class.</li>
-<li>Added <a href="./database/fields.html">$query->list_fields()</a> function to database class</li>
-<li>Added <a href="./database/helpers.html">$this->db->platform()</a> function</li>
-<li>Added new <a href="./helpers/file_helper.html">File Helper</a>:  get_filenames()</li>
-<li>Added new helper:  <a href="./helpers/smiley_helper.html">Smiley Helper</a></li>
-<li>Added support for &lt;ul> and &lt;ol> lists in the  <a href="./helpers/html_helper.html">HTML Helper</a></li>
-<li>Added the ability to rewrite <a href="./general/alternative_php.html">short tags</a> on-the-fly, converting them to standard PHP statements, for those servers that do not support short tags.  This allows the cleaner syntax to be used regardless of whether it's supported by the server.</li>
-<li>Added the ability to <a href="./general/managing_apps.html">rename or relocate the "application" folder</a>.</li>
+<li>Added <a href="database/utilities.html">DB utility class</a>, permitting DB backups, CVS or XML files from DB results, and various other functions.</li>
+<li>Added <a href="database/caching.html">Database Caching Class</a>.</li>
+<li>Added <a href="database/transactions.html">transaction support</a> to the database classes.</li>
+<li>Added <a href="general/profiling.html">Profiler Class</a> which generates a report of Benchmark execution times, queries, and POST data at the bottom of your pages.</li>
+<li>Added <a href="libraries/user_agent.html">User Agent Library</a> which allows browsers, robots, and mobile devises to be identified.</li>
+<li>Added <a href="libraries/table.html">HTML Table Class</a> , enabling tables to be generated from arrays or database results.</li>
+<li>Added <a href="libraries/zip.html">Zip Encoding Library</a>.</li>
+<li>Added <a href="libraries/ftp.html">FTP Library</a>.</li>
+<li>Added the ability to <a href="general/creating_libraries.html">extend libraries</a> and <a href="general/core_classes.html">extend core classes</a>, in addition to being able to replace them.</li>
+<li>Added support for storing <a href="general/models.html">models within sub-folders</a>.</li>
+<li>Added <a href="helpers/download_helper.html">Download Helper</a>.</li>
+<li>Added <a href="database/queries.html">simple_query()</a> function to the database classes</li>
+<li>Added <a href="helpers/date_helper.html">standard_date()</a> function to the Date Helper.</li>
+<li>Added <a href="database/results.html">$query->free_result()</a> to database class.</li>
+<li>Added <a href="database/fields.html">$query->list_fields()</a> function to database class</li>
+<li>Added <a href="database/helpers.html">$this->db->platform()</a> function</li>
+<li>Added new <a href="helpers/file_helper.html">File Helper</a>:  get_filenames()</li>
+<li>Added new helper:  <a href="helpers/smiley_helper.html">Smiley Helper</a></li>
+<li>Added support for &lt;ul> and &lt;ol> lists in the  <a href="helpers/html_helper.html">HTML Helper</a></li>
+<li>Added the ability to rewrite <a href="general/alternative_php.html">short tags</a> on-the-fly, converting them to standard PHP statements, for those servers that do not support short tags.  This allows the cleaner syntax to be used regardless of whether it's supported by the server.</li>
+<li>Added the ability to <a href="general/managing_apps.html">rename or relocate the "application" folder</a>.</li>
 <li>Added more thorough initialization in the upload class so that all class variables are reset.</li>
 <li>Added "is_numeric" to validation, which uses the native PHP is_numeric function.</li>
 <li>Improved the URI handler to make it more reliable when the $config['uri_protocol'] item is set to AUTO.</li>
 <li>Moved most of the functions in the Controller class into the Loader class, allowing fewer reserved function names for controllers when running under PHP 5.</li>
 <li>Updated the DB Result class to return an empty array when $query->result() doesn't produce a result.</li>
-<li>Updated the <dfn>input->cookie()</dfn> and <dfn>input->post()</dfn> functions in <a href="./libraries/input.html">Input Class</a> to permit arrays contained cookies that are arrays to be run through the XSS filter.</li>
+<li>Updated the <dfn>input->cookie()</dfn> and <dfn>input->post()</dfn> functions in <a href="libraries/input.html">Input Class</a> to permit arrays contained cookies that are arrays to be run through the XSS filter.</li>
 <li>Documented three functions from the <a href="./libraries/validation.html">Validation class</a> that were missing from the user guide:  set_select(), set_radio(), and set_checkbox().</li>
 <li>Fixed a bug in the Email class related to SMTP Helo data.</li>
 <li>Fixed a bug in the word wrapping helper and function in the email class.</li>
@@ -1289,7 +1289,7 @@ Hg Tag: 1.6.1</p>
 <li>Fixed a pagination bug that was permitting negative values in the URL.</li>
 <li>Fixed an oversight in which the Loader class was not allowed to be extended.</li>
 <li>Changed <dfn>_get_config()</dfn> to <dfn>get_config()</dfn> since the function is not a private one.</li>
-<li><strong>Deprecated "init" folder</strong>.  Initialization happens automatically now.  <a href="./general/creating_libraries.html">Please see documentation</a>.</li>
+<li><strong>Deprecated "init" folder</strong>.  Initialization happens automatically now.  <a href="general/creating_libraries.html">Please see documentation</a>.</li>
 <li><strong>Deprecated</strong> $this->db->field_names()  USE  $this->db->list_fields()</li>
 <li><strong>Deprecated</strong> the <dfn>$config['log_errors']</dfn> item from the config.php file.  Instead, <dfn>$config['log_threshold']</dfn> can be set to "0" to turn it off.</li>
 </ul>
@@ -1301,15 +1301,15 @@ Hg Tag: 1.6.1</p>
 <p>Release Date: September 21, 2006</p>
 
 <ul>
-<li>Added a new feature that passes URI segments directly to your function calls as parameters. See the <a href="./general/controllers.html">Controllers</a> page for more info.</li>
+<li>Added a new feature that passes URI segments directly to your function calls as parameters. See the <a href="general/controllers.html">Controllers</a> page for more info.</li>
 <li>Added support for a function named <dfn>_output()</dfn>, which when used in your controllers will received the final rendered output from the output class.  More info in the <a href="controllers.html">Controllers</a> page.</li>
-<li>Added several new functions in the <a href="./libraries/uri.html">URI Class</a> to let you retrieve and manipulate URI segments that have been re-routed using the <a href="routing.html">URI Routing</a> feature. Previously, the URI class did not permit you to access any re-routed URI segments, but now it does.</li>
-<li>Added <a href="./libraries/output.html">$this->output->set_header()</a> function, which allows you to set server headers.</li>
+<li>Added several new functions in the <a href="libraries/uri.html">URI Class</a> to let you retrieve and manipulate URI segments that have been re-routed using the <a href="routing.html">URI Routing</a> feature. Previously, the URI class did not permit you to access any re-routed URI segments, but now it does.</li>
+<li>Added <a href="libraries/output.html">$this->output->set_header()</a> function, which allows you to set server headers.</li>
 <li>Updated plugins, helpers, and language classes to allow your <dfn>application</dfn> folder to contain its own plugins, helpers, and language folders.  Previously they were always treated as global for your entire installation.  If your application folder contains any of these resources they will be used <em>instead</em> the global ones.</li>
-<li>Added <a href="./helpers/inflector_helper.html">Inflector helper</a>.</li>
-<li>Added <dfn>element()</dfn> function in the <a href="./helpers/array_helper.html">array helper</a>.</li>
+<li>Added <a href="helpers/inflector_helper.html">Inflector helper</a>.</li>
+<li>Added <dfn>element()</dfn> function in the <a href="helpers/array_helper.html">array helper</a>.</li>
 <li>Added <dfn>RAND()</dfn> to active record <dfn>orderby()</dfn> function.</li>
-<li>Added <dfn>delete_cookie()</dfn> and <dfn>get_cookie()</dfn> to <a href="./helpers/cookie_helper.html">Cookie helper</a>, even though the input class has a cookie fetching function.</li>
+<li>Added <dfn>delete_cookie()</dfn> and <dfn>get_cookie()</dfn> to <a href="helpers/cookie_helper.html">Cookie helper</a>, even though the input class has a cookie fetching function.</li>
 <li>Added Oracle database driver (still undergoing testing so it might have some bugs).</li>
 <li>Added the ability to combine pseudo-variables and php variables in the template parser class.</li>
 <li>Added output compression option to the config file.</li>
@@ -1321,7 +1321,7 @@ Hg Tag: 1.6.1</p>
 <li>Fixed an oversight in the upload class. An item mentioned in the 1.4 changelog was missing.</li>
 <li>Added some code to allow email attachments to be reset when sending batches of email.</li>
 <li>Deprecated the <dfn>application/scripts</dfn> folder. It will continue to work for legacy users, but it is recommended that you create your own
-<a href="./general/libraries.html">libraries</a> or <a href="./general/models.html">models</a> instead.  It was originally added before CI had user libraries or models, but it's not needed anymore.</li>
+<a href="general/libraries.html">libraries</a> or <a href="general/models.html">models</a> instead.  It was originally added before CI had user libraries or models, but it's not needed anymore.</li>
 <li>Deprecated the <dfn>$autoload['core']</dfn> item from the <kbd>autoload.php</kbd> file.  Instead, please now use: <kbd>$autoload['libraries']</kbd></li>
 <li>Deprecated the following database functions: $this->db->smart_escape_str() and $this->db->fields().</li>
 </ul>
@@ -1332,19 +1332,19 @@ Hg Tag: 1.6.1</p>
 <p>Release Date: September 17, 2006</p>
 
 <ul>
-<li>Added <a href="./general/hooks.html">Hooks</a> feature, enabling you to tap into and modify the inner workings of the framework without hacking the core files.</li>
-<li>Added the ability to organize controller files <a href="./general/controllers.html">into sub-folders</a>.  Kudos to Marco for <a href="http://codeigniter.com/forums/viewthread/627/">suggesting</a> this (and the next two) feature.</li>
-<li>Added regular expressions support for <a href="./general/routing.html">routing rules</a>.</li>
-<li>Added the ability to <a href="./general/controllers.html">remap function calls</a> within your controllers.</li>
-<li>Added the ability to <a href="./general/core_classes.html">replace core system classes</a> with your own classes.</li>
+<li>Added <a href="general/hooks.html">Hooks</a> feature, enabling you to tap into and modify the inner workings of the framework without hacking the core files.</li>
+<li>Added the ability to organize controller files <a href="general/controllers.html">into sub-folders</a>.  Kudos to Marco for <a href="http://codeigniter.com/forums/viewthread/627/">suggesting</a> this (and the next two) feature.</li>
+<li>Added regular expressions support for <a href="general/routing.html">routing rules</a>.</li>
+<li>Added the ability to <a href="general/controllers.html">remap function calls</a> within your controllers.</li>
+<li>Added the ability to <a href="general/core_classes.html">replace core system classes</a> with your own classes.</li>
 <li>Added support for % character in URL.</li>
-<li>Added the ability to supply full URLs using the <a href="./helpers/url_helper.html">anchor()</a> helper function.</li>
-<li>Added mode parameter to <a href="./helpers/file_helper.html">file_write()</a> helper.</li>
-<li>Added support for changing the port number in the <a href="./database/configuration.html">Postgres driver</a>.</li>
+<li>Added the ability to supply full URLs using the <a href="helpers/url_helper.html">anchor()</a> helper function.</li>
+<li>Added mode parameter to <a href="helpers/file_helper.html">file_write()</a> helper.</li>
+<li>Added support for changing the port number in the <a href="database/configuration.html">Postgres driver</a>.</li>
 <li>Moved the list of "allowed URI characters" out of the Router class and into the config file.</li>
 <li>Moved the MIME type array out of the Upload class and into its own file in the applications/config/ folder.</li>
-<li>Updated the Upload class to allow the upload field name to be set when calling <a href="./libraries/file_uploading.html">do_upload()</a>.</li>
-<li>Updated the <a href="./libraries/config.html">Config Library</a> to be able to load config files silently, and to be able to assign config files to their own index (to avoid collisions if you use multiple config files).</li>
+<li>Updated the Upload class to allow the upload field name to be set when calling <a href="libraries/file_uploading.html">do_upload()</a>.</li>
+<li>Updated the <a href="libraries/config.html">Config Library</a> to be able to load config files silently, and to be able to assign config files to their own index (to avoid collisions if you use multiple config files).</li>
 <li>Updated the URI Protocol code to allow more options so that URLs will work more reliably in different environments.</li>
 <li>Updated the <dfn>form_open()</dfn> helper to allow the GET method to be used.</li>
 <li>Updated the MySQLi <dfn>execute()</dfn> function with some code to help prevent lost connection errors.</li>
@@ -1389,7 +1389,7 @@ Hg Tag: 1.6.1</p>
 
 <ul>
 
-<li>Models do <strong>not</strong> connect automatically to the database as of this version. <a href="./general/models.html">More info here</a>.</li>
+<li>Models do <strong>not</strong> connect automatically to the database as of this version. <a href="general/models.html">More info here</a>.</li>
 <li>Updated the Sessions class to utilize the active record class when running session related queries.  Previously the queries assumed MySQL syntax.</li>
 <li>Updated alternator() function to re-initialize when called with no arguments, allowing multiple calls.</li>
 <li>Fixed a bug in the active record "having" function.</li>
@@ -1424,14 +1424,14 @@ Hg Tag: 1.6.1</p>
 <p>Release Date: April 11, 2006</p>
 
 <ul>
-<li>Added a <a href="./libraries/unit_testing.html">Unit Testing Library</a>.</li>
+<li>Added a <a href="libraries/unit_testing.html">Unit Testing Library</a>.</li>
 <li>Added the ability to pass objects to the <strong>insert()</strong> and <strong>update()</strong>  database functions.
-This feature enables you to (among other things) use your  <a href="./general/models.html">Model class</a> variables to run queries with. See the Models page for details.</li>
-<li>Added the ability to pass objects to the <a href="./general/views.html">view loading function</a>: $this->load->view('my_view', <var>$object</var>);</li>
-<li>Added <kbd>getwhere</kbd> function to <a href="./database/active_record.html">Active Record class</a>.</li>
-<li>Added <kbd>count_all</kbd> function to <a href="./database/active_record.html">Active Record class</a>.</li>
+This feature enables you to (among other things) use your  <a href="general/models.html">Model class</a> variables to run queries with. See the Models page for details.</li>
+<li>Added the ability to pass objects to the <a href="general/views.html">view loading function</a>: $this->load->view('my_view', <var>$object</var>);</li>
+<li>Added <kbd>getwhere</kbd> function to <a href="database/active_record.html">Active Record class</a>.</li>
+<li>Added <kbd>count_all</kbd> function to <a href="database/active_record.html">Active Record class</a>.</li>
 <li>Added language file for scaffolding and fixed a scaffolding bug that occurs when there are no rows in the specified table.</li>
-<li>Added <a href="./database/queries.html">$this->db->last_query()</a>, which allows you to view your last query that was run.</li>
+<li>Added <a href="database/queries.html">$this->db->last_query()</a>, which allows you to view your last query that was run.</li>
 <li>Added a new mime type to the upload class for better compatibility.</li>
 <li>Changed how cache files are read to prevent PHP errors if the cache file contains an XML tag, which PHP wants to interpret as a short tag.</li>
 <li>Fixed a bug in a couple of the active record functions (where and orderby).</li>
@@ -1448,20 +1448,20 @@ This feature enables you to (among other things) use your  <a href="./general/mo
 <ul>
 <li>Added support for <a href="models.html">Models</a>.</li>
 <li>Redesigned the database libraries to support additional RDBMs (Postgres, MySQLi, etc.).</li>
-<li>Redesigned the <a href="./database/active_record.html">Active Record class</a> to enable more varied types of queries with simpler syntax, and advanced features like JOINs.</li>
-<li>Added a feature to the database class that lets you run <a href="./database/call_function.html">custom function calls</a>.</li>
+<li>Redesigned the <a href="database/active_record.html">Active Record class</a> to enable more varied types of queries with simpler syntax, and advanced features like JOINs.</li>
+<li>Added a feature to the database class that lets you run <a href="database/call_function.html">custom function calls</a>.</li>
 <li>Added support for <a href="controllers.html">private functions</a> in your controllers.  Any controller function name that starts with an underscore will not be served by a URI request.</li>
 <li>Added the ability to pass your own initialization parameters to your <a href="creating_libraries.html">custom core libraries</a> when using $this->load->library()</li>
 <li>Added support for running standard <a href="urls.html">query string URLs</a>.  These can be optionally enabled in your config file.</li>
 <li>Added the ability to  <a href="urls.html">specify a "suffix"</a>, which will be appended to your URLs.  For example, you could add .html to your URLs, making them appear static. This feature is enabled in your config file.</li>
 <li>Added a new error template for use with native PHP errors.</li>
-<li>Added "alternator" function in the <a href="./helpers/string_helper.html">string helpers</a>.</li>
+<li>Added "alternator" function in the <a href="helpers/string_helper.html">string helpers</a>.</li>
 <li>Removed slashing from the input class. After much debate we decided to kill this feature.</li>
 <li>Change the commenting style in the scripts to the PEAR standard so that IDEs and tools like phpDocumenter can harvest the comments.</li>
 <li>Added better class and function name-spacing to avoid collisions with user developed classes. All CodeIgniter classes are now prefixed with <dfn>CI_</dfn> and
 all controller methods are prefixed with <dfn>_ci</dfn> to avoid controller collisions. A list of reserved function names can be <a href="controllers.html">found here</a>.</li>
 <li>Redesigned how the "CI" super object is referenced, depending on whether PHP 4 or 5 is being run, since PHP 5 allows a more graceful way to manage objects that utilizes a bit less resources.</li>
-<li>Deprecated: <var>$this->db->use_table()</var> has been deprecated. Please read the <a href="./database/active_record.html">Active Record</a> page for information.</li>
+<li>Deprecated: <var>$this->db->use_table()</var> has been deprecated. Please read the <a href="database/active_record.html">Active Record</a> page for information.</li>
 <li>Deprecated: <var>$this->db->smart_escape_str()</var> has been deprecated. Please use this instead: <var>$this->db->escape()</var></li>
 <li>Fixed a bug in the exception handler which was preventing some PHP errors from showing up.</li>
 <li>Fixed a typo in the URI class.  $this->total_segment() should be plural: $this->total_segments()</li>
@@ -1482,10 +1482,10 @@ all controller methods are prefixed with <dfn>_ci</dfn> to avoid controller coll
 <ul>
 <li>Redesigned some internal aspects of the framework to resolve scoping problems that surfaced during the beta tests. The problem was most notable when instantiating classes in your constructors, particularly if those classes in turn did work in their constructors.</li>
 <li>Added a global function named <a href="ancillary_classes.html">get_instance()</a> allowing the main CodeIgniter object to be accessible throughout your own classes.</li>
-<li>Added new <a href="./helpers/file_helper.html">File Helper</a>:  delete_files()</li>
-<li>Added new <a href="./helpers/url_helper.html">URL Helpers</a>:  base_url(), index_page()</li>
+<li>Added new <a href="helpers/file_helper.html">File Helper</a>:  delete_files()</li>
+<li>Added new <a href="helpers/url_helper.html">URL Helpers</a>:  base_url(), index_page()</li>
 <li>Added the ability to create your own <a href="creating_libraries.html">core libraries</a> and store them in your local application directory.</li>
-<li>Added an <kbd>overwrite</kbd> option to the <a href="./libraries/file_uploading.html">Upload class</a>, enabling files to be overwritten rather than having the file name appended.</li>
+<li>Added an <kbd>overwrite</kbd> option to the <a href="libraries/file_uploading.html">Upload class</a>, enabling files to be overwritten rather than having the file name appended.</li>
 <li>Added Javascript Calendar plugin.</li>
 <li>Added search feature to user guide.  Note: This is done using Google, which at the time of this writing has not crawled all the pages of the docs.</li>
 <li>Updated the parser class so that it allows tag pars within other tag pairs.</li>
@@ -1503,7 +1503,7 @@ all controller methods are prefixed with <dfn>_ci</dfn> to avoid controller coll
 <p>Release Date: March 10, 2006</p>
 
 <ul>
-<li>Added a <a href="./libraries/calendar.html">Calendaring class</a>.</li>
+<li>Added a <a href="libraries/calendar.html">Calendaring class</a>.</li>
 <li>Added support for running <a href="managing_apps.html">multiple applications</a> that share a common CodeIgniter backend.</li>
 <li>Moved the "uri protocol" variable from the index.php file into the config.php file</li>
 <li>Fixed a problem that was preventing certain function calls from working within constructors.</li>
@@ -1536,7 +1536,7 @@ Previous Topic:&nbsp;&nbsp;<a href="license.html">License Agreement</a>
 &nbsp;&nbsp;&nbsp;&middot;&nbsp;&nbsp;
 <a href="#top">Top of Page</a>&nbsp;&nbsp;&nbsp;&middot;&nbsp;&nbsp;
 <a href="index.html">User Guide Home</a>&nbsp;&nbsp;&nbsp;&middot;&nbsp;&nbsp;
-Next Topic:&nbsp;&nbsp;<a href="./general/credits.html">Credits</a>
+Next Topic:&nbsp;&nbsp;<a href="general/credits.html">Credits</a>
 </p>
 <p><a href="http://codeigniter.com">CodeIgniter</a> &nbsp;&middot;&nbsp; Copyright &#169; 2006 - 2014 &nbsp;&middot;&nbsp; <a href="http://ellislab.com/">EllisLab, Inc.</a></p>
 </div>

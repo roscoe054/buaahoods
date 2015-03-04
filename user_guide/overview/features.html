@@ -3,7 +3,7 @@
 <head>
 
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Design and Architectural Goals : CodeIgniter User Guide</title>
+<title>CodeIgniter Features : CodeIgniter User Guide</title>
 
 <style type='text/css' media='all'>@import url('../userguide.css');</style>
 <link rel='stylesheet' type='text/css' media='all' href='../userguide.css' />
@@ -42,7 +42,7 @@
 <td id="breadcrumb">
 <a href="http://codeigniter.com/">CodeIgniter Home</a> &nbsp;&#8250;&nbsp;
 <a href="../index.html">User Guide Home</a> &nbsp;&#8250;&nbsp;
-Goals
+Features
 </td>
 <td id="searchbox"><form method="get" action="http://www.google.com/search"><input type="hidden" name="as_sitesearch" id="as_sitesearch" value="ellislab.com/codeigniter/user-guide/" />Search User Guide&nbsp; <input type="text" class="input" style="width:200px;" name="q" id="q" size="31" maxlength="255" value="" />&nbsp;<input type="submit" class="submit" name="sa" value="Go" /></form></td>
 </tr>
@@ -56,25 +56,45 @@ Goals
 <div id="content">
 
 
+<h1>CodeIgniter Features</h1>
 
-<h2>Design and Architectural Goals</h2>
-
-<p>Our goal for CodeIgniter is <dfn>maximum performance, capability, and flexibility in the smallest, lightest possible package</dfn>.</p>
-
-<p>To meet this goal we are committed to benchmarking, re-factoring, and simplifying at every step of the development process,
-rejecting anything that doesn't further the stated objective.</p>
-
-<p>From a technical and architectural standpoint, CodeIgniter was created with the following objectives:</p>
+<p>Features in and of themselves are a very poor way to judge an application since they tell you nothing
+about the user experience, or how intuitively or intelligently it is designed.  Features
+don't reveal anything about the quality of the code, or the performance, or the attention to detail, or security practices.
+The only way to really judge an app is to try it and get to know the code. <a href="../installation">Installing</a>
+CodeIgniter is child's play so we encourage you to do just that.  In the mean time here's a list of CodeIgniter's main features.</p>
 
 <ul>
-<li><strong>Dynamic Instantiation.</strong>  In CodeIgniter, components are loaded and routines executed only when requested, rather than globally.  No assumptions are made by the system regarding what may be needed beyond the minimal core resources, so the system is very light-weight by default.  The events, as triggered by the HTTP request, and the controllers and views you design will determine what is invoked.</li>
-<li><strong>Loose Coupling.</strong>  Coupling is the degree to which components of a system rely on each other.  The less components depend on each other the more reusable and flexible the system becomes. Our goal was a very loosely coupled system.</li>
-<li><strong>Component Singularity.</strong>  Singularity is the degree to which components have a narrowly focused purpose.  In CodeIgniter, each class and its functions are highly autonomous in order to allow maximum usefulness.</li>
+<li>Model-View-Controller Based System</li>
+<li>Extremely Light Weight</li>
+<li>Full Featured database classes with support for several platforms.</li>
+<li>Active Record Database Support</li>
+<li>Form and Data Validation</li>
+<li>Security and XSS Filtering</li>
+<li>Session Management</li>
+<li>Email Sending Class. Supports Attachments, HTML/Text email, multiple protocols (sendmail, SMTP, and Mail) and more.</li>
+<li>Image Manipulation Library (cropping, resizing, rotating, etc.).  Supports GD, ImageMagick, and NetPBM</li>
+<li>File Uploading Class</li>
+<li>FTP Class</li>
+<li>Localization</li>
+<li>Pagination</li>
+<li>Data Encryption</li>
+<li>Benchmarking</li>
+<li>Full Page Caching</li>
+<li>Error Logging</li>
+<li>Application Profiling</li>
+<li>Calendaring Class</li>
+<li>User Agent Class</li>
+<li>Zip Encoding Class</li>
+<li>Template Engine Class</li>
+<li>Trackback Class</li>
+<li>XML-RPC Library</li>
+<li>Unit Testing Class</li>
+<li>Search-engine Friendly URLs</li>
+<li>Flexible URI Routing</li>
+<li>Support for Hooks and Class Extensions</li>
+<li>Large library of "helper" functions</li>
 </ul>
-
-<p>CodeIgniter is a dynamically instantiated, loosely coupled system with high component singularity. It strives for simplicity, flexibility, and high performance in a small footprint package.</p>
-
-
 
 
 
@@ -85,11 +105,11 @@ rejecting anything that doesn't further the stated objective.</p>
 
 <div id="footer">
 <p>
-Previous Topic:&nbsp;&nbsp;<a href="mvc.html">Model-View-Controller</a>
+Previous Topic:&nbsp;&nbsp;<a href="cheatsheets.html">CodeIgniter Cheatsheets</a>
 &nbsp;&nbsp;&nbsp;&middot;&nbsp;&nbsp;
 <a href="#top">Top of Page</a>&nbsp;&nbsp;&nbsp;&middot;&nbsp;&nbsp;
 <a href="../index.html">User Guide Home</a>&nbsp;&nbsp;&nbsp;&middot;&nbsp;&nbsp;
-Next Topic:&nbsp;&nbsp;<a href="./getting_started.html">Getting Started</a>
+Next Topic:&nbsp;&nbsp;<a href="appflow.html">Application Flow Chart</a>
 </p>
 <p><a href="http://codeigniter.com">CodeIgniter</a> &nbsp;&middot;&nbsp; Copyright &#169; 2006 - 2014 &nbsp;&middot;&nbsp; <a href="http://ellislab.com/">EllisLab, Inc.</a></p>
 </div>
