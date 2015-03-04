@@ -2,9 +2,10 @@ var buaaeatingFactorys = angular.module('buaaeatingFactorys', []);
 
 buaaeatingFactorys.factory('Data', function() {
 	var DishType = {
-		createNew: function(name, price, content) {
+		createNew: function(dishId, name, price, content) {
 			var dishType = {};
 
+			dishType.dishId = dishId
 			dishType.name = name
 			dishType.price = parseInt(price)
 			dishType.content = content
@@ -34,12 +35,12 @@ buaaeatingFactorys.factory('Data', function() {
 
 	return {
 		dishes: [
-			DishType.createNew("红烧猪排盖饭", "15", "猪排+青菜+鸡蛋饼"),
-			DishType.createNew("香菇鸡丁盖饭", "15", "鸡块+香菇+鸡蛋饼"),
-			DishType.createNew("酱香排骨盖饭", "15", "排骨+土豆+鸡蛋饼"),
-			DishType.createNew("蒜苔炒肉盖饭", "13", "猪肉+蒜苔+鸡蛋饼"),
-			DishType.createNew("香干炒肉盖饭", "13", "猪肉+香干+鸡蛋饼"),
-			DishType.createNew("土豆丝炒肉盖饭", "13", "猪肉+土豆丝+鸡蛋饼")
+			DishType.createNew("101", "红烧猪排盖饭", "15", "猪排+青菜+鸡蛋饼"),
+			DishType.createNew("102", "香菇鸡丁盖饭", "15", "鸡块+香菇+鸡蛋饼"),
+			DishType.createNew("103", "酱香排骨盖饭", "15", "排骨+土豆+鸡蛋饼"),
+			DishType.createNew("104", "蒜苔炒肉盖饭", "13", "猪肉+蒜苔+鸡蛋饼"),
+			DishType.createNew("105", "香干炒肉盖饭", "13", "猪肉+香干+鸡蛋饼"),
+			DishType.createNew("106", "土豆丝炒肉盖饭", "13", "猪肉+土豆丝+鸡蛋饼")
 		],
 		drinks: [
 			DrinkType.createNew("可乐"),
@@ -159,7 +160,6 @@ buaaeatingFactorys.factory('Service', function($http, Data, $localStorage) {
 			building: orderInfo.buildingNum,
 			room: orderInfo.roomNum,
 			phone: orderInfo.phoneNum,
-			price: orderInfo.price,
 			delTime: orderInfo.delTime,
 			name: "测试微信号", // TO DO
 			discount_type_new: 0, // TO DO

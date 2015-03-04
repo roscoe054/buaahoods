@@ -13,7 +13,7 @@ class Order extends CI_Controller {
 
 		// 验证POST数据中所有需要的项
 		$dataComplete = true;
-		$orderData = ['orderItems', 'building', 'room', 'phone', 'price', 'drink', 'name', 'delTime', 'discount_type_new', 'discount_type_code'];
+		$orderData = ['orderItems', 'building', 'room', 'phone', 'drink', 'name', 'delTime', 'discount_type_new', 'discount_type_code'];
 		foreach ($orderData as $item) {
 			if (array_key_exists($item, $postData)) {
 				// echo "该数组中包含了{$item}:\n";
@@ -28,6 +28,28 @@ class Order extends CI_Controller {
 			$postData['date'] = date('Y-m-d H:i:s');
 			$postData['status'] = 0;
 			$dishesData = $postData['orderItems'];
+
+			// 计算总价
+			$pirceSum = "";
+			foreach ($dishesData as $dish) {
+				if($dish['dishId'] <= 103){
+					$pirceSum += 15 * $dish['count'];
+				} else{
+					$pirceSum += 13 * $dish['count'];
+				}
+			}
+			$drinksArr = explode(", ", $postData['drink']);
+			foreach ($drinksArr as $drink) {
+				$drinkNum = explode("x", $drink)[1];
+				$pirceSum += $drinkNum * 3;
+			}
+			if($postData['discount_type_code'] == 1){
+				$pirceSum -= 2;
+			}
+			if($postData['discount_type_new'] == 1){
+				$pirceSum -= 2;
+			}
+			$postData['price'] = $pirceSum;
 
 			// insert order & get orderId
 			$orderId = $this->order_model->set_order($postData);
