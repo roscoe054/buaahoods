@@ -1,6 +1,8 @@
 var buaaeatingCtrls = angular.module('buaaeatingCtrls', []);
 
 buaaeatingCtrls.controller('reserveParentCtrl', function($scope, Data, $localStorage) {
+	$localStorage.$reset()
+
 	// 本地缓存
 	$scope.$storage = $localStorage.$default({
 		dishes: Data.dishes,
@@ -20,7 +22,12 @@ buaaeatingCtrls.controller('ReserveCtrl', function($scope, Data, Service, $local
 
 	// 校验时间
 	$scope.validDelTimes = Service.varifyDeltimes($scope.$storage.deltimes, false)
-	$localStorage.orderInfo.delTime = $scope.delTime = $scope.validDelTimes[0].time
+
+	if(typeof $scope.validDelTimes[0] !== "undefined"){
+		$localStorage.orderInfo.delTime = $scope.delTime = $scope.validDelTimes[0].time
+	} else{
+		$localStorage.orderInfo.delTime = $scope.delTime = "none"
+	}
 
 	// 预订下拉
 	$scope.reserveItem = function(dish){
