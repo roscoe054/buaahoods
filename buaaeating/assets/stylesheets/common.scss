@@ -370,6 +370,31 @@ ul{list-style: none;}
   }
 }
 
+.confirm-wrap{
+  position: relative;
+
+  .loading-mask{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+
+    .loading-wrap{
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin: -25px 0 0 -50px;
+      padding: 20px;
+      text-align: center;
+      background-color: #999;
+      color: #eee;
+      border-radius: 5px;
+    }
+  }
+}
+
 /* 确认页面 结束 */
 
 /* 成功页面 */

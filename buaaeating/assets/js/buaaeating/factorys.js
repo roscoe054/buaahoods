@@ -177,17 +177,38 @@ buaaeatingFactorys.factory('Service', function($http, Data, $localStorage) {
 	}
 
 	service.checkOrderInfo = function() {
-		var orderInfoComplete = true
+		var orderInfoComplete = true,
+			warnings = {
+				buildingNum: "请填写公寓号~",
+				roomNum: "请填写宿舍号~",
+				phoneNum: "请填写手机号~",
+				delTime: "请选择起送时间~"
+			},
+			alertWarning = ""
+
+		// 验证菜品数量是否为零
+		var noDishes = true
+		angular.forEach($localStorage.dishes, function(dish, index) {
+			if(dish.count !== 0){
+				noDishes = false
+			}
+		})
+		if(noDishes){
+			alertWarning += "请至少预定一份餐品~" + "\n"
+			orderInfoComplete = false
+		}
 
 		// 验证数据完整性
 		angular.forEach($localStorage.orderInfo, function(item, index) {
-			if(item === null && index !== "discountCode"){
-				console.log(item, index)
-
-				alert("信息没有填写完整哦亲~")
+			if((item === null || item === "") && index !== "discountCode"){
+				alertWarning += warnings[index] + "\n"
 				orderInfoComplete = false
 			}
 		})
+
+		if(alertWarning !== ""){
+			alert(alertWarning)
+		}
 
 		return orderInfoComplete
 	}

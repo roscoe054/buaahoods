@@ -1,11 +1,11 @@
-<div class="page-wrap">
+<div class="page-wrap confirm-wrap">
   <h2 class="title">确认订单</h2>
 
   <div class="section">
     <h3>菜品</h3>
     <ul class="item-list">
       <li class="item" ng-repeat="dish in $storage.dishes | filter: { count: '!0' }" >
-        <span class="item-name">{{ dish.name }}</span>
+        <span class="item-name">{{ dish.name }}（{{ dish.favor }}）</span>
         <span class="item-info">
           {{ dish.price }}元 x {{ dish.count }}份
         </span>
@@ -39,5 +39,11 @@
   <div class="section button-wrap">
     <a class="button button-white" href="#">返回修改</a>
     <a class="button button-orange" href="javascript:void(0);" ng-click="submitOrder()">确认</a>
+  </div>
+
+  <div class="loading-mask" ng-show="maskVisible">
+    <div class="loading-wrap">
+      <div>加载中...</div>
+    </div>
   </div>
 </div>

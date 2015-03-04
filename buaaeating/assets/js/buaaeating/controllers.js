@@ -91,18 +91,27 @@ buaaeatingCtrls.controller('ReserveCtrl', function($scope, Data, Service, $local
 
 // 确认订单页
 buaaeatingCtrls.controller('orderConfirmCtrl', function($scope, Service, $localStorage) {
+	//mask
+	$scope.maskVisible = false
+
 	if(typeof $localStorage.from === "undefined"){
 		location.href = "/buaaeating/reserve"
 	}
 
 	$scope.submitOrder = function(){
-		Service.submitOrder(function(ret){
-			if(ret.status === "succeed"){
-				window.location.href = "#/order_succeed/" + ret.orderId
-			}else{
-				alert("不好意思，服务器出了点小问题，请稍后再试")
-			}
-		})
+		$scope.maskVisible = true
+
+		// 最小加载延迟，防止加载框闪屏
+		setTimeout(function(){
+			Service.submitOrder(function(ret){
+				if(ret.status === "succeed"){
+					window.location.href = "#/order_succeed/" + ret.orderId
+				}else{
+					alert("不好意思，服务器出了点小问题，请稍后再试")
+				}
+				$scope.maskVisible = false
+			})
+		},300)
 	}
 
 	//drink num

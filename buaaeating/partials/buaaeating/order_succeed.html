@@ -5,7 +5,7 @@
 		<h3>菜品</h3>
 		<ul class="item-list">
 			<li class="item" ng-repeat="dish in dishes | filter: { count: '!0' }" >
-				<span class="item-name">{{ dish.name }}</span>
+				<span class="item-name">{{ dish.name }}（{{ dish.favor }}）</span>
 				<span class="item-info">
 				  {{ dish.num }}份
 				</span>
