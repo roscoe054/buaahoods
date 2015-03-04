@@ -43,7 +43,7 @@
 $route['assets/(:any)'] = 'assets/$1';
 $route['404_override'] = '';
 
-$routeRoot = 'buaagit/'
+$routeRoot = 'buaagit/';
 
 // 获取优惠码
 $route['discount/get_discount/(:any)'] = $routeRoot + 'discount/get_discount/$1';
