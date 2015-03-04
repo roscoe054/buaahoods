@@ -63,8 +63,8 @@ $route['news/(:any)'] = 'news/view/$1';
 $route['news'] = 'news';
 
 $route['(:any)'] = 'pages/home';
-$route['404_override'] = 'buaaeating/reserve';
 $route['default_controller'] = 'welcome';
+$route['404_override'] = 'pages/home';
 
 /* End of file routes.php */
 /* Location: ./application/config/routes.php */
