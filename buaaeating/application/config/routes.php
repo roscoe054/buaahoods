@@ -55,7 +55,7 @@ $route['order/query_order'] = 'order/query_order';
 $route['order/submit_order/(:any)'] = 'order/submit_order/$1';
 $route['order/submit_order'] = 'order/submit_order';
 
-$route['buaaeating/reserve'] = 'buaaeating/reserve';
+$route['buaaeating'] = 'buaaeating/reserve';
 $route['buaaeating/(:any)'] = 'buaaeating/view/$1';
 
 $route['news/json_get_news'] = 'news/json_get_news';
