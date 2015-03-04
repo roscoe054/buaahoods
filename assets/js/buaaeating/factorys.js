@@ -173,7 +173,6 @@ buaaeatingFactorys.factory('Service', function($http, Data, $localStorage) {
 			data: reqData,
 			method: "POST"
 		}).success(function(ret) {
-			console.log(ret)
 			callback(ret)
 		})
 	}

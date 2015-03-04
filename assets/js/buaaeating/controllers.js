@@ -93,7 +93,6 @@ buaaeatingCtrls.controller('ReserveCtrl', function($scope, Data, Service, $local
 			$scope.priceSum = Service.calculateSum()
 		})
 	}
-
 });
 
 // 确认订单页
@@ -102,7 +101,7 @@ buaaeatingCtrls.controller('orderConfirmCtrl', function($scope, Service, $localS
 	$scope.maskVisible = false
 
 	if(typeof $localStorage.from === "undefined"){
-		location.href = "/waimai/buaaeating"
+		location.href = "/waimai/"
 	}
 
 	$scope.submitOrder = function(){
