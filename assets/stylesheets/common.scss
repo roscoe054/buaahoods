@@ -32,7 +32,7 @@ a{
   width: 20px;
   height: 20px;
   text-align: center;
-  line-height: 23px;
+  line-height: 20px;
   background-color: $color_orange;
   color: #fff;
   border-radius: 50%;
@@ -82,11 +82,13 @@ ul{list-style: none;}
   .icon-title{
     width: 20px;
     height: 20px;
-    padding: 8px 7px 5px 7px;
-    background-color: $color-theme;
+    padding: 7px;
+    background-color: #3fc2d6;
     border-radius: 50%;
     color: #fff;
     font-size: 16px;
+    text-align: center;
+    vertical-align: middle;
   }
 
   .discount-info{
@@ -164,15 +166,17 @@ ul{list-style: none;}
         }
         .num-ope-wrap{
           @include inb;
-          padding: 0 4px;
+          padding: 5px 4px;
           background-color: #fff;
           border-radius: 3px;
         }
         .minus, .plus, .itemnum{
-          height: 20px;
-          padding: 2px 4px;
+          padding: 0px 4px;
           border: 0 none;
           vertical-align: 2px;
+        }
+        .minus, .plus,{
+          padding: 1px 4px;
         }
         .ope-wrap-item{
           border: 1px #eee solid;
@@ -186,7 +190,7 @@ ul{list-style: none;}
 
         .favor-option-wrap{
           @include inb;
-          padding: 5px 4px;
+          padding: 6px 4px;
           background-color: #fff;
           border-radius: 3px;
 
