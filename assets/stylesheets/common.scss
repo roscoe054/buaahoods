@@ -32,7 +32,7 @@ a{
   width: 20px;
   height: 20px;
   text-align: center;
-  line-height: 23px;
+  line-height: 20px;
   background-color: $color_orange;
   color: #fff;
   border-radius: 50%;
@@ -80,19 +80,20 @@ ul{list-style: none;}
   font-size: 16px;
 
   .icon-title{
-    width: 20px;
-    height: 20px;
-    padding: 8px 7px 5px 7px;
-    background-color: $color-theme;
+    display: inline-block;
+    width: 26px;
+    height: 26px;
+    line-height: 26px;
+    background-color: #3fc2d6;
     border-radius: 50%;
     color: #fff;
     font-size: 16px;
+    text-align: center;
   }
 
   .discount-info{
     float: right;
     padding: 5px 12px;
-    margin: -3px 0 0 0;
     background-color: $color_orange;
     color: #fff;
     border-radius: 20px;
@@ -164,15 +165,17 @@ ul{list-style: none;}
         }
         .num-ope-wrap{
           @include inb;
-          padding: 0 4px;
+          padding: 5px 4px;
           background-color: #fff;
           border-radius: 3px;
         }
         .minus, .plus, .itemnum{
-          height: 20px;
-          padding: 2px 4px;
+          padding: 0px 8px;
           border: 0 none;
           vertical-align: 2px;
+        }
+        .minus, .plus,{
+          padding: 1px 4px;
         }
         .ope-wrap-item{
           border: 1px #eee solid;
@@ -186,7 +189,7 @@ ul{list-style: none;}
 
         .favor-option-wrap{
           @include inb;
-          padding: 5px 4px;
+          padding: 6px 4px;
           background-color: #fff;
           border-radius: 3px;
 

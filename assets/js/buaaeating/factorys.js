@@ -64,8 +64,8 @@ buaaeatingFactorys.factory('Data', function() {
 			reserveDeadline: "17:00",
 			valid: true
 		}, {
-			time: "21:50",
-			reserveDeadline: "21:30",
+			time: "23:59", //21：50
+			reserveDeadline: "23:58", //21:30
 			valid: true
 		}],
 		orderInfo: {

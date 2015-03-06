@@ -53,8 +53,6 @@ $route['order/query_order'] = 'order/query_order';
 // 提交订单
 $route['order/submit_order/(:any)'] = 'order/submit_order/$1';
 $route['order/submit_order'] = 'order/submit_order';
-$route['waimai/order/submit_order/(:any)'] = 'order/submit_order/$1';
-$route['waimai/order/submit_order'] = 'order/submit_order';
 
 $route['buaaeating/reserve'] = 'buaaeating/reserve';
 $route['buaaeating/(:any)'] = 'buaaeating/view/$1';
@@ -64,8 +62,8 @@ $route['news/create'] = 'news/create';
 $route['news/(:any)'] = 'news/view/$1';
 $route['news'] = 'news';
 
-$route['(:any)'] = 'pages/home';
-$route['404_override'] = 'buaaeating/reserve';
+$route['(:any)'] = 'buaaeating/reserve';
+$route['404_override'] = '';
 $route['default_controller'] = 'welcome';
 
 /* End of file routes.php */
