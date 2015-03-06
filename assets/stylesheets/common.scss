@@ -80,15 +80,15 @@ ul{list-style: none;}
   font-size: 16px;
 
   .icon-title{
-    width: 20px;
-    height: 20px;
-    padding: 7px;
+    display: inline-block;
+    width: 26px;
+    height: 26px;
+    line-height: 26px;
     background-color: #3fc2d6;
     border-radius: 50%;
     color: #fff;
     font-size: 16px;
     text-align: center;
-    vertical-align: middle;
   }
 
   .discount-info{
@@ -179,7 +179,7 @@ ul{list-style: none;}
           padding: 1px 4px;
         }
         .ope-wrap-item{
-          border: 1px #eee solid;
+          border: 1px #aaa solid;
           border-width: 0 1px;
         }
       }
