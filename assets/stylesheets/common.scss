@@ -94,7 +94,6 @@ ul{list-style: none;}
   .discount-info{
     float: right;
     padding: 5px 12px;
-    margin: -3px 0 0 0;
     background-color: $color_orange;
     color: #fff;
     border-radius: 20px;
@@ -171,7 +170,7 @@ ul{list-style: none;}
           border-radius: 3px;
         }
         .minus, .plus, .itemnum{
-          padding: 0px 4px;
+          padding: 0px 5px;
           border: 0 none;
           vertical-align: 2px;
         }
@@ -179,7 +178,7 @@ ul{list-style: none;}
           padding: 1px 4px;
         }
         .ope-wrap-item{
-          border: 1px #aaa solid;
+          border: 1px #ccc solid;
           border-width: 0 1px;
         }
       }

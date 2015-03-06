@@ -36,8 +36,7 @@
             <small>数量:</small>
             <div class="num-ope-wrap">
               <span class="minus" ng-click="subItemCount(dish)">-</span>
-              <input type="text" ng-model="dish.count"
-                     class="ope-wrap-item itemnum" disabled="">
+              <span class="ope-wrap-item itemnum">{{dish.count}}</span>
               <span class="plus" ng-click="addItemCount(dish)">+</span>
             </div>
           </div>

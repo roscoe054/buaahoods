@@ -127,7 +127,6 @@ ul {
   .header .discount-info {
     float: right;
     padding: 5px 12px;
-    margin: -3px 0 0 0;
     background-color: #FA8723;
     color: #fff;
     border-radius: 20px;
@@ -191,13 +190,13 @@ ul {
           background-color: #fff;
           border-radius: 3px; }
         .list-wrap li .ope-wrap .num-wrap .minus, .list-wrap li .ope-wrap .num-wrap .plus, .list-wrap li .ope-wrap .num-wrap .itemnum {
-          padding: 0px 4px;
+          padding: 0px 5px;
           border: 0 none;
           vertical-align: 2px; }
         .list-wrap li .ope-wrap .num-wrap .minus, .list-wrap li .ope-wrap .num-wrap .plus {
           padding: 1px 4px; }
         .list-wrap li .ope-wrap .num-wrap .ope-wrap-item {
-          border: 1px #aaa solid;
+          border: 1px #ccc solid;
           border-width: 0 1px; }
       .list-wrap li .ope-wrap .favor {
         display: inline-block;
