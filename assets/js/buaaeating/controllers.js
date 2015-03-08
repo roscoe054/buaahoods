@@ -102,7 +102,7 @@ buaaeatingCtrls.controller('orderConfirmCtrl', function($scope, Service, $localS
 
 	if(typeof $localStorage.from === "undefined"){
 		alert()
-		location.href = "/waimai/buaaeating/reserve"
+		location.href = "/buaaeating/reserve"
 	}
 
 	$scope.submitOrder = function(){
