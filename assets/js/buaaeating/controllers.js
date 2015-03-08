@@ -101,6 +101,7 @@ buaaeatingCtrls.controller('orderConfirmCtrl', function($scope, Service, $localS
 	$scope.maskVisible = false
 
 	if(typeof $localStorage.from === "undefined"){
+		alert()
 		location.href = "/waimai/buaaeating/reserve"
 	}
 
