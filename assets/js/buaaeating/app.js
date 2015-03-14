@@ -33,10 +33,20 @@ buaaeatingApp.run(function($rootScope) {
     });
 
     // 首页遮罩
-    var workDay = new Date().getDay()
+    $rootScope.showMask = false
+    $rootScope.noticeContent = ""
+    var today = new Date()
+
+    var workDay = today.getDay(),
+        hour = today.getHours(),
+        minute = today.getMinutes()
     if(workDay === 0 || workDay === 6){
         $rootScope.showMask = true
         $rootScope.noticeContent = "周末休息啦~"
+    }
+    if(hour > 21 || (hour === 21 && minute > 30)){
+        $rootScope.showMask = true
+        $rootScope.noticeContent = "太晚了，明天再来~"
     }
 })
 

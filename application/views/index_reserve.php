@@ -123,7 +123,7 @@ function getID($token, $openid) {
     <div ng-view>
     </div>
 
-    <div class="notice-wrap">
+    <div class="notice-wrap" ng-show="showMask">
       <div class="notice">
         {{noticeContent}}
       </div>
