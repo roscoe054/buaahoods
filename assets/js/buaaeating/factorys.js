@@ -85,7 +85,7 @@ buaaeatingFactorys.factory('Service', function($http, Data, $localStorage) {
 
 	service.varifyDeltimes = function(deltimes, testIfOverdue) {
 		var validDelTimes = []
-
+		
 		for (var i in deltimes) {
 			var deltime = deltimes[i],
 				deadline = deltime.reserveDeadline,

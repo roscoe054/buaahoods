@@ -122,6 +122,12 @@ function getID($token, $openid) {
 		</div>
     <div ng-view>
     </div>
+
+    <div class="notice-wrap">
+      <div class="notice">
+        {{noticeContent}}
+      </div>
+    </div>
   </div>
 </body>
 </html>

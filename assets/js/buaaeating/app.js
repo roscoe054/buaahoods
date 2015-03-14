@@ -31,6 +31,13 @@ buaaeatingApp.run(function($rootScope) {
             $rootScope.title = "订餐"
         }
     });
+
+    // 首页遮罩
+    var workDay = new Date().getDay()
+    if(workDay === 0 || workDay === 6){
+        $rootScope.showMask = true
+        $rootScope.noticeContent = "周末休息啦~"
+    }
 })
 
 buaaeatingApp.config(function($httpProvider) {
