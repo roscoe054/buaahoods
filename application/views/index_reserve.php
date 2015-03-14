@@ -67,7 +67,7 @@ if ($_GET['code']) {
 		echo "<div class='username-wrap'>欢迎你，<span id='username' class='{$newuser}'>{$name}</span></div>";
 	} else {
 		$newuser = "newuser";
-		echo "<div class='username-wrap'>欢迎你，<span id='username' class='{$newuser}'>{$name}</span>，首单减2！</div>";
+		echo "<div class='username-wrap'>欢迎你，<span id='username' class='{$newuser}'>{$name}</span></div>";
 	}
 
 } else {
@@ -118,7 +118,7 @@ function getID($token, $openid) {
 		<div class="header">
 		    <span class="icon-title">航</span>
 		    学长外卖 - {{title}}
-			<span class="discount-info">新用户首单减2元!</span>
+			<span class="discount-info">新学期新气象!</span>
 		</div>
     <div ng-view>
     </div>

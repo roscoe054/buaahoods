@@ -138,7 +138,8 @@ buaaeatingFactorys.factory('Service', function($http, Data, $localStorage) {
 		var dishes = [],
 			drinks = [],
 			orderInfo = $localStorage.orderInfo,
-			reqData = {}
+			reqData = {},
+			username = document.getElementById("username").innerHTML || "测试微信号"
 
 		// 获取订单有效项
 		angular.forEach($localStorage.dishes, function(dish, index) {
@@ -154,6 +155,7 @@ buaaeatingFactorys.factory('Service', function($http, Data, $localStorage) {
 		})
 		drinks = drinks.join(", ")
 
+
 		// 组织数据
 		reqData = {
 			orderItems: dishes,
@@ -162,7 +164,7 @@ buaaeatingFactorys.factory('Service', function($http, Data, $localStorage) {
 			room: orderInfo.roomNum,
 			phone: orderInfo.phoneNum,
 			delTime: orderInfo.delTime,
-			name: "测试微信号", // TO DO
+			name: username, // TO DO
 			discount_type_new: 0, // TO DO
 			discount_type_code: orderInfo.discountCodeValid ? 1 : 0
 		}
