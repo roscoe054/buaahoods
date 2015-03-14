@@ -37,7 +37,6 @@ $con = connectDB("buaahoods_data");
 //获取token
 $token = "none";
 $name = "noName";
-$_GET['code'] = (isset($_GET['code']) ? $_GET['code'] : 'default');
 if ($_GET['code']) {
 //得到code
 	$code = $_GET['code'];
@@ -72,7 +71,7 @@ if ($_GET['code']) {
 	}
 
 } else {
-	echo "<div class='username-wrap'>欢迎你，<span id='username'>请关注buaaeating后订餐</span></div>";
+	echo "<div class='username-wrap'>欢迎你，<span id='username'class='{$newuser}'>请关注buaaeating后订餐</span></div>";
 }
 
 function getToken($appID, $appsecret, $code) {
