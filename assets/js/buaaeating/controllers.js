@@ -12,9 +12,9 @@ buaaeatingCtrls.controller('reserveParentCtrl', function($scope, Data, $localSto
 	});
 
 	// 测试订单验证页
-	$scope.$storage.orderInfo.buildingNum = 1
-	$scope.$storage.orderInfo.roomNum = "中333"
-	$scope.$storage.orderInfo.phoneNum = 1501111111
+	//$scope.$storage.orderInfo.buildingNum = 1
+	//$scope.$storage.orderInfo.roomNum = "中333"
+	//$scope.$storage.orderInfo.phoneNum = 1501111111
 })
 
 buaaeatingCtrls.controller('ReserveCtrl', function($scope, Data, Service, $localStorage) {

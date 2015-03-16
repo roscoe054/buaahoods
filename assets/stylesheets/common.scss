@@ -19,6 +19,8 @@ body{
 }
 a{
   color: $color-content;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  -webkit-touch-callout: none;
 }
 
 @mixin inb {
