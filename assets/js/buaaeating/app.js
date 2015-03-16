@@ -2,7 +2,7 @@ var buaaeatingApp = angular.module('buaaeatingApp',[
 	'ngRoute','ngTouch','ngStorage','buaaeatingCtrls','buaaeatingFilters','buaaeatingFactorys'
 ]);
 
-var rootPath = '/waimai/partials/buaaeating/'
+var rootPath = '/partials/buaaeating/'
 
 buaaeatingApp.config(function($routeProvider){
 	$routeProvider.when('/order_confirm',{

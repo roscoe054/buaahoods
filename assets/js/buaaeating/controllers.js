@@ -1,8 +1,6 @@
 var buaaeatingCtrls = angular.module('buaaeatingCtrls', []);
 
 buaaeatingCtrls.controller('reserveParentCtrl', function($scope, Data, $localStorage) {
-	$localStorage.$reset()
-
 	// 本地缓存
 	$scope.$storage = $localStorage.$default({
 		dishes: Data.dishes,
@@ -105,7 +103,7 @@ buaaeatingCtrls.controller('orderConfirmCtrl', function($scope, Service, $localS
 	$scope.maskVisible = false
 
 	if(typeof $localStorage.from === "undefined"){
-		location.href = "/buaaeating/reserve"
+		location.href = "https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx65cfe45c2c6fad4a&redirect_uri=http%3A%2F%2F182.92.107.59/buaaeating/reserve&response_type=code&scope=snsapi_userinfo&state=123#wechat_redirect"
 	}
 
 	$scope.submitOrder = function(){
@@ -168,7 +166,9 @@ buaaeatingCtrls.controller('orderSucceedCtrl', function($scope, $localStorage, $
 		}
 	})
 
-	$localStorage.$reset();
+	delete $localStorage.dishes;
+	delete $localStorage.drinks;
+	delete $localStorage.deltimes;
 })
 
 // 页面准备好了
