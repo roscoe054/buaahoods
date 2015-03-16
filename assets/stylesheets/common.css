@@ -19,7 +19,9 @@ body {
   color: #666; }
 
 a {
-  color: #666;
+  color: #666; }
+
+a, span, input {
   -webkit-tap-highlight-color: transparent;
   -webkit-touch-callout: none; }
 
