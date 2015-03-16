@@ -93,6 +93,10 @@ buaaeatingCtrls.controller('ReserveCtrl', function($scope, Data, Service, $local
 			$scope.priceSum = Service.calculateSum()
 		})
 	}
+
+	$scope.updateTime = function(){
+		$localStorage.orderInfo.delTime = $scope.delTime
+	}
 });
 
 // 确认订单页

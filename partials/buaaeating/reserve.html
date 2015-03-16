@@ -78,7 +78,7 @@
     <div class="info-item">
       <span class="label">起送时间</span>
       <select class="select-time" ng-model='delTime' required
-        ng-options='option.time as option.time for option in validDelTimes'>
+        ng-options='option.time as option.time for option in validDelTimes' ng-change="updateTime()">
       </select>
     </div>
     <div class="submit">
