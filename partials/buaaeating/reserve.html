@@ -81,6 +81,10 @@
         ng-options='option.time as option.time for option in validDelTimes' ng-change="updateTime()">
       </select>
     </div>
+    <div class="info-item" ng-show="$storage.orderInfo.drinkBonus">
+        <span class="label">附加</span>
+        <span class="bonus-info">送1.25L饮料</span>
+    </div>
     <div class="submit">
       共计
       <span id="sum">{{ priceSum }}</span>

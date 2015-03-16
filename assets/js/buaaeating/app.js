@@ -33,8 +33,8 @@ buaaeatingApp.run(function($rootScope) {
     });
 
     // 首页遮罩
-    $rootScope.showMask = true //false
-    $rootScope.noticeContent = "停电了，稍后再试 :("
+    $rootScope.showMask = false
+    $rootScope.noticeContent = ""
     var today = new Date()
 
     var workDay = today.getDay(),

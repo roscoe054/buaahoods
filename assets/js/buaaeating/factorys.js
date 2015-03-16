@@ -74,6 +74,7 @@ buaaeatingFactorys.factory('Data', function() {
 			phoneNum: null,
 			discountCodeValid: false,
 			discountCode: null,
+			drinkBonus: false,
 			delTime: null,
 			price: null
 		}
@@ -82,6 +83,65 @@ buaaeatingFactorys.factory('Data', function() {
 
 buaaeatingFactorys.factory('Service', function($http, Data, $localStorage) {
 	var service = {}
+
+	service.getUserNameFromWeixin = function(){
+		var code,
+			appid = "wx65cfe45c2c6fad4a",
+			secret = "fc123736bb3fa7743e97818b496f5147",
+			path = "https://api.weixin.qq.com/sns/oauth2/access_token?appid=" + appid + "&secret=" + secret + "&code=CODE&grant_type=authorization_code",
+			codeIndex = path.indexOf("code")
+
+		var getrefreshToken = function(refreshToken){
+			var refreshTokenUrl = "http://localhost:9999/refresh_token" // "https://api.weixin.qq.com/sns/oauth2/refresh_token"
+
+			$http({
+				url: refreshTokenUrl,
+				params: {
+					"appid": appid,
+					"grant_type": "refresh_token",
+					"refresh_token": refreshToken
+				},
+				method: "GET"
+			}).success(function(data) {
+				console.log(data)
+			});
+		}
+
+		var getUserInfo = function(data){
+			var getUserInfoUrl = "http://localhost:9999/userinfo" //"https://api.weixin.qq.com/sns/userinfo"
+
+			$http({
+				url: getUserInfoUrl,
+				params: {
+					"accessToken": data.access_token,
+					"openId": data.openid,
+					"lang": "zh_CN"
+				},
+				method: "GET"
+			}).success(function(data) {
+				console.log(data)
+			});
+		}
+
+		if(codeIndex !== -1){
+			var reg = /code=([^"]+)&grant/,
+				tokenUrl = "http://localhost:9999/access_token" //https://api.weixin.qq.com/sns/oauth2/access_token
+
+			code = path.match(reg)[1]
+			$http({
+				url: tokenUrl,
+				params: {
+					"appid": appid,
+					"secret": secret,
+					"code": code,
+					"grant_type": "authorization_code"
+				},
+				method: "GET"
+			}).success(function(data) {
+				getUserInfo(data)
+			});
+		}
+	}
 
 	service.varifyDeltimes = function(deltimes, testIfOverdue) {
 		var validDelTimes = []
@@ -159,7 +219,9 @@ buaaeatingFactorys.factory('Service', function($http, Data, $localStorage) {
 			}
 		})
 		drinks = drinks.join(", ")
-
+		if($localStorage.orderInfo.drinkBonus){
+			drinks += "满四份送1.25L饮料"
+		}
 
 		// 组织数据
 		reqData = {
@@ -222,10 +284,14 @@ buaaeatingFactorys.factory('Service', function($http, Data, $localStorage) {
 	}
 
 	service.calculateSum = function(){
-		var sum = 0
+		var sum = 0,
+			countSum = 0
 
 		angular.forEach($localStorage.dishes, function(dish){
 			sum += dish.count * dish.price
+			if(dish.count > 0){
+				countSum += dish.count
+			}
 		})
 		angular.forEach($localStorage.drinks, function(drink){
 			sum += drink.count * drink.price
@@ -237,6 +303,13 @@ buaaeatingFactorys.factory('Service', function($http, Data, $localStorage) {
 		}
 
 		// TODO 新用户
+
+		// 送饮料
+		if(countSum > 3){
+			$localStorage.orderInfo.drinkBonus = true
+		} else{
+			$localStorage.orderInfo.drinkBonus = false
+		}
 
 		// 检测最小值
 		if(sum < 0){

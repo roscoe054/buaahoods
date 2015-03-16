@@ -20,7 +20,7 @@ body{
 a{
   color: $color-content;
 }
-a,span,input{
+a,span,input,li,i{
   -webkit-tap-highlight-color: rgba(0,0,0,0);
   -webkit-touch-callout: none;
 }
@@ -305,6 +305,10 @@ ul{list-style: none;}
       width: 20%;
       min-width: 4em;
       margin: 2px 0;
+    }
+    .bonus-info{
+      @include inb;
+      margin: 0 0 0 5px;
     }
   }
   .submit{

@@ -21,7 +21,7 @@ body {
 a {
   color: #666; }
 
-a, span, input {
+a, span, input, li, i {
   -webkit-tap-highlight-color: transparent;
   -webkit-touch-callout: none; }
 
@@ -310,6 +310,11 @@ ul {
       width: 20%;
       min-width: 4em;
       margin: 2px 0; }
+    .result-wrap .info-item .bonus-info {
+      display: inline-block;
+      *display: inline;
+      *zoom: 1;
+      margin: 0 0 0 5px; }
   .result-wrap .submit {
     border-top: 1px #bbb solid;
     padding: 10px 12px;

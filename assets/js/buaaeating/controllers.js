@@ -1,6 +1,6 @@
 var buaaeatingCtrls = angular.module('buaaeatingCtrls', []);
 
-buaaeatingCtrls.controller('reserveParentCtrl', function($scope, Data, $localStorage) {
+buaaeatingCtrls.controller('reserveParentCtrl', function($scope, Data, Service, $localStorage) {
 	// 本地缓存
 	$scope.$storage = $localStorage.$default({
 		dishes: Data.dishes,
@@ -9,6 +9,7 @@ buaaeatingCtrls.controller('reserveParentCtrl', function($scope, Data, $localSto
 		orderInfo: Data.orderInfo // 订单信息
 	});
 
+	//Service.getUserNameFromWeixin()
 	// 测试订单验证页
 	//$scope.$storage.orderInfo.buildingNum = 1
 	//$scope.$storage.orderInfo.roomNum = "中333"
@@ -157,7 +158,7 @@ buaaeatingCtrls.controller('orderSucceedCtrl', function($scope, $localStorage, $
 
 			$scope.drinks.push({
 				name: drinkInfoArr[0],
-				num:drinkInfoArr[1]
+				num:drinkInfoArr[1] === "" ? drinkInfoArr[1]: 1
 			})
 		})
 
