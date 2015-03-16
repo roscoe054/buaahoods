@@ -169,17 +169,19 @@ ul{list-style: none;}
         }
         .num-ope-wrap{
           @include inb;
-          padding: 5px 4px;
           background-color: #fff;
           border-radius: 3px;
+          font-size: 0;
         }
         .minus, .plus, .itemnum{
           padding: 0px 8px;
           border: 0 none;
           vertical-align: 2px;
+          font-size: 14px;
         }
         .minus, .plus,{
-          padding: 1px 4px;
+          @include inb;
+          padding: 6px 10px;
         }
         .ope-wrap-item{
           border: 1px #eee solid;

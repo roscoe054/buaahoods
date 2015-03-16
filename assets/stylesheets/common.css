@@ -190,15 +190,19 @@ ul {
           display: inline-block;
           *display: inline;
           *zoom: 1;
-          padding: 5px 4px;
           background-color: #fff;
-          border-radius: 3px; }
+          border-radius: 3px;
+          font-size: 0; }
         .list-wrap li .ope-wrap .num-wrap .minus, .list-wrap li .ope-wrap .num-wrap .plus, .list-wrap li .ope-wrap .num-wrap .itemnum {
           padding: 0px 8px;
           border: 0 none;
-          vertical-align: 2px; }
+          vertical-align: 2px;
+          font-size: 14px; }
         .list-wrap li .ope-wrap .num-wrap .minus, .list-wrap li .ope-wrap .num-wrap .plus {
-          padding: 1px 4px; }
+          display: inline-block;
+          *display: inline;
+          *zoom: 1;
+          padding: 6px 10px; }
         .list-wrap li .ope-wrap .num-wrap .ope-wrap-item {
           border: 1px #eee solid;
           border-width: 0 1px; }
