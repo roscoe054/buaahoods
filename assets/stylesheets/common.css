@@ -25,6 +25,9 @@ a, span, input, li, i {
   -webkit-tap-highlight-color: transparent;
   -webkit-touch-callout: none; }
 
+.hidden {
+  display: none; }
+
 .icon-count {
   display: inline-block;
   *display: inline;

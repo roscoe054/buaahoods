@@ -25,6 +25,10 @@ a,span,input,li,i{
   -webkit-touch-callout: none;
 }
 
+.hidden{
+  display: none;
+}
+
 @mixin inb {
   display: inline-block;
   *display: inline;

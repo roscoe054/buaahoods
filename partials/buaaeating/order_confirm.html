@@ -33,7 +33,7 @@
     <div class="item"><span class="item-label">手机号</span>{{ $storage.orderInfo.phoneNum }}</div>
     <div class="item"><span class="item-label">起送时间</span>{{ $storage.orderInfo.delTime }}</div>
     <div class="item"><span class="item-label">总价</span>{{ $storage.orderInfo.price }}</div>
-    <div class="item"><span class="item-label"  ng-show="$storage.orderInfo.drinkBonus">附加</span>送1.25L饮料</div>
+    <div class="item" ng-show="$storage.orderInfo.drinkBonus"><span class="item-label">附加</span>送1.25L饮料</div>
     <div class="item" ng-show="$storage.orderInfo.discountCodeValid">优惠码减2元</div>
   </div>
 
