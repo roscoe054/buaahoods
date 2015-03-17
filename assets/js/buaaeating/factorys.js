@@ -231,9 +231,9 @@ buaaeatingFactorys.factory('Service', function($http, Data, $localStorage) {
 		reqData = {
 			orderItems: dishes,
 			drink: drinks,
-			building: orderInfo.buildingNum,
-			room: orderInfo.roomNum,
-			phone: orderInfo.phoneNum,
+			building: userInfo.buildingNum,
+			room: userInfo.roomNum,
+			phone: userInfo.phoneNum,
 			delTime: orderInfo.delTime,
 			name: "测试号", // TODO
 			discount_type_new: 0, // TODO
