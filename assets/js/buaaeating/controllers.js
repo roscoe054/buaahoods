@@ -6,8 +6,24 @@ buaaeatingCtrls.controller('reserveParentCtrl', function($scope, Data, Service, 
 		dishes: Data.dishes,
 		drinks: Data.drinks,
 		deltimes: Data.deltimes,
+		userInfo: Data.userInfo, // 用户信息
 		orderInfo: Data.orderInfo // 订单信息
 	});
+
+	// 顶部
+	$scope.welcomeWords = "满4份送饮料"
+
+	// 网页入口获取微信昵称和是否是新用户
+	var usernameNode = document.getElementById("userName"),
+		newUserNode = document.getElementById("newUser")
+
+	if(usernameNode){
+		$localStorage.orderInfo.username = usernameNode.innerHTML
+	}
+	if(newUserNode){
+		$localStorage.orderInfo.isNewUser = true
+		$scope.welcomeWords = "新用户减2元"
+	}
 
 	//Service.getUserNameFromWeixin()
 	// 测试订单验证页
@@ -169,6 +185,7 @@ buaaeatingCtrls.controller('orderSucceedCtrl', function($scope, $localStorage, $
 
 	delete $localStorage.dishes;
 	delete $localStorage.drinks;
+	delete $localStorage.orderInfo;
 	delete $localStorage.deltimes;
 })
 

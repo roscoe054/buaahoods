@@ -60,15 +60,15 @@
     <h2>订单信息</h2>
     <div class="info-item">
       <span class="label">公寓号</span>
-      <input class="info-input" type="number" ng-model="$storage.orderInfo['buildingNum']" placeholder="如“4”">
+      <input class="info-input" type="number" ng-model="$storage.userInfo['buildingNum']" placeholder="如“4”">
     </div>
     <div class="info-item">
       <span class="label">宿舍号</span>
-      <input class="info-input" type="text" ng-model="$storage.orderInfo['roomNum']" placeholder="如“中404”">
+      <input class="info-input" type="text" ng-model="$storage.userInfo['roomNum']" placeholder="如“中404”">
     </div>
     <div class="info-item">
       <span class="label">手机号</span>
-      <input class="info-input" type="tel" max-length=11 ng-model="$storage.orderInfo['phoneNum']">
+      <input class="info-input" type="tel" max-length=11 ng-model="$storage.userInfo['phoneNum']">
     </div>
     <div class="info-item">
       <span class="label">优惠码</span>
@@ -90,6 +90,7 @@
       <span id="sum">{{ priceSum }}</span>
       元
       <span class="discount-info" ng-show="$storage.orderInfo.discountCodeValid">(优惠码减2)</span>
+      <span class="discount-info" ng-show="$storage.orderInfo.isNewUser">(新用户减2)</span>
       <a class="button-submit" href="javascript:void(0);" ng-click="confirmOrder();">确认订单</a>
     </div>
   </div>

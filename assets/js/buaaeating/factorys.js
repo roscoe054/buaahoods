@@ -68,10 +68,14 @@ buaaeatingFactorys.factory('Data', function() {
 			reserveDeadline: "21:30", //21:30
 			valid: true
 		}],
-		orderInfo: {
+		userInfo: {
 			buildingNum: null,
 			roomNum: null,
-			phoneNum: null,
+			phoneNum: null
+		},
+		orderInfo: { // TODO 提取用户信息
+			isNewUser: false,
+			userName: "测试微信号",
 			discountCodeValid: false,
 			discountCode: null,
 			drinkBonus: false,
@@ -200,10 +204,10 @@ buaaeatingFactorys.factory('Service', function($http, Data, $localStorage) {
 			orderInfo = $localStorage.orderInfo,
 			reqData = {},
 			usernameNode = document.getElementById("username"),
-			username = "测试微信号"
+			userName = "测试微信号"
 
 		if(usernameNode){
-			username = usernameNode.innerHTML
+			userName = usernameNode.innerHTML
 		}
 
 		// 获取订单有效项
@@ -231,8 +235,8 @@ buaaeatingFactorys.factory('Service', function($http, Data, $localStorage) {
 			room: orderInfo.roomNum,
 			phone: orderInfo.phoneNum,
 			delTime: orderInfo.delTime,
-			name: username, // TO DO
-			discount_type_new: 0, // TO DO
+			name: userName, // TODO
+			discount_type_new: orderInfo.isNewUser ? 1 : 0, // TODO
 			discount_type_code: orderInfo.discountCodeValid ? 1 : 0
 		}
 
@@ -302,7 +306,10 @@ buaaeatingFactorys.factory('Service', function($http, Data, $localStorage) {
 			sum -= 2
 		}
 
-		// TODO 新用户
+		// 新用户
+		if($localStorage.orderInfo.isNewUser){
+			sum -= 2
+		}
 
 		// 送饮料
 		if(countSum > 3){
