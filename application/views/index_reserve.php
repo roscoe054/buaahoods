@@ -64,14 +64,15 @@ if ($_GET['code']) {
 	$result = mysql_query("SELECT * FROM order_info WHERE name = '{$name}'");
 	if (0 != @mysql_num_rows($result)) {
 		$newuser = "";
-		echo "<div class='username-wrap'>欢迎你，<span id='username' class='{$newuser}'>{$name}</span></div>";
+		echo "<div class='username-wrap'>欢迎你，<span id='userName' class='{$newuser}'>{$name}</span></div>";
 	} else {
 		$newuser = "newuser";
-		echo "<div class='username-wrap'>欢迎你，<span id='username' class='{$newuser}'>{$name}</span></div>";
+		echo "<div class='username-wrap'>欢迎你，<span id='userName' class='{$newuser}'>{$name}</span></div>";
+		echo "<div id='newUser' class='hidden'></div>";
 	}
 
 } else {
-	echo "<div class='username-wrap'>欢迎你，<span id='username'class='{$newuser}'>请关注buaaeating后订餐</span></div>";
+	echo "<div class='username-wrap'>欢迎你，<span id='userName'class='{$newuser}'>请关注buaaeating后订餐</span></div>";
 }
 
 function getToken($appID, $appsecret, $code) {
@@ -118,7 +119,7 @@ function getID($token, $openid) {
 		<div class="header">
 		    <span class="icon-title">航</span>
 		    学长外卖 - {{title}}
-			<span class="discount-info">新学期新气象!</span>
+			<span class="discount-info">{{welcomeWords}}</span>
 		</div>
     <div ng-view>
     </div>

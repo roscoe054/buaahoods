@@ -128,7 +128,7 @@ buaaeatingFactorys.factory('Service', function($http, Data, $localStorage) {
 		}
 
 		if(codeIndex !== -1){
-			var reg = /code=([^"]+)&grant/,
+			var reg = /code=([^"]+)&/,
 				tokenUrl = "http://localhost:9999/access_token" //https://api.weixin.qq.com/sns/oauth2/access_token
 
 			code = path.match(reg)[1]

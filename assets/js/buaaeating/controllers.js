@@ -11,7 +11,7 @@ buaaeatingCtrls.controller('reserveParentCtrl', function($scope, Data, Service, 
 	});
 
 	// 顶部
-	$scope.welcomeWords = "满4份送饮料"
+	$scope.welcomeWords = "满4份送饮料!"
 
 	// 网页入口获取微信昵称和是否是新用户
 	var usernameNode = document.getElementById("userName"),
@@ -22,10 +22,12 @@ buaaeatingCtrls.controller('reserveParentCtrl', function($scope, Data, Service, 
 	}
 	if(newUserNode){
 		$localStorage.orderInfo.isNewUser = true
-		$scope.welcomeWords = "新用户减2元"
+		$scope.welcomeWords = "新用户减2元!"
 	}
 
+	// JS 获取用户信息
 	//Service.getUserNameFromWeixin()
+
 	// 测试订单验证页
 	//$scope.$storage.orderInfo.buildingNum = 1
 	//$scope.$storage.orderInfo.roomNum = "中333"
@@ -188,10 +190,3 @@ buaaeatingCtrls.controller('orderSucceedCtrl', function($scope, $localStorage, $
 	delete $localStorage.orderInfo;
 	delete $localStorage.deltimes;
 })
-
-// 页面准备好了
-function ReserveCtrlReady($scope) {
-	angular.element(document).ready(function() {
-		var host = location.host
-	});
-}
