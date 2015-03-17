@@ -236,7 +236,7 @@ buaaeatingFactorys.factory('Service', function($http, Data, $localStorage) {
 			phone: $localStorage.userInfo.phoneNum,
 			delTime: orderInfo.delTime,
 			name: userName, // TODO
-			discount_type_new: $localStorage.orderInfo.isNewUser, // TODO
+			discount_type_new: $localStorage.orderInfo.isNewUser ? 1 : 0, // TODO
 			discount_type_code: orderInfo.discountCodeValid ? 1 : 0
 		}
 
