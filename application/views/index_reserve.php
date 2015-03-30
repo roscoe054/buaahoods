@@ -62,7 +62,8 @@ if ($_GET['code']) {
 	}
 	mysql_query("SET NAMES utf8");
 	$result = mysql_query("SELECT * FROM order_info WHERE name = '{$name}'");
-	if (0 != @mysql_num_rows($result)) {
+	$openidResult = mysql_query("SELECT * FROM order_info WHERE name = '{$openid}'");
+	if (0 != @mysql_num_rows($result) || 0 != @mysql_num_rows($openidResult)) {
 		$newuser = "";
 		echo "<div class='username-wrap'>欢迎你，<span id='userName' class='{$newuser}'>{$name}</span></div>";
 		echo "<div id='openid' class='hidden'>{$openid}</div>";
