@@ -203,11 +203,16 @@ buaaeatingFactorys.factory('Service', function($http, Data, $localStorage) {
 			drinks = [],
 			orderInfo = $localStorage.orderInfo,
 			reqData = {},
-			usernameNode = document.getElementById("openid"),
-			userName = "测试微信号"
+			usernameNode = document.getElementById("userName"),
+			userName = "测试微信号",
+			openidNode = document.getElementById("openid"),
+			openid = "test openid"
 
 		if(usernameNode){
 			userName = usernameNode.innerHTML
+		}
+		if(openidNode){
+			openid = openidNode.innerHTML
 		}
 
 		// 获取订单有效项
@@ -235,7 +240,8 @@ buaaeatingFactorys.factory('Service', function($http, Data, $localStorage) {
 			room: $localStorage.userInfo.roomNum,
 			phone: $localStorage.userInfo.phoneNum,
 			delTime: orderInfo.delTime,
-			name: userName, // TODO
+			name: openid, // TODO
+			nickname: userName,
 			discount_type_new: $localStorage.orderInfo.isNewUser ? 1 : 0, // TODO
 			discount_type_code: orderInfo.discountCodeValid ? 1 : 0
 		}
