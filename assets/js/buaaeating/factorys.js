@@ -203,7 +203,7 @@ buaaeatingFactorys.factory('Service', function($http, Data, $localStorage) {
 			drinks = [],
 			orderInfo = $localStorage.orderInfo,
 			reqData = {},
-			usernameNode = document.getElementById("userName"),
+			usernameNode = document.getElementById("openid"),
 			userName = "测试微信号"
 
 		if(usernameNode){

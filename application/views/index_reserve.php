@@ -65,10 +65,12 @@ if ($_GET['code']) {
 	if (0 != @mysql_num_rows($result)) {
 		$newuser = "";
 		echo "<div class='username-wrap'>欢迎你，<span id='userName' class='{$newuser}'>{$name}</span></div>";
+		echo "<div id='openid' class='hidden'>{$openid}</div>";
 	} else {
 		$newuser = "newuser";
 		echo "<div class='username-wrap'>欢迎你，<span id='userName' class='{$newuser}'>{$name}</span></div>";
 		echo "<div id='newUser' class='hidden'></div>";
+		echo "<div id='openid' class='hidden'>{$openid}</div>";
 	}
 
 } else {
