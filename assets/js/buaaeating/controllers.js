@@ -25,6 +25,7 @@ buaaeatingCtrls.controller('reserveParentCtrl', function($scope, Data, Service, 
 		$scope.welcomeWords = "新用户减2元!"
 	}
 
+	delete $localStorage.deltimes;
 	// JS 获取用户信息
 	//Service.getUserNameFromWeixin()
 
