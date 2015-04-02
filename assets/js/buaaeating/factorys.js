@@ -52,11 +52,11 @@ buaaeatingFactorys.factory('Data', function() {
 			DrinkType.createNew("酸枣汁")
 		],
 		deltimes: [
-		// {
-		// 	time: "11:20",
-		// 	reserveDeadline: "11:00",
-		// 	valid: true
-		// }, 
+		{
+			time: "11:20",
+			reserveDeadline: "11:00",
+			valid: true
+		}, 
 		{
 			time: "12:00",
 			reserveDeadline: "11:30",
