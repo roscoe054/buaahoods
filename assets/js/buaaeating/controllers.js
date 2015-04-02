@@ -2,6 +2,8 @@ var buaaeatingCtrls = angular.module('buaaeatingCtrls', []);
 
 buaaeatingCtrls.controller('reserveParentCtrl', function($scope, Data, Service, $localStorage) {
 	// 本地缓存
+	delete $localStorage.deltimes;
+	
 	$scope.$storage = $localStorage.$default({
 		dishes: Data.dishes,
 		drinks: Data.drinks,
@@ -25,7 +27,6 @@ buaaeatingCtrls.controller('reserveParentCtrl', function($scope, Data, Service, 
 		$scope.welcomeWords = "新用户减2元!"
 	}
 
-	delete $localStorage.deltimes;
 	// JS 获取用户信息
 	//Service.getUserNameFromWeixin()
 
