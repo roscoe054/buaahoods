@@ -139,6 +139,13 @@ ul {
     border-radius: 20px;
     font-size: 12px; }
 
+.ad-link-wrap {
+  background-color: #eee;
+  height: 40px;
+  line-height: 40px; }
+  .ad-link-wrap a {
+    color: #09c; }
+
 .list-wrap {
   text-align: left; }
   .list-wrap li {
