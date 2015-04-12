@@ -41,6 +41,10 @@
 |
  */
 $routeRoot = '';
+$route['default_controller'] = 'welcome';
+$route['404_override'] = '';
+$route['translate_uri_dashes'] = FALSE;
+
 
 // 获取优惠码
 $route['discount/get_discount/(:any)'] = 'discount/get_discount/$1';
