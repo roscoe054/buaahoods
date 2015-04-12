@@ -1,5 +1,6 @@
-<?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+<?php if (!defined('BASEPATH')) {
+	exit('No direct script access allowed');
+}
 
 /*
 | -------------------------------------------------------------------------
@@ -25,7 +26,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | RESERVED ROUTES
 | -------------------------------------------------------------------------
 |
-| There are three reserved routes:
+| There area two reserved routes:
 |
 |	$route['default_controller'] = 'welcome';
 |
@@ -35,20 +36,35 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |
 |	$route['404_override'] = 'errors/page_missing';
 |
-| This route will tell the Router which controller/method to use if those
-| provided in the URL cannot be matched to a valid route.
+| This route will tell the Router what URI segments to use if those provided
+| in the URL cannot be matched to a valid route.
 |
-|	$route['translate_uri_dashes'] = FALSE;
-|
-| This is not exactly a route, but allows you to automatically route
-| controller and method names that contain dashes. '-' isn't a valid
-| class or method name character, so it requires translation.
-| When you set this option to TRUE, it will replace ALL dashes in the
-| controller and method URI segments.
-|
-| Examples:	my-controller/index	-> my_controller/index
-|		my-controller/my-method	-> my_controller/my_method
-*/
+ */
+$routeRoot = '';
+
+// 获取优惠码
+$route['discount/get_discount/(:any)'] = 'discount/get_discount/$1';
+$route['discount/get_discount'] = 'discount/get_discount';
+
+// 查询订单
+$route['order/query_order/(:any)'] = 'order/query_order/$1';
+$route['order/query_order'] = 'order/query_order';
+
+// 提交订单
+$route['order/submit_order/(:any)'] = 'order/submit_order/$1';
+$route['order/submit_order'] = 'order/submit_order';
+
+$route['buaaeating/reserve'] = 'buaaeating/reserve';
+$route['buaaeating/(:any)'] = 'buaaeating/view/$1';
+
+$route['news/json_get_news'] = 'news/json_get_news';
+$route['news/create'] = 'news/create';
+$route['news/(:any)'] = 'news/view/$1';
+$route['news'] = 'news';
+
+$route['(:any)'] = 'buaaeating/reserve';
+$route['404_override'] = 'buaaeating/reserve';
 $route['default_controller'] = 'welcome';
-$route['404_override'] = '';
-$route['translate_uri_dashes'] = FALSE;
+
+/* End of file routes.php */
+/* Location: ./application/config/routes.php */
