@@ -177,7 +177,7 @@ buaaeatingFactorys.factory('Service', function($http, Data, $localStorage) {
 		code += ""
 		if (code.length === 6) {
 			$http({
-				url: "http://" + location.host + '/discount/get_discount',
+				url: "http://" + location.host + '/index.php/discount/get_discount',
 				data: {
 					"code": code
 				},
@@ -250,7 +250,7 @@ buaaeatingFactorys.factory('Service', function($http, Data, $localStorage) {
 
 		// 上传
 		$http({
-			url: "http://" + location.host + '/order/submit_order',
+			url: "http://" + location.host + '/index.php/order/submit_order',
 			data: reqData,
 			method: "POST"
 		}).success(function(ret) {
@@ -339,7 +339,7 @@ buaaeatingFactorys.factory('Service', function($http, Data, $localStorage) {
 	service.getOrderInfo = function(orderId, callback){
 		// 上传
 		$http({
-			url: "http://" + location.host + '/order/query_order',
+			url: "http://" + location.host + '/index.php/order/query_order',
 			params: {
 				orderId:orderId
 			},
