@@ -43,7 +43,6 @@ class Order extends CI_Controller {
 				foreach ($drinksArr as $drink) {
 					$drinkItem = explode("x", $drink);
 					$drinkNum = $drinkItem[1];
-					$drinkNum = 1;
 					$pirceSum += $drinkNum * 3;
 				}
 			}
