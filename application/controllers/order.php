@@ -41,7 +41,8 @@ class Order extends CI_Controller {
 			$drinksArr = explode(", ", $postData['drink']);
 			if ($postData['drink'] != "") {
 				foreach ($drinksArr as $drink) {
-					$drinkNum = explode("x", $drink)[1];
+					// $drinkNum = explode("x", $drink)[1];
+					$drinkNum = 1;
 					$pirceSum += $drinkNum * 3;
 				}
 			}
