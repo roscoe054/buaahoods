@@ -80,7 +80,7 @@ if (_get('code')) {
 	}
 
 } else {
-	echo "<div class='username-wrap'>欢迎你，<span id='userName'class='{$newuser}'>请关注buaaeating后订餐</span></div>";
+	echo "<div class='username-wrap'>欢迎你，<span id='userName'class=''>请关注buaaeating后订餐</span></div>";
 }
 
 function getToken($appID, $appsecret, $code) {
