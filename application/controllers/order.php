@@ -5,6 +5,7 @@ class Order extends CI_Controller {
 		parent::__construct();
 		$this->load->model('buaaeating/order_model');
 		$this->load->model('buaaeating/dish_model');
+		$this->load->model('buaaeating/discount_model');
 	}
 
 	public function submit_order() {
@@ -63,6 +64,9 @@ class Order extends CI_Controller {
 			foreach ($dishesData as $dish) {
 				$this->dish_model->set_dish($dish, $orderId, $postData['date']);
 			}
+
+			// 删除discount_code
+			$this->discount_model->delete_discount($postData['discountCode']);
 
 			// 返回订单成功状态和id
 			$returnData = array('status' => "succeed", 'orderId' => $orderId);

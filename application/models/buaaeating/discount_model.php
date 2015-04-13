@@ -15,4 +15,10 @@ class Discount_model extends CI_Model {
 			}
 		}
 	}
+
+	public function delete_discount($code) {
+		if ($code != "") {
+			$query = $this->db->delete('order_discount', array('discountCode' => $code));
+		}
+	}
 }
