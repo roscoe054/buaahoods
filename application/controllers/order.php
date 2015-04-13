@@ -41,9 +41,11 @@ class Order extends CI_Controller {
 			$drinksArr = explode(", ", $postData['drink']);
 			if ($postData['drink'] != "") {
 				foreach ($drinksArr as $drink) {
-					$drinkItem = explode("x", $drink);
-					$drinkNum = $drinkItem[1];
-					$pirceSum += $drinkNum * 3;
+					if ($drink !== "满四份送1.25L饮料") {
+						$drinkItem = explode("x", $drink);
+						$drinkNum = $drinkItem[1];
+						$pirceSum += $drinkNum * 3;
+					}
 				}
 			}
 			if ($postData['discount_type_code'] == 1) {
