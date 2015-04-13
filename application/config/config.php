@@ -16,7 +16,7 @@
 | path to your installation.
 |
  */
-$config['base_url'] = '';
+$config['base_url'] = 'http://182.92.107.59/';
 
 /*
 |--------------------------------------------------------------------------
@@ -46,7 +46,7 @@ $config['index_page'] = '';
 | 'ORIG_PATH_INFO'	Uses the ORIG_PATH_INFO
 |
  */
-$config['uri_protocol'] = 'PATH_INFO';
+$config['uri_protocol'] = 'REQUEST_URI';
 
 /*
 |--------------------------------------------------------------------------
