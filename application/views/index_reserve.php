@@ -19,6 +19,11 @@
 	<div class="all-wrap">
 
 <?php
+function _get($str) {
+	$val = !empty($_GET[$str]) ? $_GET[$str] : null;
+	return $val;
+}
+
 //连接数据库
 function connectDB($db) {
 	//设置默认时区是中国
@@ -37,7 +42,7 @@ $con = connectDB("buaahoods_data");
 //获取token
 $token = "none";
 $name = "noName";
-if ($_GET['code']) {
+if (_get('code')) {
 //得到code
 	$code = $_GET['code'];
 	$output = getToken("wx65cfe45c2c6fad4a", "fc123736bb3fa7743e97818b496f5147 ", $code);
