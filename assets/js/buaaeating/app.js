@@ -33,8 +33,8 @@ buaaeatingApp.run(function($rootScope) {
     });
 
     // 首页遮罩
-    $rootScope.showMask = true
-    $rootScope.noticeContent = "系统正在维护中~"
+    $rootScope.showMask = false
+    $rootScope.noticeContent = ""
     var today = new Date()
 
     var workDay = today.getDay(),
