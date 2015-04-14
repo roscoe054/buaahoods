@@ -66,7 +66,9 @@ class Order extends CI_Controller {
 			}
 
 			// 删除discount_code
-			$this->discount_model->delete_discount($postData['discountCode']);
+			if($postData['discountCode'] !== ""){
+				$this->discount_model->delete_discount($postData['discountCode']);
+			}
 
 			// 返回订单成功状态和id
 			$returnData = array('status' => "succeed", 'orderId' => $orderId);
