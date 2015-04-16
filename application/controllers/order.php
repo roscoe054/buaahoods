@@ -57,17 +57,17 @@ class Order extends CI_Controller {
 			}
 			$postData['price'] = $pirceSum;
 
+			// 删除discount_code
+			if($postData['discountCode'] !== ""){
+				$this->discount_model->delete_discount($postData['discountCode']);
+			}
+
 			// insert order & get orderId
 			$orderId = $this->order_model->set_order($postData);
 
 			// insert dish
 			foreach ($dishesData as $dish) {
 				$this->dish_model->set_dish($dish, $orderId, $postData['date']);
-			}
-
-			// 删除discount_code
-			if($postData['discountCode'] !== ""){
-				$this->discount_model->delete_discount($postData['discountCode']);
 			}
 
 			// 返回订单成功状态和id
