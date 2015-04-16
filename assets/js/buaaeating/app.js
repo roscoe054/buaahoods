@@ -45,10 +45,10 @@ buaaeatingApp.run(function($rootScope) {
        $rootScope.showMask = true
        $rootScope.noticeContent = "周末休息啦~"
     }
-    if(hour > 21 || (hour === 21 && minute > 30)){
-       $rootScope.showMask = true
-       $rootScope.noticeContent = "太晚了，明天再来~"
-    }
+    //if(hour > 21 || (hour === 21 && minute > 30)){
+    //   $rootScope.showMask = true
+    //   $rootScope.noticeContent = "太晚了，明天再来~"
+    //}
 })
 
 buaaeatingApp.config(function($httpProvider) {
