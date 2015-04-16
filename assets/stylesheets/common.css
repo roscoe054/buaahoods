@@ -90,7 +90,8 @@ ul {
 .username-wrap {
   background-color: #444;
   color: #fff;
-  padding: 2px 5px; }
+  padding: 3px 5px;
+  text-align: center; }
 
 .drink-wrap {
   font-size: 12px; }
