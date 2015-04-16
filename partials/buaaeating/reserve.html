@@ -75,7 +75,7 @@
     </div>
     <div class="info-item">
       <span class="label">优惠码</span>
-      <input class="info-input" type="text" ng-model="$storage.orderInfo['discountCode']" ng-keyup="varifyDiscountCode()">
+      <input class="info-input" type="text" ng-model="$storage.orderInfo['discountCode']" ng-change="varifyDiscountCode()">
     </div>
     <div class="info-item">
       <span class="label">起送时间</span>
