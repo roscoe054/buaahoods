@@ -17,6 +17,7 @@
 </head>
 
 <?php
+error_reporting(E_ALL ^ E_NOTICE);
 function _get($str) {
 	$val = !empty($_GET[$str]) ? $_GET[$str] : null;
 	return $val;
