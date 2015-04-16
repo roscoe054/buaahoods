@@ -7,7 +7,6 @@
   <link rel="stylesheet" type="text/css" href="<?php echo asset_url();?>stylesheets/common.css" />
   <link rel="stylesheet" type="text/css" href="<?php echo asset_url();?>stylesheets/lib/ionicons.css" />
   <script src="<?php echo asset_url();?>js/framework/angular.min.js"></script>
-  <script src="<?php echo asset_url();?>js/framework/angular-touch.min.js"></script>
   <script src="<?php echo asset_url();?>js/framework/angular-route.min.js"></script>
   <script src="<?php echo asset_url();?>js/framework/ngStorage.js"></script>
   <script src="<?php echo asset_url();?>js/buaaeating/app.js"></script>
