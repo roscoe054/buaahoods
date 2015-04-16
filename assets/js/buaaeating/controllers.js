@@ -107,6 +107,8 @@ buaaeatingCtrls.controller('ReserveCtrl', function($scope, Data, Service, $local
 
 	// code改变时检测
 	$scope.varifyDiscountCode = function(){
+		alert("test")
+
 		Service.varifyDiscountCode($scope.$storage.orderInfo.discountCode, function(){
 			// 重新计算总价
 			$scope.priceSum = Service.calculateSum()
