@@ -30,6 +30,45 @@ class Order extends CI_Controller {
 			$postData['status'] = 0;
 			$dishesData = $postData['orderItems'];
 
+			// 验证时间
+			switch ($postData['delTime'])
+            {
+            case "11:20":
+            	$endDate = date('11:00');
+            	if(strtotime($endDate) < strtotime($postData['date'])){
+					$returnData = array('status' => 'error', 'errMsg' => "该送餐时间已过，请重新选择" + $endDate);
+					echo json_encode($returnData);
+					return;
+                }
+				break;
+            case "12:00":
+				$endDate = date('11:30');
+				if(strtotime($endDate) < strtotime($postData['date'])){
+					$returnData = array('status' => 'error', 'errMsg' => "该送餐时间已过，请重新选择" + $endDate);
+					echo json_encode($returnData);
+					return;
+				}
+              	break;
+			case "17:30":
+				$endDate = date('17:00');
+				if(strtotime($endDate) < strtotime($postData['date'])){
+					$returnData = array('status' => 'error', 'errMsg' => "该送餐时间已过，请重新选择" + $endDate);
+					echo json_encode($returnData);
+					return;
+				}
+				break;
+			case "21:50":
+				$endDate = date('21:30');
+				if(strtotime($endDate) < strtotime($postData['date'])){
+					$returnData = array('status' => 'error', 'errMsg' => "该送餐时间已过，请重新选择" + $endDate);
+					echo json_encode($returnData);
+					return;
+				}
+				break;
+            default:
+				break;
+            }
+
 			// 计算总价
 			$pirceSum = "";
 			foreach ($dishesData as $dish) {

@@ -136,7 +136,11 @@ buaaeatingCtrls.controller('orderConfirmCtrl', function($scope, Service, $localS
 				if(ret.status === "succeed"){
 					window.location.href = "#/order_succeed/" + ret.orderId
 				}else{
-					alert("不好意思，服务器出了点小问题，请稍后再试")
+					if(typeof ret.errMsg !== "undefined"){
+						alert(ret.errMsg)
+					}else{
+						alert("不好意思，服务器出了点小问题，请稍后再试")
+					}
 				}
 				$scope.maskVisible = false
 			})
