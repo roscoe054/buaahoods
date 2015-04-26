@@ -36,12 +36,14 @@ buaaeatingFactorys.factory('Data', function() {
 
 	return {
 		dishes: [
-			DishType.createNew("101", "红烧猪排盖饭", "15", "猪排+青菜+鸡蛋饼", "/assets/images/hongshaopaigu.jpg"),
-			DishType.createNew("102", "香菇鸡丁盖饭", "15", "鸡块+香菇+鸡蛋饼", "/assets/images/xianggujiding.jpg"),
-			DishType.createNew("103", "酱香排骨盖饭", "15", "排骨+土豆+鸡蛋饼", "/assets/images/jiangxiangpaigu.jpg"),
-			DishType.createNew("104", "蒜苔炒肉盖饭", "13", "猪肉+蒜苔+鸡蛋饼", "/assets/images/suantaichaorou.jpg"),
-			DishType.createNew("105", "香干炒肉盖饭", "13", "猪肉+香干+鸡蛋饼", "/assets/images/xiangganchaorou.jpg"),
-			DishType.createNew("106", "土豆丝炒肉盖饭", "13", "猪肉+土豆丝+鸡蛋饼", "/assets/images/tudousi.jpg")
+			DishType.createNew("101", "红烧猪排盖饭", "15", "猪排+青菜+鸡蛋饼", "/assets/images/hongshaopaigu0426.jpg"),
+			DishType.createNew("102", "香菇鸡丁盖饭", "15", "鸡块+香菇+鸡蛋饼", "/assets/images/xianggujiding0426.jpg"),
+			DishType.createNew("103", "酱香排骨盖饭", "15", "排骨+土豆+鸡蛋饼", "/assets/images/jiangxiangpaigu0426.jpg"),
+			DishType.createNew("104", "蒜苔炒肉盖饭", "13", "猪肉+蒜苔+鸡蛋饼", "/assets/images/suantaichaorou0426.jpg"),
+			DishType.createNew("105", "香干炒肉盖饭", "13", "猪肉+香干+鸡蛋饼", "/assets/images/xiangganchaorou0426.jpg"),
+			DishType.createNew("106", "土豆丝炒肉盖饭", "13", "猪肉+土豆丝+鸡蛋饼", "/assets/images/tudousi0426.jpg"),
+			DishType.createNew("100", "回锅肉盖饭", "15", "五花肉+蒜苗+鸡蛋饼", "/assets/images/huiguorou0426.jpg"),
+			DishType.createNew("107", "肉末茄子盖饭", "13", "肉末+茄子+鸡蛋饼", "/assets/images/hongshaoqiezi0426.jpg")
 		],
 		drinks: [
 			DrinkType.createNew("可乐"),
