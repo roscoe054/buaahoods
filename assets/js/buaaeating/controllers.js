@@ -3,7 +3,9 @@ var buaaeatingCtrls = angular.module('buaaeatingCtrls', []);
 buaaeatingCtrls.controller('reserveParentCtrl', function($scope, Data, Service, $localStorage) {
 	// 本地缓存
 	delete $localStorage.deltimes;
-	
+	delete $localStorage.dishes;
+	delete $localStorage.drinks;
+
 	$scope.$storage = $localStorage.$default({
 		dishes: Data.dishes,
 		drinks: Data.drinks,
