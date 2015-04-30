@@ -33,8 +33,8 @@ buaaeatingApp.run(function($rootScope) {
     });
 
     // 首页遮罩
-    $rootScope.showMask = false
-    $rootScope.noticeContent = ""
+    $rootScope.showMask = true
+    $rootScope.noticeContent = "五一放假啦~"
     var today = new Date()
 
     var workDay = today.getDay(),
