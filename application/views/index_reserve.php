@@ -10,7 +10,7 @@
   <script src="<?php echo asset_url();?>js/framework/angular-touch.min.js"></script>
   <script src="<?php echo asset_url();?>js/framework/angular-route.min.js"></script>
   <script src="<?php echo asset_url();?>js/framework/ngStorage.js"></script>
-  <script src="<?php echo asset_url();?>js/buaaeating/app0501.js"></script>
+  <script src="<?php echo asset_url();?>js/buaaeating/app0503.js"></script>
   <script src="<?php echo asset_url();?>js/buaaeating/controllers.js"></script>
   <script src="<?php echo asset_url();?>js/buaaeating/filters.js"></script>
   <script src="<?php echo asset_url();?>js/buaaeating/factorys.js"></script>
@@ -127,8 +127,6 @@ function getID($token, $openid) {
 
 <body ng-controller="reserveParentCtrl">
 	<div class="all-wrap">
-
-
 		<div class="header">
 		    <span class="icon-title">航</span>
 		    学长外卖 - {{title}}
