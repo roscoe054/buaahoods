@@ -51,7 +51,7 @@ buaaeatingFactorys.factory('Data', function() {
 			DrinkType.createNew("冰红茶"),
 			DrinkType.createNew("冰绿茶"),
 			DrinkType.createNew("冰糖雪梨"),
-			DrinkType.createNew("酸枣汁")
+			DrinkType.createNew("酸梅汁")
 		],
 		deltimes: [
 		{
