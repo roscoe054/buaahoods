@@ -453,7 +453,7 @@ ul{list-style: none;}
   bottom: 0;
   left: 0;
   right: 0;
-  background-color: rgba(0, 0, 0, 0.7);
+//  background-color: rgba(0, 0, 0, 0.7);
 
   .notice{
     position: absolute;
@@ -465,5 +465,6 @@ ul{list-style: none;}
     background-color: $color-orange;
     border-radius: 5px;
     color: #fff;
+    opacity: 0.8;
   }
 }
