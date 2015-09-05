@@ -11,6 +11,7 @@
   <script src="<?php echo asset_url();?>js/framework/angular-route.min.js"></script>
   <script src="<?php echo asset_url();?>js/framework/ngStorage.js"></script>
   <script src="<?php echo asset_url();?>js/buaaeating/app0503.js"></script>
+  <script src="<?php echo asset_url();?>js/buaaeating/app0905.js"></script>
   <script src="<?php echo asset_url();?>js/buaaeating/controllers.js"></script>
   <script src="<?php echo asset_url();?>js/buaaeating/filters.js"></script>
   <script src="<?php echo asset_url();?>js/buaaeating/factorys.js"></script>
