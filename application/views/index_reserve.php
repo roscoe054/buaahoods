@@ -4,14 +4,13 @@
 <meta charset="UTF-8">
   <meta name="viewport" content="target-densitydpi=get-target-densitydpi, width=device-width, user-scalable=no" />
   <title><?php echo $title?> - 航学长与航学姐</title>
-  <link rel="stylesheet" type="text/css" href="<?php echo asset_url();?>stylesheets/common.css" />
+  <link rel="stylesheet" type="text/css" href="<?php echo asset_url();?>stylesheets/common_0905.css" />
   <link rel="stylesheet" type="text/css" href="<?php echo asset_url();?>stylesheets/lib/ionicons.css" />
   <script src="<?php echo asset_url();?>js/framework/angular.min.js"></script>
   <script src="<?php echo asset_url();?>js/framework/angular-touch.min.js"></script>
   <script src="<?php echo asset_url();?>js/framework/angular-route.min.js"></script>
   <script src="<?php echo asset_url();?>js/framework/ngStorage.js"></script>
-  <script src="<?php echo asset_url();?>js/buaaeating/app0503.js"></script>
-  <script src="<?php echo asset_url();?>js/buaaeating/app0905.js"></script>
+  <script src="<?php echo asset_url();?>js/buaaeating/app0905_2.js"></script>
   <script src="<?php echo asset_url();?>js/buaaeating/controllers.js"></script>
   <script src="<?php echo asset_url();?>js/buaaeating/filters.js"></script>
   <script src="<?php echo asset_url();?>js/buaaeating/factorys.js"></script>
@@ -136,7 +135,7 @@ function getID($token, $openid) {
     <div ng-view>
     </div>
 
-    <div class="notice-wrap" ng-show="showMask">
+    <div class="notice-wrap" ng-show="showMask" ng-click="hideMask()">
       <div class="notice">
         {{noticeContent}}
       </div>

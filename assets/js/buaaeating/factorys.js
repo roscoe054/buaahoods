@@ -89,7 +89,7 @@ buaaeatingFactorys.factory('Data', function() {
 	}
 })
 
-buaaeatingFactorys.factory('Service', function($http, Data, $localStorage) {
+buaaeatingFactorys.factory('Service', function($http, Data, $localStorage, $rootScope) {
 	var service = {}
 
 	service.getUserNameFromWeixin = function(){
@@ -354,6 +354,12 @@ buaaeatingFactorys.factory('Service', function($http, Data, $localStorage) {
 				alert("不好意思，服务器出了点小问题，请稍后再试")
 			}
 		})
+	}
+
+	// 弹窗提示
+	service.openDialog = function(msg){
+		$rootScope.showMask = true
+		$rootScope.noticeContent = msg
 	}
 
 	return service

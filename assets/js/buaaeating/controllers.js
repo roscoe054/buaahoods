@@ -1,6 +1,6 @@
 var buaaeatingCtrls = angular.module('buaaeatingCtrls', []);
 
-buaaeatingCtrls.controller('reserveParentCtrl', function($scope, Data, Service, $localStorage) {
+buaaeatingCtrls.controller('reserveParentCtrl', function($scope, Data, Service, $localStorage, $rootScope) {
 	// 本地缓存
 	delete $localStorage.deltimes;
 	delete $localStorage.dishes;
@@ -29,6 +29,11 @@ buaaeatingCtrls.controller('reserveParentCtrl', function($scope, Data, Service, 
 		$scope.welcomeWords = "新用户减2元!"
 	}
 
+	$scope.hideMask = function(){
+		$rootScope.showMask = false
+		$rootScope.noticeContent = ""
+	}
+
 	// JS 获取用户信息
 	//Service.getUserNameFromWeixin()
 
@@ -52,6 +57,9 @@ buaaeatingCtrls.controller('ReserveCtrl', function($scope, Data, Service, $local
 
 	// 预订下拉
 	$scope.reserveItem = function(dish){
+		Service.openDialog("本学期9月21号（周一）开业哦，感谢你选择航学长外卖~")
+		return
+
 		var opeVisible = dish.temp.opeVisible
 		dish.temp.opeVisible = !opeVisible
 	}
@@ -75,6 +83,9 @@ buaaeatingCtrls.controller('ReserveCtrl', function($scope, Data, Service, $local
 		$scope.priceSum = Service.calculateSum()
 	}
 	$scope.addDrinkCount = function(drink) {
+		Service.openDialog("本学期9月21号（周一）开业哦，感谢你选择航学长外卖~")
+		return
+
 		drink.count += 1
 
 		// 重新计算总价
@@ -91,6 +102,9 @@ buaaeatingCtrls.controller('ReserveCtrl', function($scope, Data, Service, $local
 
 	// 转到确认订单页
 	$scope.confirmOrder = function() {
+		Service.openDialog("本学期9月21号（周一）开业哦，感谢你选择航学长外卖~")
+		return
+
 		var timeValid,orderInfoComplete
 
 		Data.orderInfo.price = $scope.priceSum
@@ -117,6 +131,10 @@ buaaeatingCtrls.controller('ReserveCtrl', function($scope, Data, Service, $local
 
 	$scope.updateTime = function(){
 		$localStorage.orderInfo.delTime = $scope.delTime
+	}
+
+	$scope.preventEdit = function(){
+		Service.openDialog("本学期9月21号（周一）开业哦，感谢你选择航学长外卖~")
 	}
 });
 

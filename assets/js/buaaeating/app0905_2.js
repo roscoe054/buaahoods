@@ -33,7 +33,7 @@ buaaeatingApp.run(function($rootScope) {
     });
 
     // 首页遮罩
-    $rootScope.showMask = true
+    $rootScope.showMask = false
     $rootScope.noticeContent = "开学准备中~"
     var today = new Date()
 
