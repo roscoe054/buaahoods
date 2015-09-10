@@ -19,11 +19,12 @@
   var _hmt = _hmt || [];
   (function() {
     var hm = document.createElement("script");
-    hm.src = "//hm.baidu.com/hm.js?b0f5fcce66f1cf7a7d85646b52af3ecc";
+    hm.src = "//hm.baidu.com/hm.js?8f420fd781890df4ddffed2ba8840648";
     var s = document.getElementsByTagName("script")[0];
     s.parentNode.insertBefore(hm, s);
   })();
   </script>
+
 </head>
 
 <?php
