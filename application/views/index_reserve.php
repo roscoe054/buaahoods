@@ -14,6 +14,16 @@
   <script src="<?php echo asset_url();?>js/buaaeating/controllers.js"></script>
   <script src="<?php echo asset_url();?>js/buaaeating/filters.js"></script>
   <script src="<?php echo asset_url();?>js/buaaeating/factorys.js"></script>
+
+  <script>
+  var _hmt = _hmt || [];
+  (function() {
+    var hm = document.createElement("script");
+    hm.src = "//hm.baidu.com/hm.js?b0f5fcce66f1cf7a7d85646b52af3ecc";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+  })();
+  </script>
 </head>
 
 <?php
