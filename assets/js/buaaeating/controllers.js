@@ -57,7 +57,7 @@ buaaeatingCtrls.controller('ReserveCtrl', function($scope, Data, Service, $local
 
 	// 预订下拉
 	$scope.reserveItem = function(dish){
-		Service.openDialog("本学期9月21号（周一）开业哦，感谢你选择航学长外卖~")
+		Service.openDialog("非常抱歉，由于后台人员调动，营业时间延后到国庆之后")
 		return
 
 		var opeVisible = dish.temp.opeVisible
@@ -83,7 +83,7 @@ buaaeatingCtrls.controller('ReserveCtrl', function($scope, Data, Service, $local
 		$scope.priceSum = Service.calculateSum()
 	}
 	$scope.addDrinkCount = function(drink) {
-		Service.openDialog("本学期9月21号（周一）开业哦，感谢你选择航学长外卖~")
+		Service.openDialog("非常抱歉，由于后台人员调动，营业时间延后到国庆之后")
 		return
 
 		drink.count += 1
@@ -102,7 +102,7 @@ buaaeatingCtrls.controller('ReserveCtrl', function($scope, Data, Service, $local
 
 	// 转到确认订单页
 	$scope.confirmOrder = function() {
-		Service.openDialog("本学期9月21号（周一）开业哦，感谢你选择航学长外卖~")
+		Service.openDialog("非常抱歉，由于后台人员调动，营业时间延后到国庆之后")
 		return
 
 		var timeValid,orderInfoComplete
@@ -134,7 +134,7 @@ buaaeatingCtrls.controller('ReserveCtrl', function($scope, Data, Service, $local
 	}
 
 	$scope.preventEdit = function(){
-		Service.openDialog("本学期9月21号（周一）开业哦，感谢你选择航学长外卖~")
+		Service.openDialog("非常抱歉，由于后台人员调动，营业时间延后到国庆之后")
 	}
 });
 

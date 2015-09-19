@@ -143,7 +143,10 @@ ul {
 .ad-link-wrap {
   background-color: #eee;
   height: 40px;
-  line-height: 40px; }
+  line-height: 40px;
+  font-size: 15px;
+  background-color: #F8801C;
+  color: #fff; }
   .ad-link-wrap a {
     color: #09c; }
 
@@ -440,5 +443,3 @@ ul {
     border-radius: 5px;
     color: #fff;
     opacity: 0.8; }
-
-/*# sourceMappingURL=common_0905.css.map */
