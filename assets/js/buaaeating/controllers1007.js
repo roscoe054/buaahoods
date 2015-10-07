@@ -57,9 +57,6 @@ buaaeatingCtrls.controller('ReserveCtrl', function($scope, Data, Service, $local
 
 	// 预订下拉
 	$scope.reserveItem = function(dish){
-		Service.openDialog("非常抱歉，由于后台人员调动，营业时间延后到国庆之后")
-		return
-
 		var opeVisible = dish.temp.opeVisible
 		dish.temp.opeVisible = !opeVisible
 	}
@@ -83,9 +80,6 @@ buaaeatingCtrls.controller('ReserveCtrl', function($scope, Data, Service, $local
 		$scope.priceSum = Service.calculateSum()
 	}
 	$scope.addDrinkCount = function(drink) {
-		Service.openDialog("非常抱歉，由于后台人员调动，营业时间延后到国庆之后")
-		return
-
 		drink.count += 1
 
 		// 重新计算总价
@@ -102,9 +96,6 @@ buaaeatingCtrls.controller('ReserveCtrl', function($scope, Data, Service, $local
 
 	// 转到确认订单页
 	$scope.confirmOrder = function() {
-		Service.openDialog("非常抱歉，由于后台人员调动，营业时间延后到国庆之后")
-		return
-
 		var timeValid,orderInfoComplete
 
 		Data.orderInfo.price = $scope.priceSum
@@ -134,7 +125,6 @@ buaaeatingCtrls.controller('ReserveCtrl', function($scope, Data, Service, $local
 	}
 
 	$scope.preventEdit = function(){
-		Service.openDialog("非常抱歉，由于后台人员调动，营业时间延后到国庆之后")
 	}
 });
 
