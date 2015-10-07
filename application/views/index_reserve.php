@@ -9,6 +9,7 @@
   <title><?php echo $title?> - 航学长与航学姐</title>
   <link rel="stylesheet" type="text/css" href="<?php echo asset_url();?>stylesheets/common_0919.css" />
   <link rel="stylesheet" type="text/css" href="<?php echo asset_url();?>stylesheets/lib/ionicons.css" />
+  <link rel="stylesheet" type="text/css" href="<?php echo asset_url();?>stylesheets/common_1007.css" />
   <script src="<?php echo asset_url();?>js/framework/angular.min.js"></script>
   <script src="<?php echo asset_url();?>js/framework/angular-touch.min.js"></script>
   <script src="<?php echo asset_url();?>js/framework/angular-route.min.js"></script>
