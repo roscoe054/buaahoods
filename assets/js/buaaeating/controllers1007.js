@@ -124,8 +124,6 @@ buaaeatingCtrls.controller('ReserveCtrl', function($scope, Data, Service, $local
 		$localStorage.orderInfo.delTime = $scope.delTime
 	}
 
-	$scope.preventEdit = function(){
-	}
 });
 
 // 确认订单页
