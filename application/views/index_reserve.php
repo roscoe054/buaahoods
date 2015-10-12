@@ -11,13 +11,6 @@
   <link rel="stylesheet" type="text/css" href="<?php echo asset_url();?>stylesheets/lib/ionicons.css" />
   <link rel="stylesheet" type="text/css" href="<?php echo asset_url();?>stylesheets/common_1012.css" />
 
-  <script type="text/javascript">
-      var QReportParam = {
-          bu: "roscoe",
-          pd: "waimai"
-      }
-  </script>
-  <script type="text/javascript" src="http://qreport.qunar.com/client/js/qr.min.js"></script>
 
   <script src="<?php echo asset_url();?>js/framework/angular.min.js"></script>
   <script src="<?php echo asset_url();?>js/framework/angular-touch.min.js"></script>
