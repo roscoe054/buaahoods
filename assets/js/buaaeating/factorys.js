@@ -266,8 +266,7 @@ buaaeatingFactorys.factory('Service', function($http, Data, $localStorage, $root
 			warnings = {
 				buildingNum: "请填写公寓号~",
 				roomNum: "请填写宿舍号~",
-				phoneNum: "请填写手机号~",
-				delTime: "请选择起送时间~"
+				phoneNum: "请填写手机号~"
 			},
 			alertWarning = ""
 
@@ -284,8 +283,9 @@ buaaeatingFactorys.factory('Service', function($http, Data, $localStorage, $root
 		}
 
 		// 验证数据完整性
-		angular.forEach($localStorage.orderInfo, function(item, index) {
-			if((item === null || item === "") && index !== "discountCode"){
+		angular.forEach(warnings, function(item, index) {
+			var item = $localStorage.userInfo[index]
+			if(!item){
 				alertWarning += warnings[index] + "\n"
 				orderInfoComplete = false
 			}
