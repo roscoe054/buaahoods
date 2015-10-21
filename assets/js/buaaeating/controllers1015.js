@@ -108,6 +108,15 @@ buaaeatingCtrls.controller('ReserveCtrl', function($scope, Data, Service, $local
 		});
 
 		if(timeValid && orderInfoComplete){
+			// qreport统计
+			QReport.cl({
+				qrmodule: "header",// 模块
+				qrtag: "start",// 标签
+				qrtitle: "确认订单", // title
+				qrlink: "/confirm", // link
+				qrtagname: "a" // 标签tagName
+			})
+
 			location.href = "#/order_confirm"
 		}
 	}

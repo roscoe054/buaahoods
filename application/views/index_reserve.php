@@ -21,6 +21,18 @@
   <script src="<?php echo asset_url();?>js/buaaeating/filters.js"></script>
   <script src="<?php echo asset_url();?>js/buaaeating/factorys.js"></script>
 
+  <script type="text/javascript">
+      var QReportParam = {
+		bu: "other",
+		pd: "waimai_test"
+	  }
+      // 可选配置，一些比较少用到的配置
+      var QReport = {
+          clickEvent: "tap"
+      }
+  </script>
+  <script type="text/javascript" src="http://qreport.qunar.com/client/js/qr.min.js"></script>
+
 </head>
 
 <?php
