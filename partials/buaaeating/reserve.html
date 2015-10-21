@@ -1,13 +1,13 @@
 <div class="ad-link-wrap">
     餐饮提供：北航沙河校区东门外 重庆鸡公煲
 </div>
-<div class="list-wrap" name="order">
+<div class="list-wrap" name="order" qrmodule="header">
   <div>
     <ul class="list">
       <li ng-repeat="dish in $storage.dishes">
-        <div class="main-wrap">
+        <div class="main-wrap" qrtag="enter">
           <img class="dish-img" ng-src="{{dish.img}}">
-          <a href="javascript:void(0);" class="button-reserve" ng-click="reserveItem(dish)">
+          <a stp="1" href="javascript:void(0);" class="button-reserve" ng-click="reserveItem(dish)">
             预订
             <i class="icon ion-chevron-down" ng-show="!dish.temp.opeVisible"></i>
             <i class="icon ion-chevron-up" ng-show="dish.temp.opeVisible"></i>

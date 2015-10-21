@@ -28,7 +28,8 @@
 	  }
       // 可选配置，一些比较少用到的配置
       var QReport = {
-          clickEvent: "tap"
+          clickEvent: "tap",
+		 attrs:["stp"]
       }
   </script>
   <script type="text/javascript" src="http://qreport.qunar.com/client/js/qr.min.js"></script>
