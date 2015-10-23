@@ -109,11 +109,11 @@ buaaeatingCtrls.controller('ReserveCtrl', function($scope, Data, Service, $local
 
 		if(timeValid && orderInfoComplete){
 			// qreport统计
-			QReport.cl({
-				qrmodule: "form",// 模块
-				qrtag: "enter",// 标签
-				stp: "1"
-			})
+			//QReport.cl({
+			//	qrmodule: "form",// 模块
+			//	qrtag: "enter",// 标签
+			//	stp: "1"
+			//})
 
 			location.href = "#/order_confirm"
 		}
@@ -144,11 +144,11 @@ buaaeatingCtrls.controller('orderConfirmCtrl', function($scope, Service, $localS
 
 	$scope.submitOrder = function(){
 		// qreport统计
-		QReport.cl({
-			qrmodule: "form",// 模块
-			qrtag: "others",// 标签
-			stp: "2"
-		})
+		//QReport.cl({
+		//	qrmodule: "form",// 模块
+		//	qrtag: "others",// 标签
+		//	stp: "2"
+		//})
 
 		$scope.maskVisible = true
 
@@ -184,11 +184,11 @@ buaaeatingCtrls.controller('orderConfirmCtrl', function($scope, Service, $localS
 buaaeatingCtrls.controller('orderSucceedCtrl', function($scope, $localStorage, $routeParams, Service) {
 
 	// qreport统计
-	QReport.cl({
-		qrmodule: "form",// 模块
-		qrtag: "end",// 标签
-		stp: "3"
-	})
+	//QReport.cl({
+	//	qrmodule: "form",// 模块
+	//	qrtag: "end",// 标签
+	//	stp: "3"
+	//})
 
 	// 获取订单信息
 	$scope.showDrinks = false
