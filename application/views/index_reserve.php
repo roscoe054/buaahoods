@@ -18,8 +18,8 @@
   <script src="<?php echo asset_url();?>js/framework/ngStorage.js"></script>
   <script src="<?php echo asset_url();?>js/buaaeating/app1007.js"></script>
   <script src="<?php echo asset_url();?>js/buaaeating/controllers1023.js"></script>
-  <script src="<?php echo asset_url();?>js/buaaeating/filters1025.js"></script>
-  <script src="<?php echo asset_url();?>js/buaaeating/factorys.js"></script>
+  <script src="<?php echo asset_url();?>js/buaaeating/filters.js"></script>
+  <script src="<?php echo asset_url();?>js/buaaeating/factorys1025.js"></script>
 
   <script type="text/javascript">
       var QReportParam = {
