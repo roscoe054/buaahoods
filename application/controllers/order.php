@@ -72,7 +72,11 @@ class Order extends CI_Controller {
 			// 计算总价
 			$pirceSum = "";
 			foreach ($dishesData as $dish) {
-				if ($dish['dishId'] <= 103) {
+				if ($dish['dishId'] == 108){
+					$pirceSum += 16 * $dish['count'];
+				} else if ($dish['dishId'] == 109){
+					$pirceSum += 10 * $dish['count'];
+				} else if ($dish['dishId'] <= 103) {
 					$pirceSum += 15 * $dish['count'];
 				} else {
 					$pirceSum += 13 * $dish['count'];
