@@ -167,14 +167,43 @@ buaaeatingFactorys.factory('Service', function($http, Data, $localStorage, $root
 
 			if (deadlineDate < nowDate) {
 				if (testIfOverdue) {
-					alert("不好意思，页面放太久失效了，请刷新一下吧~")
+					alert("不好意思，该订餐时间已过，请选择其它时间~")
 				}
 				deltime.valid = false
 			} else {
 				validDelTimes.push(deltime)
 			}
 		}
+
 		return validDelTimes
+	}
+
+	service.varifyConfirmTime = function(deltimes) {
+		var validDelTimes = []
+
+		for (var i in deltimes) {
+			var deltime = deltimes[i],
+				deadline = deltime.reserveDeadline,
+				nowDate = new Date(),
+				deadlineDate = new Date()
+
+			deadlineDate.setHours(parseInt(deadline.slice(0, 2)))
+			deadlineDate.setMinutes(parseInt(deadline.slice(3, 5)))
+
+			if (deadlineDate < nowDate) {
+				alert("不好意思，该订餐时间已过，请选择其它时间~")
+				return false
+			} else {
+				validDelTimes.push(deltime)
+			}
+		}
+
+		if (validDelTimes.length === 0) {
+			alert("不好意思，订餐时间已过~")
+			return false
+		}
+
+		return true
 	}
 
 	service.varifyDiscountCode = function(code, callback) {

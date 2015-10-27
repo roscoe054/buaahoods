@@ -99,7 +99,7 @@ buaaeatingCtrls.controller('ReserveCtrl', function($scope, Data, Service, $local
 		var timeValid,orderInfoComplete
 
 		Data.orderInfo.price = $scope.priceSum
-		timeValid = Service.varifyDeltimes($scope.validDelTimes, true),
+		timeValid = Service.varifyDeltimes($scope.validDelTimes, true)
 		orderInfoComplete = Service.checkOrderInfo()
 
 		// 记录是由订餐页跳过去的
@@ -149,24 +149,27 @@ buaaeatingCtrls.controller('orderConfirmCtrl', function($scope, Service, $localS
 		//	qrtag: "others",// 标签
 		//	stp: "2"
 		//})
+		var timeValid = Service.varifyConfirmTime($scope.validDelTimes, true)
 
-		$scope.maskVisible = true
+		if(timeValid){
+			$scope.maskVisible = true
 
-		// 最小加载延迟，防止加载框闪屏
-		setTimeout(function(){
-			Service.submitOrder(function(ret){
-				if(ret.status === "succeed"){
-					window.location.href = "#/order_succeed/" + ret.orderId
-				}else{
-					if(typeof ret.errMsg !== "undefined"){
-						alert(ret.errMsg)
+			// 最小加载延迟，防止加载框闪屏
+			setTimeout(function(){
+				Service.submitOrder(function(ret){
+					if(ret.status === "succeed"){
+						window.location.href = "#/order_succeed/" + ret.orderId
 					}else{
-						alert("不好意思，服务器出了点小问题，请稍后再试")
+						if(typeof ret.errMsg !== "undefined"){
+							alert(ret.errMsg)
+						}else{
+							alert("不好意思，服务器出了点小问题，请稍后再试")
+						}
 					}
-				}
-				$scope.maskVisible = false
-			})
-		},300)
+					$scope.maskVisible = false
+				})
+			},300)
+		}
 	}
 
 	//drink num
