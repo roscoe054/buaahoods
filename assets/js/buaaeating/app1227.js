@@ -33,8 +33,8 @@ buaaeatingApp.run(function($rootScope) {
     });
 
     // 首页遮罩
-    $rootScope.showMask = false
-    $rootScope.noticeContent = ""
+    $rootScope.showMask = true
+    $rootScope.noticeContent = "本学期营业结束啦，祝大家考期顺利！"
     var today = new Date()
 
     var workDay = today.getDay(),

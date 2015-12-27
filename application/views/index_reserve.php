@@ -16,7 +16,7 @@
   <script src="<?php echo asset_url();?>js/framework/angular-touch.min.js"></script>
   <script src="<?php echo asset_url();?>js/framework/angular-route.min.js"></script>
   <script src="<?php echo asset_url();?>js/framework/ngStorage.js"></script>
-  <script src="<?php echo asset_url();?>js/buaaeating/app1007.js"></script>
+  <script src="<?php echo asset_url();?>js/buaaeating/app1227.js"></script>
   <script src="<?php echo asset_url();?>js/buaaeating/controllers1028.js"></script>
   <script src="<?php echo asset_url();?>js/buaaeating/filters.js"></script>
   <script src="<?php echo asset_url();?>js/buaaeating/factorys1027.js"></script>
