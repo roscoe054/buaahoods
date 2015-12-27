@@ -35,20 +35,20 @@ buaaeatingApp.run(function($rootScope) {
     // 首页遮罩
     $rootScope.showMask = true
     $rootScope.noticeContent = "本学期营业结束啦，祝大家考期顺利！"
-    var today = new Date()
+    // var today = new Date()
 
-    var workDay = today.getDay(),
-        hour = today.getHours(),
-        minute = today.getMinutes()
-
-    if(workDay === 0 || workDay === 6){
-       $rootScope.showMask = true
-       $rootScope.noticeContent = "周末休息啦~"
-    }
-    if(hour > 21 || (hour === 21 && minute > 30)){
-       $rootScope.showMask = true
-       $rootScope.noticeContent = "太晚了，明天再来~"
-    }
+    // var workDay = today.getDay(),
+    //     hour = today.getHours(),
+    //     minute = today.getMinutes()
+	//
+    // if(workDay === 0 || workDay === 6){
+    //    $rootScope.showMask = true
+    //    $rootScope.noticeContent = "周末休息啦~"
+    // }
+    // if(hour > 21 || (hour === 21 && minute > 30)){
+    //    $rootScope.showMask = true
+    //    $rootScope.noticeContent = "太晚了，明天再来~"
+    // }
 })
 
 buaaeatingApp.config(function($httpProvider) {
